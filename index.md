@@ -11,9 +11,11 @@ Este repositorio contiene el material del curso de Machine Learning desarrollado
 
 ## Licencia
 
-El contenido está bajo licencia [Creative Commons BY-NC-SA 3.0 ES](LICENSE.md).
+El contenido está bajo licencia [Creative Commons BY-NC-SA 4.0 ES](LICENSE.md).
 
 ## Contenido del curso
 
-### [Unidad 1. Fundamentos de la Inteligencia Artificial y el Aprendizaje Automático](unidad1/unidad1.md)  
-
+### [Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sistemes Operatius](sp1/sp1.md)
+### [Sprint 2: Gestió de la Informació del Sistema i Administració](sp2/sp2.md) 
+### [Sprint 3: Gestió de Dominis i Accessos](sp3/sp3.md) 
+### [Sprint 4: Monitorització, connexió remota i llicenciament](sp4/sp4.md)
