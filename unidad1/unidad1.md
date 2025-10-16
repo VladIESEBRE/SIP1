@@ -56,7 +56,7 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
   
    
    
- <p style="margin-top: 20px;">## Llicenciament</p>
+ <p style="margin-top: 20rem;">## Llicenciament</p>
    
 
 #### **Licencia de Ubuntu**
