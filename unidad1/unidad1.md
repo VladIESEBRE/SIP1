@@ -14,6 +14,13 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  
  <img width="859" height="478" alt="Captura de pantalla de 2025-09-26 12-45-05" src="https://github.com/user-attachments/assets/9a6edb8b-b134-415e-bc94-46d7e0bde50c" />
 
+
+
+
+
+
+
+
   # Paso 2
 &nbsp;&nbsp;- Aquí podemos elegir la capacidad total que tendrá el disco duro.
  
