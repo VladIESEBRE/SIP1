@@ -60,10 +60,6 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
 <img width="906" height="718" alt="Captura de pantalla de 2025-09-26 13-07-54" src="https://github.com/user-attachments/assets/b62dbb33-45c5-4ef9-8386-bfe512526977" />
 
 
-
- <details>
-  <summary>Llicenciament</summary>
-
    ## Llicenciament
 
 #### **Licencia de Ubuntu**
@@ -80,10 +76,7 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  - Attribution (BY),simbolizado por el icono de la persona ,requiere que se dé crédito al autor original.
  - NoDerivatives (ND),sibolizado por "=", prohíbe modificar o crear obras derivadas de la original.
  - 4.0 International quiere decir que es la versión más reciente de esta licencia, aplicable globalmente con términos estandarizados.
-    </details>
- 
- <details>
-  <summary>Instal·lacións duals i Gestors d'arrancada</summary>
+   
 
 ## Instal·lacións duals i Gestors d'arrancada
 
@@ -174,9 +167,6 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
 
 <img width="1037" height="821" alt="Captura de pantalla de 2025-10-03 13-01-18" src="https://github.com/user-attachments/assets/31c34a3b-7463-4640-b561-b7d93b2069cc" />
 
- </details>
-  <details>
-  <summary>Particions i punts de restauració</summary>
 
 ## Particions i punts de restauració
 
@@ -218,20 +208,14 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 <img width="1282" height="889" alt="Captura de pantalla de 2025-10-10 13-13-55" src="https://github.com/user-attachments/assets/94e33c6b-8542-418d-a372-c4c541d66191" />
 
 
-
-</details>
- <details>
-  <summary>Configuració basica de la xarxa</summary>
       
 
 ## Configuració basica de la xarxa
-</details>
- <details>
-  <summary>Comandes generals i instal·lació d'aplicacions</summary>
+
      
 
 ## Comandes generals i instal·lació d'aplicacions
-</details>
+
 
 
 
