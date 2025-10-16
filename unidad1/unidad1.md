@@ -51,12 +51,11 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  - sda6(biosgrub)(área reservada para BIOS(elegimos "Área reservada de la BIOS de arranque" en la opción "Utilizar como")) *98MB*
 
 <img width="906" height="718" alt="Captura de pantalla de 2025-09-26 13-07-54" src="https://github.com/user-attachments/assets/b62dbb33-45c5-4ef9-8386-bfe512526977" />
-
-
-  
-   
-   
- <p style="margin-top: 20rem;">## Llicenciament</p>
+ 
+   &nbsp;
+   &nbsp;
+   &nbsp;
+ ## Llicenciament
    
 
 #### **Licencia de Ubuntu**
