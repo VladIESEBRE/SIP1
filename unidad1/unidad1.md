@@ -56,7 +56,7 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
   
    
    
-   ## Llicenciament
+   ## Llicenciament<br><br>
 
 #### **Licencia de Ubuntu**
 &nbsp;&nbsp;Ubuntu, no tiene una única licencia, ya que está compuesto por muchos programas, cada uno con su propia licencia.La mayoría del software en Ubuntu está bajo licencias de software libre, principalmente la GNU General Public License (GPL), que permite usar, modificar y distribuir el código libremente, siempre que los derivados mantengan la misma licencia.
