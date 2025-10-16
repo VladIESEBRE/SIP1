@@ -72,6 +72,12 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  - Attribution (BY),simbolizado por el icono de la persona ,requiere que se dé crédito al autor original.
  - NoDerivatives (ND),sibolizado por "=", prohíbe modificar o crear obras derivadas de la original.
  - 4.0 International quiere decir que es la versión más reciente de esta licencia, aplicable globalmente con términos estandarizados.
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
    
 
 ## Instal·lacións duals i Gestors d'arrancada
