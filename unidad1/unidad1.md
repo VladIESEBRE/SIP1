@@ -51,10 +51,10 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  - sda6(biosgrub)(área reservada para BIOS(elegimos "Área reservada de la BIOS de arranque" en la opción "Utilizar como")) *98MB*
 
 <img width="906" height="718" alt="Captura de pantalla de 2025-09-26 13-07-54" src="https://github.com/user-attachments/assets/b62dbb33-45c5-4ef9-8386-bfe512526977" />
- 
-   &nbsp;
-   &nbsp;
-   &nbsp;
+ <br><br>
+  <br><br>
+  <br><br>
+  <br><br>
  ## Llicenciament
    
 
@@ -72,13 +72,7 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  - Attribution (BY),simbolizado por el icono de la persona ,requiere que se dé crédito al autor original.
  - NoDerivatives (ND),sibolizado por "=", prohíbe modificar o crear obras derivadas de la original.
  - 4.0 International quiere decir que es la versión más reciente de esta licencia, aplicable globalmente con términos estandarizados.
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
-   
+
 
 ## Instal·lacións duals i Gestors d'arrancada
 
