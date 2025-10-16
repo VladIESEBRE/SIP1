@@ -195,6 +195,23 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 13.
 14.
 15.
+<img width="881" height="537" alt="Captura de pantalla de 2025-10-10 11-49-57" src="https://github.com/user-attachments/assets/015bfb7a-3315-46f1-a28b-6f6ee07e4534" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-01-58" src="https://github.com/user-attachments/assets/3d588daa-73c1-4528-914f-61dbd8dbdbfa" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-03-25" src="https://github.com/user-attachments/assets/95c4e33e-a59b-45fb-8b66-61ac3cf51b40" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-05-04" src="https://github.com/user-attachments/assets/60111b4c-47f8-4be3-9fd2-e16e3e3d4b2b" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-06-31" src="https://github.com/user-attachments/assets/cc11a2a8-5391-4ca0-9c44-1a4ea7093d12" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-43" src="https://github.com/user-attachments/assets/726cd0ec-6093-41d0-a1e7-a9c3e0261dbb" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-53" src="https://github.com/user-attachments/assets/0433cc6d-30e6-4101-a881-1c771197f330" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-12-11" src="https://github.com/user-attachments/assets/ba65f111-e022-4268-915a-5263992a17f4" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-14-50" src="https://github.com/user-attachments/assets/b076dbb5-10de-46f3-b97f-d6eb6be8cf42" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-16-33" src="https://github.com/user-attachments/assets/9696a499-3f46-4a45-bcb7-b2975ecbb7bb" />
+<img width="1284" height="889" alt="Captura de pantalla de 2025-10-10 13-09-53" src="https://github.com/user-attachments/assets/4aab3951-85aa-4da4-9862-f46c91f0ad1b" />
+<img width="1282" height="889" alt="Captura de pantalla de 2025-10-10 13-13-55" src="https://github.com/user-attachments/assets/94e33c6b-8542-418d-a372-c4c541d66191" />
+
 
 
 </details>
