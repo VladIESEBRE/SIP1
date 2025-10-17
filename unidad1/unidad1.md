@@ -185,6 +185,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
  
  # Paso 4
  &nbsp;&nbsp; - Partición creada.
+ 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
   
  # Paso 5 
@@ -211,7 +212,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
  
  # Paso 10
- &nbsp;&nbsp; - captura time shift
+ &nbsp;&nbsp; - Inicio configuración Timeshift
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
  
