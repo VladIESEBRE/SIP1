@@ -181,18 +181,18 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
  &nbsp;&nbsp; - Creamos la partición
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-03-25" src="https://github.com/user-attachments/assets/95c4e33e-a59b-45fb-8b66-61ac3cf51b40" />
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
- 
+
  
  # Paso 4
- &nbsp;&nbsp; - Preparando para guardar instantaneamente, (disc)
-
+ &nbsp;&nbsp; - Partición creada.
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-05-04" src="https://github.com/user-attachments/assets/60111b4c-47f8-4be3-9fd2-e16e3e3d4b2b" />
   
  # Paso 5 
- &nbsp;&nbsp; - Seguimos con la instalación normal del windows hasta que llegamos al Home Screen y comprobamos que todo se ha instalado correctamente.  
+ &nbsp;&nbsp; -Preparando para guardar instantaneamente, (disc)
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-05-04" src="https://github.com/user-attachments/assets/60111b4c-47f8-4be3-9fd2-e16e3e3d4b2b" />
+  
  
  # Paso 6
  &nbsp;&nbsp; - Borramos el disco virtual del Windows que hemos creado.
