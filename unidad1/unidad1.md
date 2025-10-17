@@ -277,10 +277,12 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
   <br><br>
 
 ## Configuració basica de la xarxa
+cambiar ip interna , nat ip conjunta pc y maquina, adaptador pont (ips diferentes),xarxa nat para servidores, interna(sin internet), dh
+
 1 
 2
-3
-4
+3la conex esta funcionando
+4la conex esta funcionando
 5
 6
 7
