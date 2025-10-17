@@ -186,7 +186,6 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
  # Paso 4
  &nbsp;&nbsp; - Partición creada.
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-05-04" src="https://github.com/user-attachments/assets/60111b4c-47f8-4be3-9fd2-e16e3e3d4b2b" />
   
  # Paso 5 
  &nbsp;&nbsp; -Preparando para guardar instantaneamente, (disc)
@@ -195,12 +194,13 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
   
  
  # Paso 6
- &nbsp;&nbsp; - Borramos el disco virtual del Windows que hemos creado.
+ &nbsp;&nbsp; - Insatalmos TimeShift.
 
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-06-31" src="https://github.com/user-attachments/assets/cc11a2a8-5391-4ca0-9c44-1a4ea7093d12" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-53" src="https://github.com/user-attachments/assets/0433cc6d-30e6-4101-a881-1c771197f330" />
+ 
  
  # Paso 7
- &nbsp;&nbsp; - Creamos un disco virtual vacío.
+ &nbsp;&nbsp; - TimeShift instalado.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-43" src="https://github.com/user-attachments/assets/726cd0ec-6093-41d0-a1e7-a9c3e0261dbb" />
  
