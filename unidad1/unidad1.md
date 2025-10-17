@@ -168,25 +168,27 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
 
 image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantanea)
 # Paso 1
- &nbsp;&nbsp; - Activamos EFI ya que si no lo activamos nos podríamos enfrentar con problemas de compatibilidad.Tenemos que instalar el Windows en GPT.
+ &nbsp;&nbsp; - Tenemos 2 imágenes (hemos creado una nueva de 25gb en sata)
  
 <img width="881" height="537" alt="Captura de pantalla de 2025-10-10 11-49-57" src="https://github.com/user-attachments/assets/015bfb7a-3315-46f1-a28b-6f6ee07e4534" />
 
  # Paso 2
- &nbsp;&nbsp; - Creamos un disco virtual y montamos la imagen ISO con el Windows 10 Enterptrise en "Controlador:IDE"
+ &nbsp;&nbsp; - Entramos en el disco sdb que hemos creado
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-01-58" src="https://github.com/user-attachments/assets/3d588daa-73c1-4528-914f-61dbd8dbdbfa" />
 
  # Paso 3
- &nbsp;&nbsp; - Selecionamos Instalación personalizada,para poder elegir donde instalar en windows.
+ &nbsp;&nbsp; - Creamos la partición
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-03-25" src="https://github.com/user-attachments/assets/95c4e33e-a59b-45fb-8b66-61ac3cf51b40" />
- 
- # Paso 4
- &nbsp;&nbsp; - Seleccionamos "Unidad 0-Particion 8" (es el disco virtual) y le damos al boton nuevo para crear una particion nueva e instalar el windows ahí. 
-
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
  
+ 
+ # Paso 4
+ &nbsp;&nbsp; - Preparando para guardar instantaneamente, (disc)
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-05-04" src="https://github.com/user-attachments/assets/60111b4c-47f8-4be3-9fd2-e16e3e3d4b2b" />
+  
  # Paso 5 
  &nbsp;&nbsp; - Seguimos con la instalación normal del windows hasta que llegamos al Home Screen y comprobamos que todo se ha instalado correctamente.  
 
