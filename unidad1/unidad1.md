@@ -132,7 +132,7 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  
 <img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-49-01" src="https://github.com/user-attachments/assets/05c42854-8a97-49cf-bda1-572091513149" />
 
- # Paso 13
+ # Paso 12
  - Abrimos el archivo de configuración de GRUB escribiendo "sudo nano /etc/default/grub".
  - Ponemos una "#" antes de "#GRUB_TIMEOUT_STYLE=menu" y "#GRUB_TIMEOUT=5" para desactivarlas .Sin estas líneas, GRUB puede usar un comportamiento predeterminado, haciendo que el menú no sea visible a menos que presiones una tecla durante el arranque.
  - Añadimos "GRUB_DISABLE_OS_PROBER=false" para activar el os-prober (es una utilidad que escanea los discos en busca de otros sistemas operativos y agrega entradas para ellos en el menú de GRUB).Así GRUB puede buscar y añadir entradas para otros sistemas operativos, en el menú de arranque.
@@ -140,24 +140,24 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
 
 <img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-51-43" src="https://github.com/user-attachments/assets/10c47847-be52-46cf-ad35-390b4871f561" />
  
- # Paso 14
+ # Paso 13
   &nbsp;&nbsp; - Escribimos "update-grub2" para que se guarde la configuración.
   
 <img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-53-05" src="https://github.com/user-attachments/assets/a82c9858-418f-446a-a3b2-9e306f3f8cb8" />
 
- # Paso 15
+ # Paso 14
   &nbsp;&nbsp; - Si queremos cambiar el orden de arranque ,escribimos "efibootmgr".Si no está instalado escribimos apt install "efibootmgr".
 
 <img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-53-49" src="https://github.com/user-attachments/assets/a463d045-65a2-4598-a807-3a4dab15ab2b" />
  
 <img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-54-49" src="https://github.com/user-attachments/assets/01cd6b90-38ba-4e02-8b48-5237f51e4cf7" />
 
- # Paso 16
+ # Paso 15
   &nbsp;&nbsp; - Aquí podemos ver como cambiar el orden de arranque(efibootmgr -o y los números en orden de arranque). El primero en iniciarse será UEFI VBOX HRDDISK, después UiApp ,UEFI VBOX CD-ROM etc... y al final el Windows.
 
 <img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-57-50" src="https://github.com/user-attachments/assets/847b8947-4da3-4331-8cc8-e3113ff74bf5" />
 
- # Paso 17
+ # Paso 16
  &nbsp;&nbsp; - Después, al iniciar el sistema podemos entrar en el menú de GRUB y seleccionar qué sistema operativo queremos arrancar.
 
 <img width="1037" height="821" alt="Captura de pantalla de 2025-10-03 13-01-18" src="https://github.com/user-attachments/assets/31c34a3b-7463-4640-b561-b7d93b2069cc" />
@@ -168,9 +168,89 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
 
 image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantanea)
 # Paso 1
-  &nbsp;&nbsp;
-  # Paso 1
-  &nbsp;&nbsp;
+ &nbsp;&nbsp; - Activamos EFI ya que si no lo activamos nos podríamos enfrentar con problemas de compatibilidad.Tenemos que instalar el Windows en GPT.
+ 
+<img width="881" height="537" alt="Captura de pantalla de 2025-10-10 11-49-57" src="https://github.com/user-attachments/assets/015bfb7a-3315-46f1-a28b-6f6ee07e4534" />
+
+ # Paso 2
+ &nbsp;&nbsp; - Creamos un disco virtual y montamos la imagen ISO con el Windows 10 Enterptrise en "Controlador:IDE"
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-01-58" src="https://github.com/user-attachments/assets/3d588daa-73c1-4528-914f-61dbd8dbdbfa" />
+
+ # Paso 3
+ &nbsp;&nbsp; - Selecionamos Instalación personalizada,para poder elegir donde instalar en windows.
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-03-25" src="https://github.com/user-attachments/assets/95c4e33e-a59b-45fb-8b66-61ac3cf51b40" />
+ 
+ # Paso 4
+ &nbsp;&nbsp; - Seleccionamos "Unidad 0-Particion 8" (es el disco virtual) y le damos al boton nuevo para crear una particion nueva e instalar el windows ahí. 
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
+ 
+ # Paso 5 
+ &nbsp;&nbsp; - Seguimos con la instalación normal del windows hasta que llegamos al Home Screen y comprobamos que todo se ha instalado correctamente.  
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-05-04" src="https://github.com/user-attachments/assets/60111b4c-47f8-4be3-9fd2-e16e3e3d4b2b" />
+ 
+ # Paso 6
+ &nbsp;&nbsp; - Borramos el disco virtual del Windows que hemos creado.
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-06-31" src="https://github.com/user-attachments/assets/cc11a2a8-5391-4ca0-9c44-1a4ea7093d12" />
+ 
+ # Paso 7
+ &nbsp;&nbsp; - Creamos un disco virtual vacío.
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-43" src="https://github.com/user-attachments/assets/726cd0ec-6093-41d0-a1e7-a9c3e0261dbb" />
+ 
+ # Paso 8
+ &nbsp;&nbsp; - Montamos la ISO "Spuber_GRUB_2..." que nos permitirá acceder al Ubuntu.
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-53" src="https://github.com/user-attachments/assets/0433cc6d-30e6-4101-a881-1c771197f330" />
+ 
+ # Paso 9
+ &nbsp;&nbsp; - Entramos en el Boot Manager del VM (apretando la tecla "ESC" rapidamente) y seleccionamos "UEFI V-BOX"( el disco virtual que acabamos de montar)
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
+ 
+ # Paso 10
+ &nbsp;&nbsp; - Le damos a la segunda opción ("Detect and show boot methods) y seleccionamos Ubuntu(o Linux dependiendo del caso).
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
+ 
+ # Paso 11
+ &nbsp;&nbsp; - Al llegar a la página principal de Ubuntu, abrimos el terminal y escribimos "apt install --reinstall grub-pc" (fuerza la reinstalación del paquete que contiene los archivos necesarios para que GRUB funcione en sistemas que arrancan en modo BIOS).
+
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-12-11" src="https://github.com/user-attachments/assets/ba65f111-e022-4268-915a-5263992a17f4" />
+ 
+
+ # Paso 12
+ - Abrimos el archivo de configuración de GRUB escribiendo "sudo nano /etc/default/grub".
+
+
+<img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-51-43" src="https://github.com/user-attachments/assets/10c47847-be52-46cf-ad35-390b4871f561" />
+ 
+ # Paso 13
+  &nbsp;&nbsp; - Escribimos "update-grub2" para que se guarde la configuración.
+  
+<img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-53-05" src="https://github.com/user-attachments/assets/a82c9858-418f-446a-a3b2-9e306f3f8cb8" />
+
+ # Paso 14
+  &nbsp;&nbsp; - Si queremos cambiar el orden de arranque ,escribimos "efibootmgr".Si no está instalado escribimos apt install "efibootmgr".
+
+<img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-53-49" src="https://github.com/user-attachments/assets/a463d045-65a2-4598-a807-3a4dab15ab2b" />
+ 
+<img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-54-49" src="https://github.com/user-attachments/assets/01cd6b90-38ba-4e02-8b48-5237f51e4cf7" />
+
+ # Paso 15
+  &nbsp;&nbsp; - Aquí podemos ver como cambiar el orden de arranque(efibootmgr -o y los números en orden de arranque). El primero en iniciarse será UEFI VBOX HRDDISK, después UiApp ,UEFI VBOX CD-ROM etc... y al final el Windows.
+
+<img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-57-50" src="https://github.com/user-attachments/assets/847b8947-4da3-4331-8cc8-e3113ff74bf5" />
+
+ # Paso 16
+ &nbsp;&nbsp; - Después, al iniciar el sistema podemos entrar en el menú de GRUB y seleccionar qué sistema operativo queremos arrancar.
+
+<img width="1037" height="821" alt="Captura de pantalla de 2025-10-03 13-01-18" src="https://github.com/user-attachments/assets/31c34a3b-7463-4640-b561-b7d93b2069cc" />
+
 1. tenemos 2 imatges(hemos creado una nueva de 25gb en sata)
 2.entramos en el disco sdb que hemos creado
 3.oren empieza , w para salir
@@ -194,6 +274,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-06-31" src="https://github.com/user-attachments/assets/cc11a2a8-5391-4ca0-9c44-1a4ea7093d12" />
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-43" src="https://github.com/user-attachments/assets/726cd0ec-6093-41d0-a1e7-a9c3e0261dbb" />
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-53" src="https://github.com/user-attachments/assets/0433cc6d-30e6-4101-a881-1c771197f330" />
+
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-12-11" src="https://github.com/user-attachments/assets/ba65f111-e022-4268-915a-5263992a17f4" />
