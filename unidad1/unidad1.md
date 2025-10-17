@@ -204,18 +204,14 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-43" src="https://github.com/user-attachments/assets/726cd0ec-6093-41d0-a1e7-a9c3e0261dbb" />
  
- # Paso 8
- &nbsp;&nbsp; - Montamos la ISO "Spuber_GRUB_2..." que nos permitirá acceder al Ubuntu.
 
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-53" src="https://github.com/user-attachments/assets/0433cc6d-30e6-4101-a881-1c771197f330" />
- 
  # Paso 9
- &nbsp;&nbsp; - Entramos en el Boot Manager del VM (apretando la tecla "ESC" rapidamente) y seleccionamos "UEFI V-BOX"( el disco virtual que acabamos de montar)
+ &nbsp;&nbsp; - creamos carpeta
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
  
  # Paso 10
- &nbsp;&nbsp; - Le damos a la segunda opción ("Detect and show boot methods) y seleccionamos Ubuntu(o Linux dependiendo del caso).
+ &nbsp;&nbsp; - captura time shift
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
  
