@@ -238,35 +238,15 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-16-33" src="https://github.com/user-attachments/assets/9696a499-3f46-4a45-bcb7-b2975ecbb7bb" />
 
  # Paso 15
-  &nbsp;&nbsp; - Aquí podemos ver que no existe la caprpeta que hemos creado(holaprova .
+  &nbsp;&nbsp; - Aquí podemos ver que no existe la carpeta que hemos creado(hola-->prova) .La hemos borrado.
 
 <img width="1284" height="889" alt="Captura de pantalla de 2025-10-10 13-09-53" src="https://github.com/user-attachments/assets/4aab3951-85aa-4da4-9862-f46c91f0ad1b" />
 
  # Paso 16
- &nbsp;&nbsp; - .
+ &nbsp;&nbsp; - Después de recuperar los documentos mediante Timeshift ,podemos ver que la carpeta ha vuelto a aparecer.
 
 <img width="1282" height="889" alt="Captura de pantalla de 2025-10-10 13-13-55" src="https://github.com/user-attachments/assets/94e33c6b-8542-418d-a372-c4c541d66191" />
-
-
-1. tenemos 2 imatges(hemos creado una nueva de 25gb en sata)
-2.entramos en el disco sdb que hemos creado
-3.oren empieza , w para salir
-4.particion creada
-5.preparado para guardar instantanee, (disc)
-6.instalamos time shift
-7.creamos carpeta
-8.captura time shift
-9.marcamos dnd va la instantanea
-10.triar cuando hacer instantanea
-11.seleccionar documentos solo para que no tarde
-12. soda su , /home/Vlad/Documentos/, ls , rm hola, rm -r prova,ls (captura), timeshift ,elegimos ,restaurar,seguent,captura al final ,terminal, cs /home/vlad/Documentos/, ls
-13.
-14.
-
-
-
-
-
+ 
       <br><br>
   <br><br>
 
