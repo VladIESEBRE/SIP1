@@ -308,7 +308,9 @@ cambiar ip interna , nat ip conjunta pc y maquina, adaptador pont (ips diferente
 
 
 # Paso 8
- &nbsp;&nbsp; - Aplicamos mediante "sudo Netplan apply". En este caso nos sale una advertencia avisando que el archivo "/etc/netplan/01-network-manager-all.yaml" tiene permisos demasiado abiertos.Esto se puede solucionar haciendo que solo el administrador pueda modificarlo.
+ &nbsp;&nbsp; - Aplicamos los cambios mediante el comando sudo netplan apply.
+En este caso aparece una advertencia que indica que el archivo /etc/netplan/01-network-manager-all.yaml tiene permisos demasiado abiertos.
+Esto se puede solucionar configurando los permisos para que solo el administrador (root) tenga acceso de lectura y escritura al archivo.
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-12-40" src="https://github.com/user-attachments/assets/2e6c8daa-faac-457b-8d74-4e488f84b2e1" />
 
