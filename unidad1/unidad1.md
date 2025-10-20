@@ -251,12 +251,11 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
       <br><br>
   <br><br>
 ## Configuració basica de la xarxa
-cambiar ip interna , nat ip conjunta pc y maquina, adaptador pont (ips diferentes),xarxa nat para servidores, interna(sin internet), dh
 
 # Paso 1
- &nbsp;&nbsp; - Para configurar una IP estática tenemos que cambiar algunos parámetros:
+ &nbsp;&nbsp;   Para configurar una IP estática tenemos que cambiar algunos parámetros:
   
- - Seleccionamos IPv4:Manual ,ya que queremos asignar nosotros la IP, no queremos que lo haga el router automaticamente(DHCP).
+ - Seleccionamos IPv4:Manual, ya que queremos asignar nosotros la IP, no queremos que lo haga el router automaticamente(DHCP).
  - Dirección : La IP que le queremos asignar.
  - Máscara de red: Indica el tamaño de la red. En este caso, todas las IP que comienzan con 192.168.201 están en la misma red.
  - Puerta de enlace: Es la dirección del router.
@@ -266,14 +265,14 @@ cambiar ip interna , nat ip conjunta pc y maquina, adaptador pont (ips diferente
 
 
 # Paso 2
- &nbsp;&nbsp; - Comprobamos que la configuración de red funciona bien. 
+ &nbsp;&nbsp;   Comprobamos que la configuración de red funciona bien. 
  - Mediante el comando "ip a" podemos ver que tenemos la ip correcta "192.168.201.150" y "/24" que equivale a la máscara de red que hemos puesto.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-55-32" src="https://github.com/user-attachments/assets/86aa4a28-7c30-4cd1-b50d-6ee2729a6520" />
 
 
 # Paso 3
- &nbsp;&nbsp; - Después mediante el comando "ping www.google.es" combrobamos que el equipo tiene salida a Internet y que el DNS (8.8.8.8) está funcionando.
+ &nbsp;&nbsp; - Después mediante el comando "ping www.google.es" comprobamos que el equipo tiene salida a Internet y que el DNS (8.8.8.8) está funcionando.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-56-03" src="https://github.com/user-attachments/assets/46992327-e217-4bd5-a0ad-99ecb9f12541" />
 
@@ -309,8 +308,8 @@ cambiar ip interna , nat ip conjunta pc y maquina, adaptador pont (ips diferente
 
 # Paso 8
  &nbsp;&nbsp; - Aplicamos los cambios mediante el comando sudo netplan apply.
-En este caso aparece una advertencia que indica que el archivo /etc/netplan/01-network-manager-all.yaml tiene permisos demasiado abiertos.
-Esto se puede solucionar configurando los permisos para que solo el administrador (root) tenga acceso de lectura y escritura al archivo.
+ - En este caso aparece una advertencia que indica que el archivo /etc/netplan/01-network-manager-all.yaml tiene permisos demasiado abiertos.
+ - Esto se puede solucionar configurando los permisos para que solo el administrador (root) tenga acceso de lectura y escritura al archivo.
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-12-40" src="https://github.com/user-attachments/assets/2e6c8daa-faac-457b-8d74-4e488f84b2e1" />
 
