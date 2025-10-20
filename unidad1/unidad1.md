@@ -223,13 +223,12 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
  
 
  # Paso 12
- - Abrimos el archivo de configuración de GRUB escribiendo "sudo nano /etc/default/grub".
-
+ - Seleccionamos cuando se creara la instantanea (los intervalos de tiempo).
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
  
  # Paso 13
-  &nbsp;&nbsp; - Escribimos "update-grub2" para que se guarde la configuración.
+  &nbsp;&nbsp; - Seleccionamos de que ficheros queremos hacer la instantanea.En este caso he seleccionado todos los ficheros de "/root" y ningun fichero de "/home/vlad".
   
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-14-50" src="https://github.com/user-attachments/assets/b076dbb5-10de-46f3-b97f-d6eb6be8cf42" />
 
@@ -265,12 +264,6 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 
 
 
-
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-14-50" src="https://github.com/user-attachments/assets/b076dbb5-10de-46f3-b97f-d6eb6be8cf42" />
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-16-33" src="https://github.com/user-attachments/assets/9696a499-3f46-4a45-bcb7-b2975ecbb7bb" />
-<img width="1284" height="889" alt="Captura de pantalla de 2025-10-10 13-09-53" src="https://github.com/user-attachments/assets/4aab3951-85aa-4da4-9862-f46c91f0ad1b" />
-<img width="1282" height="889" alt="Captura de pantalla de 2025-10-10 13-13-55" src="https://github.com/user-attachments/assets/94e33c6b-8542-418d-a372-c4c541d66191" />
 
 
       <br><br>
