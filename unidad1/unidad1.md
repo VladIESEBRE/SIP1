@@ -247,7 +247,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <img width="1282" height="889" alt="Captura de pantalla de 2025-10-10 13-13-55" src="https://github.com/user-attachments/assets/94e33c6b-8542-418d-a372-c4c541d66191" />
  
      
-      <br><br>
+<br><br>
   <br><br>
 ## Configuración básica de la red
 
