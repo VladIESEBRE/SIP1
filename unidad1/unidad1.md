@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Sprint 1: Instal·lació i Configuració Inicial"
+title: "Sprint 1: Instalación i Configuración Inicial"
 ---
 
- ## **"Virtualització i instal·lació del S.O Ubuntu"**
+ ## **"Virtualización y instalación del S.O Ubuntu"**
 
 ### **Instalación y particionamiento Ubuntu**
 
@@ -54,7 +54,7 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
  <br><br>
   <br><br>
 
-## **Llicenciament**
+## **Licenciamiento**
  
 #### **Licencia de Ubuntu**
 &nbsp;&nbsp;Ubuntu, no tiene una única licencia, ya que está compuesto por muchos programas, cada uno con su propia licencia.La mayoría del software en Ubuntu está bajo licencias de software libre, principalmente la GNU General Public License (GPL), que permite usar, modificar y distribuir el código libremente, siempre que los derivados mantengan la misma licencia.
@@ -73,7 +73,7 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
 
 <br><br>
   <br><br>
-## Instal·lacións duals i Gestors d'arrancada
+## Instalaciones duales y gestores de arranque
 
  # Paso 1
  &nbsp;&nbsp; - Activamos EFI ya que si no lo activamos nos podríamos enfrentar con problemas de compatibilidad.Tenemos que instalar el Windows en GPT.
@@ -164,9 +164,8 @@ title: "Sprint 1: Instal·lació i Configuració Inicial"
 
 <br><br>
   <br><br>
-## Particions i punts de restauració
+## Particiones y puntos de restauración
 
-image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantanea)
 # Paso 1
  &nbsp;&nbsp; - Tenemos 2 imágenes (hemos creado una nueva de 25gb en sata)
  
@@ -250,7 +249,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
      
       <br><br>
   <br><br>
-## Configuració basica de la xarxa
+## Configuración básica de la red
 
 # Paso 1
  &nbsp;&nbsp;   Para configurar una IP estática tenemos que cambiar algunos parámetros:
@@ -309,7 +308,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 # Paso 8
  &nbsp;&nbsp;   Aplicamos los cambios mediante el comando "sudo netplan apply".
  - En este caso aparece una advertencia que indica que el archivo "/etc/netplan/01-network-manager-all.yaml" tiene permisos demasiado abiertos.
- - Esto se puede solucionar configurando los permisos para que solo el administrador tenga acceso de lectura y escritura al archivo.
+ - Esto se puede solucionar configurando los permisos para que solo el administrador tenga acceso de lectura y escritura al archivo ("sudo chmod 600 /etc/netplan/01-network-manager-all.yaml").
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-12-40" src="https://github.com/user-attachments/assets/2e6c8daa-faac-457b-8d74-4e488f84b2e1" />
 
@@ -322,7 +321,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
      
 <br><br>
   <br><br>
-## Comandes generals i instal·lació d'aplicacions
+## Comandos generales e instalación de aplicaciones
 1
 2
 3
