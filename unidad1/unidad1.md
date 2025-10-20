@@ -298,19 +298,23 @@ cambiar ip interna , nat ip conjunta pc y maquina, adaptador pont (ips diferente
 
 # Paso 7
  &nbsp;&nbsp; - Aquí tenemos una configuración manual de red (IP estática) mediante NetPlan/NetworkManager:
-  - 
+ - "enp0s3" es el nombre del adaptador Ethernet físico.
+ - "dhcp4" y "dhcp6" están desactivados ,lo que significa que todo se configurará manualmente , no se usará DHCP.
+ - "Addresses" es la IP fija que asignamos y su máscara de red: 192.168.201.150/24.
+ - "routes -to ,via" define la puerta de enlace (router).
+ - "nameservers" - configura el servidor DNS , en este caso Google.
 
  <img width="745" height="482" alt="Captura de pantalla de 2025-10-17 12-06-04" src="https://github.com/user-attachments/assets/374071f6-e022-480d-b5e8-fc0b27ad22f8" />
 
 
 # Paso 8
- &nbsp;&nbsp; - Después de recuperar los documentos mediante Timeshift ,podemos ver que la carpeta ha vuelto a aparecer.
+ &nbsp;&nbsp; - Aplicamos mediante "sudo Netplan apply". En este caso nos sale una advertencia avisando que el archivo "/etc/netplan/01-network-manager-all.yaml" tiene permisos demasiado abiertos.Esto se puede solucionar haciendo que solo el administrador pueda modificarlo.
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-12-40" src="https://github.com/user-attachments/assets/2e6c8daa-faac-457b-8d74-4e488f84b2e1" />
 
 
 # Paso 9
- &nbsp;&nbsp; - Después de recuperar los documentos mediante Timeshift ,podemos ver que la carpeta ha vuelto a aparecer.
+ &nbsp;&nbsp; - Comprobamos que funciona bien.
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-13-05" src="https://github.com/user-attachments/assets/30323ff6-6726-47c2-b6ac-d96914d7bd72" />
 
