@@ -265,38 +265,38 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 
 
 # Paso 2
- &nbsp;&nbsp;   Comprobamos que la configuración de red funciona bien. 
+ &nbsp;&nbsp;   Comprobamos que la configuración de red funciona bien: 
  - Mediante el comando "ip a" podemos ver que tenemos la ip correcta "192.168.201.150" y "/24" que equivale a la máscara de red que hemos puesto.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-55-32" src="https://github.com/user-attachments/assets/86aa4a28-7c30-4cd1-b50d-6ee2729a6520" />
 
 
 # Paso 3
- &nbsp;&nbsp; - Después mediante el comando "ping www.google.es" comprobamos que el equipo tiene salida a Internet y que el DNS (8.8.8.8) está funcionando.
+ &nbsp;&nbsp;   Después mediante el comando "ping www.google.es" comprobamos que el equipo tiene salida a Internet y que el DNS (8.8.8.8) está funcionando.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-56-03" src="https://github.com/user-attachments/assets/46992327-e217-4bd5-a0ad-99ecb9f12541" />
 
 
 # Paso 4
- &nbsp;&nbsp; - El comando "ping 8.8.8.8" prueba la conexión directa por IP, sin pasar por el DNS.
+ &nbsp;&nbsp;   El comando "ping 8.8.8.8" prueba la conexión directa por IP, sin pasar por el DNS.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-56-37" src="https://github.com/user-attachments/assets/ff1a71f9-b326-4e1f-8dc4-bd362958ee8f" />
 
 
 # Paso 5
- &nbsp;&nbsp; - También escribimos "ping 192.168.201.100" para hacer una prueba dentro de la red local (LAN). 
+ &nbsp;&nbsp;   También escribimos "ping 192.168.201.100" para hacer una prueba dentro de la red local (LAN). 
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-57-56" src="https://github.com/user-attachments/assets/0f93e4df-9873-4ac4-a811-9658cd03887a" />
 
 
 # Paso 6
- &nbsp;&nbsp; - Seleccionamos "Automático (DHCP) si queremos volver al estado inicial , con IP automática y DNS automático.
+ &nbsp;&nbsp;   Seleccionamos "Automático (DHCP) si queremos volver al estado inicial , con IP automática y DNS automático.
 
  <img width="768" height="503" alt="Captura de pantalla de 2025-10-17 11-58-33" src="https://github.com/user-attachments/assets/da1c17d1-4e71-4201-a0ee-bb8cd68cdb77" />
 
 
 # Paso 7
- &nbsp;&nbsp; - Aquí tenemos una configuración manual de red (IP estática) mediante NetPlan/NetworkManager:
+ &nbsp;&nbsp;   Aquí tenemos una configuración manual de red (IP estática) mediante NetPlan/NetworkManager:
  - "enp0s3" es el nombre del adaptador Ethernet físico.
  - "dhcp4" y "dhcp6" están desactivados ,lo que significa que todo se configurará manualmente , no se usará DHCP.
  - "Addresses" es la IP fija que asignamos y su máscara de red: 192.168.201.150/24.
@@ -307,7 +307,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 
 
 # Paso 8
- &nbsp;&nbsp; - Aplicamos los cambios mediante el comando sudo netplan apply.
+ &nbsp;&nbsp;   Aplicamos los cambios mediante el comando sudo netplan apply.
  - En este caso aparece una advertencia que indica que el archivo /etc/netplan/01-network-manager-all.yaml tiene permisos demasiado abiertos.
  - Esto se puede solucionar configurando los permisos para que solo el administrador (root) tenga acceso de lectura y escritura al archivo.
 
@@ -315,7 +315,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 
 
 # Paso 9
- &nbsp;&nbsp; - Comprobamos que funciona bien.
+ &nbsp;&nbsp;   Comprobamos que funciona bien.
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-13-05" src="https://github.com/user-attachments/assets/30323ff6-6726-47c2-b6ac-d96914d7bd72" />
 
