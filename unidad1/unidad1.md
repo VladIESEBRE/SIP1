@@ -173,12 +173,12 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 <img width="881" height="537" alt="Captura de pantalla de 2025-10-10 11-49-57" src="https://github.com/user-attachments/assets/015bfb7a-3315-46f1-a28b-6f6ee07e4534" />
 
  # Paso 2
- &nbsp;&nbsp; - Entramos en el disco sdb que hemos creado
+ &nbsp;&nbsp; - Entramos en el disco sdb que hemos creado.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-01-58" src="https://github.com/user-attachments/assets/3d588daa-73c1-4528-914f-61dbd8dbdbfa" />
 
  # Paso 3
- &nbsp;&nbsp; - Creamos la partición
+ &nbsp;&nbsp; - Creamos la partición. GPT y primaria.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-03-25" src="https://github.com/user-attachments/assets/95c4e33e-a59b-45fb-8b66-61ac3cf51b40" />
 
@@ -189,7 +189,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-04-15" src="https://github.com/user-attachments/assets/8c9b645c-c8b1-434b-9c00-d2cbb5cfb91b" />
   
  # Paso 5 
- &nbsp;&nbsp; -Preparando para guardar instantaneamente, (disc)
+ &nbsp;&nbsp; - Formateado la partición /dev/sdb1 con el comando "mkfs.ext4".
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-05-04" src="https://github.com/user-attachments/assets/60111b4c-47f8-4be3-9fd2-e16e3e3d4b2b" />
   
@@ -207,17 +207,17 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
  
 
  # Paso 9
- &nbsp;&nbsp; - creamos carpeta
+ &nbsp;&nbsp; - Creamos una carpeta.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
  
  # Paso 10
- &nbsp;&nbsp; - Inicio configuración Timeshift
+ &nbsp;&nbsp; - Inicio configuración Timeshift.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
  
  # Paso 11
- &nbsp;&nbsp; - marcamos dnd va la instantanea
+ &nbsp;&nbsp; - Marcamos la ubicación de la instantanea, "sdb1" en este caso.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-12-11" src="https://github.com/user-attachments/assets/ba65f111-e022-4268-915a-5263992a17f4" />
  
@@ -226,12 +226,12 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
  - Abrimos el archivo de configuración de GRUB escribiendo "sudo nano /etc/default/grub".
 
 
-<img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-51-43" src="https://github.com/user-attachments/assets/10c47847-be52-46cf-ad35-390b4871f561" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
  
  # Paso 13
   &nbsp;&nbsp; - Escribimos "update-grub2" para que se guarde la configuración.
   
-<img width="746" height="486" alt="Captura de pantalla de 2025-10-03 12-53-05" src="https://github.com/user-attachments/assets/a82c9858-418f-446a-a3b2-9e306f3f8cb8" />
+<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-14-50" src="https://github.com/user-attachments/assets/b076dbb5-10de-46f3-b97f-d6eb6be8cf42" />
 
  # Paso 14
   &nbsp;&nbsp; - Si queremos cambiar el orden de arranque ,escribimos "efibootmgr".Si no está instalado escribimos apt install "efibootmgr".
@@ -246,6 +246,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
  &nbsp;&nbsp; - Después, al iniciar el sistema podemos entrar en el menú de GRUB y seleccionar qué sistema operativo queremos arrancar.
 
 <img width="1282" height="889" alt="Captura de pantalla de 2025-10-10 13-13-55" src="https://github.com/user-attachments/assets/94e33c6b-8542-418d-a372-c4c541d66191" />
+
 
 1. tenemos 2 imatges(hemos creado una nueva de 25gb en sata)
 2.entramos en el disco sdb que hemos creado
@@ -264,9 +265,7 @@ image para s.o, para dadas(ficherso) es diferente, copia de seguridad(instantane
 
 
 
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
-<img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-12-11" src="https://github.com/user-attachments/assets/ba65f111-e022-4268-915a-5263992a17f4" />
+
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-14-50" src="https://github.com/user-attachments/assets/b076dbb5-10de-46f3-b97f-d6eb6be8cf42" />
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-16-33" src="https://github.com/user-attachments/assets/9696a499-3f46-4a45-bcb7-b2975ecbb7bb" />
