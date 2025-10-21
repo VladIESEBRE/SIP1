@@ -3,7 +3,7 @@ layout: default
 title: "Sprint 1: Instalación i Configuración Inicial"
 ---
 
- # **"Virtualización y instalación del S.O Ubuntu"**
+ # **"Virtualización e instalación del S.O Ubuntu"**
 
 # **Instalación y particionamiento Ubuntu**
 
