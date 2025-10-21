@@ -270,7 +270,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-55-32" src="https://github.com/user-attachments/assets/86aa4a28-7c30-4cd1-b50d-6ee2729a6520" />
 
 
-##Paso 3
+## Paso 3
  &nbsp;&nbsp; - Después mediante el comando "ping www.google.es" comprobamos que el equipo tiene salida a Internet y que el DNS (8.8.8.8) está funcionando.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-56-03" src="https://github.com/user-attachments/assets/46992327-e217-4bd5-a0ad-99ecb9f12541" />
@@ -325,7 +325,51 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 
 # Instalación mediante "dpkg"
 ## Paso 1
- &nbsp;&nbsp;   Para configurar una IP estática tenemos que cambiar algunos parámetros:
+ &nbsp;&nbsp; - Descargamos el archivo ".deb",que contiene el juego Ninvaders.
+
+<img width="1281" height="879" alt="Captura de pantalla de 2025-10-21 12-48-11" src="https://github.com/user-attachments/assets/58436e0f-43de-4b3f-b48b-6db60360616e" />
+
+## Paso 2
+ &nbsp;&nbsp; - Instalamos el juego mediante el comando "sudo dpkg -i ninvaders_0.1.1-4_amd64.deb".
+
+<img width="1281" height="879" alt="Captura de pantalla de 2025-10-21 12-50-55" src="https://github.com/user-attachments/assets/95b18115-55bc-4a7d-be11-1d333c4c2045" />
+
+## Paso 3
+  &nbsp;&nbsp; - Iniciamos el juego escribiendo "ninvaders" en el terminal.
+
+<img width="1281" height="879" alt="Captura de pantalla de 2025-10-21 12-51-35" src="https://github.com/user-attachments/assets/dc0ba864-73da-4dbb-a439-4a333107a8dd" />
+
+<img width="1281" height="879" alt="Captura de pantalla de 2025-10-21 12-51-46" src="https://github.com/user-attachments/assets/6459439d-2fa4-43de-8f84-65d2f117b2f9" />
+
+## Paso 4
+ &nbsp;&nbsp; - Para desinstalar el juego utilizamos el comando "sudo dpkg -r ninvaders". Al volver a escribir "ninvaders" podemos ver que el archivo ya no existe.
+
+<img width="853" height="610" alt="Captura de pantalla de 2025-10-21 13-01-27" src="https://github.com/user-attachments/assets/7e6192a3-4a85-4ac3-9057-0f22fc88cac4" />
+
+<img width="853" height="610" alt="Captura de pantalla de 2025-10-21 13-01-46" src="https://github.com/user-attachments/assets/5e633124-3bbc-4691-8bcb-2c6426117f7d" />
+
+# Instalación mediante "apt"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
