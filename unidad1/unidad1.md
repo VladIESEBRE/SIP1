@@ -322,7 +322,10 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <br><br>
   <br><br>
 ## Comandos generales e instalación de aplicaciones
-## Instalación mediante "dpkg"
+
+# Instalación mediante "dpkg"
+# Paso 1
+ &nbsp;&nbsp;   Para configurar una IP estática tenemos que cambiar algunos parámetros:
 
 
 
