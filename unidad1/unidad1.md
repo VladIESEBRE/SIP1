@@ -249,9 +249,9 @@ title: "Sprint 1: Instalación i Configuración Inicial"
      
 <br><br>
   <br><br>
-## Configuración básica de la red
+# Configuración básica de la red
 
-# Paso 1
+## Paso 1
  &nbsp;&nbsp;   Para configurar una IP estática tenemos que cambiar algunos parámetros:
   
  - Seleccionamos IPv4:Manual, ya que queremos asignar nosotros la IP, no queremos que lo haga el router automaticamente(DHCP).
@@ -263,38 +263,38 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <img width="589" height="482" alt="Captura de pantalla de 2025-10-17 11-54-57" src="https://github.com/user-attachments/assets/62ea1e2a-7df1-41a6-bb4d-9497c97b0ca1" />
 
 
-# Paso 2
+## Paso 2
  &nbsp;&nbsp;   Comprobamos que la configuración de red funciona bien: 
  - Mediante el comando "ip a" podemos ver que tenemos la ip correcta "192.168.201.150" y "/24" que equivale a la máscara de red que hemos puesto.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-55-32" src="https://github.com/user-attachments/assets/86aa4a28-7c30-4cd1-b50d-6ee2729a6520" />
 
 
-# Paso 3
+##Paso 3
  &nbsp;&nbsp; - Después mediante el comando "ping www.google.es" comprobamos que el equipo tiene salida a Internet y que el DNS (8.8.8.8) está funcionando.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-56-03" src="https://github.com/user-attachments/assets/46992327-e217-4bd5-a0ad-99ecb9f12541" />
 
 
-# Paso 4
+## Paso 4
  &nbsp;&nbsp; - El comando "ping 8.8.8.8" prueba la conexión directa por IP, sin pasar por el DNS.
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-56-37" src="https://github.com/user-attachments/assets/ff1a71f9-b326-4e1f-8dc4-bd362958ee8f" />
 
 
-# Paso 5
+## Paso 5
  &nbsp;&nbsp; - También escribimos "ping 192.168.201.100" para hacer una prueba dentro de la red local (LAN). 
 
  <img width="746" height="488" alt="Captura de pantalla de 2025-10-17 11-57-56" src="https://github.com/user-attachments/assets/0f93e4df-9873-4ac4-a811-9658cd03887a" />
 
 
-# Paso 6
+## Paso 6
  &nbsp;&nbsp; - Seleccionamos "Automático (DHCP) si queremos volver al estado inicial , con IP automática y DNS automático.
 
  <img width="768" height="503" alt="Captura de pantalla de 2025-10-17 11-58-33" src="https://github.com/user-attachments/assets/da1c17d1-4e71-4201-a0ee-bb8cd68cdb77" />
 
 
-# Paso 7
+## Paso 7
  &nbsp;&nbsp;   Aquí tenemos una configuración manual de red (IP estática) mediante NetPlan/NetworkManager:
  - "enp0s3" es el nombre del adaptador Ethernet físico.
  - "dhcp4" y "dhcp6" están desactivados ,lo que significa que todo se configurará manualmente , no se usará DHCP.
@@ -305,7 +305,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
  <img width="745" height="482" alt="Captura de pantalla de 2025-10-17 12-06-04" src="https://github.com/user-attachments/assets/374071f6-e022-480d-b5e8-fc0b27ad22f8" />
 
 
-# Paso 8
+## Paso 8
  &nbsp;&nbsp;   Aplicamos los cambios mediante el comando "sudo netplan apply".
  - En este caso aparece una advertencia que indica que el archivo "/etc/netplan/01-network-manager-all.yaml" tiene permisos demasiado abiertos.
  - Esto se puede solucionar configurando los permisos para que solo el administrador tenga acceso de lectura y escritura al archivo ("sudo chmod 600 /etc/netplan/01-network-manager-all.yaml").
@@ -313,7 +313,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-12-40" src="https://github.com/user-attachments/assets/2e6c8daa-faac-457b-8d74-4e488f84b2e1" />
 
 
-# Paso 9
+##Paso 9
  &nbsp;&nbsp; - Comprobamos que funciona bien.
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-10-17 12-13-05" src="https://github.com/user-attachments/assets/30323ff6-6726-47c2-b6ac-d96914d7bd72" />
@@ -321,10 +321,10 @@ title: "Sprint 1: Instalación i Configuración Inicial"
      
 <br><br>
   <br><br>
-## Comandos generales e instalación de aplicaciones
+# Comandos generales e instalación de aplicaciones
 
 # Instalación mediante "dpkg"
-# Paso 1
+## Paso 1
  &nbsp;&nbsp;   Para configurar una IP estática tenemos que cambiar algunos parámetros:
 
 
