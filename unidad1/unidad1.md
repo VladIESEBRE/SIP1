@@ -322,16 +322,8 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <br><br>
   <br><br>
 ## Comandos generales e instalación de aplicaciones
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
+## Instalación mediante "dpkg"
+
 
 
 
