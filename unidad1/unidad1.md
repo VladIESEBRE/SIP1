@@ -227,7 +227,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
  
  ## Paso 12
-  &nbsp;&nbsp; - Seleccionamos los archivos de los que queremos hacer una copia de seguridad. En este caso he seleccionado todos los archivos de "/root" y ningun fichero de "/home/vlad".
+  &nbsp;&nbsp; - Seleccionamos los archivos que queremos incluir o excluir. En este caso he seleccionado todos los archivos de "/root" y ningun fichero de "/home/vlad".
   
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-14-50" src="https://github.com/user-attachments/assets/b076dbb5-10de-46f3-b97f-d6eb6be8cf42" />
 
