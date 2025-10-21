@@ -205,43 +205,43 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-08-43" src="https://github.com/user-attachments/assets/726cd0ec-6093-41d0-a1e7-a9c3e0261dbb" />
  
 
- ## Paso 9
+ ## Paso 8
  &nbsp;&nbsp; - Creamos una carpeta.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-10-44" src="https://github.com/user-attachments/assets/80d9ee0d-e5e3-4116-90e9-d5026ae4ecb8" />
  
- ## Paso 10
+ ## Paso 9
  &nbsp;&nbsp; - Inicio configuración Timeshift.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-11-26" src="https://github.com/user-attachments/assets/c3994f0c-3c0b-47e6-bee9-cc00f1190c28" />
  
- ## Paso 11
+ ## Paso 10
  &nbsp;&nbsp; - Marcamos la ubicación de la instantanea, "sdb1" en este caso.
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-12-11" src="https://github.com/user-attachments/assets/ba65f111-e022-4268-915a-5263992a17f4" />
  
 
- ## Paso 12
+ ## Paso 11
  - Seleccionamos cuando se creara la instantanea (los intervalos de tiempo).
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
  
- ## Paso 13
-  &nbsp;&nbsp; - Seleccionamos los ficheros para la instantanea.En este caso he seleccionado todos los ficheros de "/root" y ningun fichero de "/home/vlad".
+ ## Paso 12
+  &nbsp;&nbsp; - Seleccionamos los archivos de los que queremos hacer una copia de seguridad. En este caso he seleccionado todos los archivos de "/root" y ningun fichero de "/home/vlad".
   
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-14-50" src="https://github.com/user-attachments/assets/b076dbb5-10de-46f3-b97f-d6eb6be8cf42" />
 
- ## Paso 14
-  &nbsp;&nbsp; - Los filtros . En este caso solo incluymos la carpeta "/Documentos".
+ ## Paso 13
+  &nbsp;&nbsp; - Los filtros . En este caso solo incluimos la carpeta "/Documentos".
   
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-16-33" src="https://github.com/user-attachments/assets/9696a499-3f46-4a45-bcb7-b2975ecbb7bb" />
 
- ## Paso 15
-  &nbsp;&nbsp; - Aquí podemos ver que no existe la carpeta que hemos creado(hola-->prova) .La hemos borrado.
+ ## Paso 14
+  &nbsp;&nbsp; - Aquí podemos ver que no existe la carpeta que hemos creado(hola-->prova) . La hemos borrado.
 
 <img width="1284" height="889" alt="Captura de pantalla de 2025-10-10 13-09-53" src="https://github.com/user-attachments/assets/4aab3951-85aa-4da4-9862-f46c91f0ad1b" />
 
- ## Paso 16
+ ## Paso 15
  &nbsp;&nbsp; - Después de recuperar los documentos mediante Timeshift ,podemos ver que la carpeta ha vuelto a aparecer.
 
 <img width="1282" height="889" alt="Captura de pantalla de 2025-10-10 13-13-55" src="https://github.com/user-attachments/assets/94e33c6b-8542-418d-a372-c4c541d66191" />
