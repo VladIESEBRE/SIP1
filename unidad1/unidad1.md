@@ -222,7 +222,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
  
 
  ## Paso 11
- - Seleccionamos cuando se creara la instantanea (los intervalos de tiempo).
+ &nbsp;&nbsp; - Seleccionamos cuando se creara la instantanea (los intervalos de tiempo).
 
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-13-06" src="https://github.com/user-attachments/assets/1d50a007-2b17-472e-a903-96b4d0aa7c6a" />
  
