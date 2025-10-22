@@ -401,7 +401,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 
 
 ## Paso 3
-  &nbsp;&nbsp; - También añade el repositorio oficial de Google. Lo podemos verificar mediante el comando "cat /etc/apt/sources.list.d/google-chrome.list". Esto confirma que Chrome está instalado desde su repositorio oficial, y que se actualizará automáticamente cuando escribes "sudo apt update" o "sudo apt upgrade".
+  &nbsp;&nbsp; - La instalación también añade el repositorio oficial de Google. Lo podemos verificar mediante el comando "cat /etc/apt/sources.list.d/google-chrome.list". Esto confirma que Chrome está instalado desde su repositorio oficial, y que se actualizará automáticamente cuando escribes "sudo apt update" o "sudo apt upgrade".
 
 
 <img width="740" height="487" alt="Captura de pantalla de 2025-10-22 22-01-46" src="https://github.com/user-attachments/assets/2ac51591-9aba-438e-91e7-93bb76882b9f" />
