@@ -323,7 +323,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
   <br><br>
 # Comandos generales e instalación de aplicaciones
 
-# Instalación mediante "dpkg"
+# Instalación mediante "dpkg"(Ninvaders)
 ## Paso 1
  &nbsp;&nbsp; - Descargamos el archivo ".deb",que contiene el juego Ninvaders.
 
@@ -348,7 +348,87 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 
 <img width="853" height="610" alt="Captura de pantalla de 2025-10-21 13-01-46" src="https://github.com/user-attachments/assets/5e633124-3bbc-4691-8bcb-2c6426117f7d" />
 
-# Instalación mediante "apt"
+# Instalación mediante "apt"(dia)
+## Paso 1
+ &nbsp;&nbsp; - Instalamos el juego mediante el comando "sudo apt install dia".
+
+<img width="975" height="489" alt="Captura de pantalla de 2025-10-22 20-58-05" src="https://github.com/user-attachments/assets/c55cb68c-77e9-4bd5-84e0-9d0fe831d028" />
+
+
+## Paso 2
+ &nbsp;&nbsp; - Iniciamos la aplicación escribiendo "dia" en el terminal.
+
+<img width="1281" height="879" alt="Captura de pantalla de 2025-10-21 12-50-55" src="https://github.com/user-attachments/assets/95b18115-55bc-4a7d-be11-1d333c4c2045" />
+
+## Paso 3
+  &nbsp;&nbsp; - Para desinstalar la aplicación utilizamos el comando "sudo apt remove dia". Al volver a escribir "dia" podemos ver que el archivo ya no existe.
+
+<img width="973" height="478" alt="Captura de pantalla de 2025-10-22 20-59-52" src="https://github.com/user-attachments/assets/c632dff9-15bf-468b-b4cb-0298099c3555" />
+
+
+<img width="973" height="478" alt="Captura de pantalla de 2025-10-22 21-00-00" src="https://github.com/user-attachments/assets/42032e6e-0cb5-4dcf-ad27-aefcaa78b4f5" />
+
+# Instalación mediante "aptitude"(geany)
+## Paso 1
+ &nbsp;&nbsp; - Instalamos el juego mediante el comando "sudo aptitude install geany".
+
+<img width="977" height="487" alt="Captura de pantalla de 2025-10-22 21-06-16" src="https://github.com/user-attachments/assets/ca17191d-e139-4011-816a-b86ed79dd9e2" />
+
+
+## Paso 2
+ &nbsp;&nbsp; - Iniciamos la aplicación escribiendo "geany" en el terminal.
+
+<img width="1160" height="765" alt="Captura de pantalla de 2025-10-22 21-06-43" src="https://github.com/user-attachments/assets/be0b15dd-6b2b-4122-b322-8d7d3429f6bb" />
+
+
+## Paso 3
+  &nbsp;&nbsp; - Para desinstalar la aplicación utilizamos el comando "sudo aptitude purge geany". Al volver a escribir "geany" podemos ver que el archivo ya no existe.
+
+<img width="970" height="493" alt="Captura de pantalla de 2025-10-22 21-07-56" src="https://github.com/user-attachments/assets/d4c7ad0e-5c4b-4721-a5b0-0b398e81db48" />
+
+# Instalación mediante "Repositorio"(Google Chrome)
+## Paso 1
+ &nbsp;&nbsp; - Descargamos el fichero .deb desde la página oficial.
+
+<img width="639" height="701" alt="Captura de pantalla de 2025-10-22 21-10-14" src="https://github.com/user-attachments/assets/a9e65227-e068-4558-b493-f476f677ca29" />
+
+
+## Paso 2
+ &nbsp;&nbsp; - Instalamos mediante el comando "sudo apt install ./google-chrome-stable_current_amd64.deb".
+
+<img width="741" height="488" alt="Captura de pantalla de 2025-10-22 21-59-48" src="https://github.com/user-attachments/assets/5cfb0cfc-d9fa-4053-8b30-0917ad6fa365" />
+
+
+
+## Paso 3
+  &nbsp;&nbsp; - También añade el repositorio oficial de Google. Lo podemos verificar mediante el comando "cat /etc/apt/sources.list.d/google-chrome.list". Esto confirma que Chrome está instalado desde su repositorio oficial, y que se actualizará automáticamente cuando escribes "sudo apt update" o "sudo apt upgrade".
+
+
+<img width="740" height="487" alt="Captura de pantalla de 2025-10-22 22-01-46" src="https://github.com/user-attachments/assets/2ac51591-9aba-438e-91e7-93bb76882b9f" />
+
+## Paso 4
+  &nbsp;&nbsp; - Podemos ver la version escribiendo en el terminal "google-chrome --version".
+
+<img width="742" height="487" alt="Captura de pantalla de 2025-10-22 22-02-49" src="https://github.com/user-attachments/assets/f8a0c663-3e17-4903-bfa9-f9c49e096974" />
+
+## Paso 5
+  &nbsp;&nbsp; - Para desinstalarlo escribimos "sudo apt remove-google-stable.
+
+<img width="742" height="487" alt="Captura de pantalla de 2025-10-22 22-03-24" src="https://github.com/user-attachments/assets/245b1d7b-e0e8-4d8d-84b5-11dc0f4be4a1" />
+
+## Paso6
+  &nbsp;&nbsp; - Para una desinstalación más completa podemos escribir:
+- "sudo apt autoremove". Esto elimina dependencias que se instalaron junto con un programa, pero que ya no se usan porque desinstalamos el programa principal.
+- O también "sudo apt autoclean",que elimina los archivos de paquetes antiguos del caché. Limpia el espacio en disco borrando versiones antiguas de programas que ya fueron reemplazadas por versiones nuevas.
+
+<img width="742" height="487" alt="Captura de pantalla de 2025-10-22 22-05-27" src="https://github.com/user-attachments/assets/4b063c02-f995-4a20-87f6-eeb20e2403a6" />
+
+
+
+
+
+
+
 
 
 
