@@ -28,7 +28,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <img width="830" height="624" alt="Captura de pantalla de 2025-09-26 12-57-03" src="https://github.com/user-attachments/assets/d7e58052-dad4-4dbd-862c-2444124aee33" />
 
   ## Paso 5
-&nbsp;&nbsp; -Damos click a "Utilizar como: Sistema de ficheros ext4 transaccional ,ya que ext4 es el estándar para Linux
+&nbsp;&nbsp; -Hacemos click en "Utilizar como: Sistema de ficheros ext4 transaccional ,ya que ext4 es el estándar para Linux
 
 <img width="906" height="718" alt="Captura de pantalla de 2025-09-26 12-58-24" src="https://github.com/user-attachments/assets/cbd3f8d0-9d5e-44ce-b982-7573a160a590" />
 
@@ -38,7 +38,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <img width="906" height="718" alt="Captura de pantalla de 2025-09-26 12-59-07" src="https://github.com/user-attachments/assets/84732e9b-9593-4b10-b9f1-a03fea89453f" />
 
   ## Paso 7
- &nbsp;&nbsp; -Después, seleccionamos "espacio libre" y damos click al botón "+" para crear nuevas particiones: sda2 (/home) (el espacio reservado para los documentos de usuario, 10GB en este caso) 
+ &nbsp;&nbsp; -Después, seleccionamos "espacio libre" y hacemos click en el botón "+" para crear nuevas particiones: sda2 (/home) (el espacio reservado para los documentos de usuario, 10GB en este caso) 
 
 <img width="906" height="718" alt="Captura de pantalla de 2025-09-26 13-01-56" src="https://github.com/user-attachments/assets/3a31622e-08a1-4f7d-a093-4979d3c713bd" />
 
@@ -240,7 +240,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 <img width="1283" height="886" alt="Captura de pantalla de 2025-10-10 12-16-33" src="https://github.com/user-attachments/assets/9696a499-3f46-4a45-bcb7-b2975ecbb7bb" />
 
  ## Paso 14
-  &nbsp;&nbsp; - Aquí podemos ver que no existe la carpeta que hemos creado(hola-->prova) . La hemos borrado.
+  &nbsp;&nbsp; - Aquí podemos ver que no existe la carpeta que hemos creado(prova-->hola) . La hemos borrado.
 
 <img width="1284" height="889" alt="Captura de pantalla de 2025-10-10 13-09-53" src="https://github.com/user-attachments/assets/4aab3951-85aa-4da4-9862-f46c91f0ad1b" />
 
