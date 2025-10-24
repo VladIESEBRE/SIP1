@@ -59,6 +59,9 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 ## **Licencia de Ubuntu**
 &nbsp;&nbsp;Ubuntu, no tiene una única licencia, ya que está compuesto por muchos programas, cada uno con su propia licencia.La mayoría del software en Ubuntu está bajo licencias de software libre, principalmente la GNU General Public License (GPL), que permite usar, modificar y distribuir el código libremente, siempre que los derivados mantengan la misma licencia.
 
+<img width="813" height="566" alt="Captura de pantalla de 2025-10-24 11-55-16" src="https://github.com/user-attachments/assets/f11093c6-1323-4f98-a9a1-bf677dfd78e2" />
+
+
 ## **Por qué hay tantas licencias diferentes en Ubuntu?**
 &nbsp;&nbsp;Ubuntu tiene muchas licencias porque está hecho de muchos programas diferentes, y cada uno tiene sus propias reglas. Algunos son completamente libres (como GPL), otros más flexibles (como MIT), y algunos son propietarios (como controladores de NVIDIA). Como Ubuntu junta software de varias fuentes, cada uno trae su licencia, y por eso hay tanta variedad.
 
