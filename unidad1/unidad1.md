@@ -382,7 +382,7 @@ title: "Sprint 1: Instalación i Configuración Inicial"
 
 
 ## Paso 3
-  &nbsp;&nbsp; - Para desinstalar la aplicación utilizamos el comando "sudo aptitude purge geany". Al volver a escribir "geany" podemos ver que el archivo ya no existe.
+  &nbsp;&nbsp; - Para desinstalar la aplicación utilizamos el comando "sudo aptitude purge geany". El "purge" significa que también borramos la configuracion no solo la aplicación como el "remove". Al volver a escribir "geany" podemos ver que el archivo ya no existe.
 
 <img width="970" height="493" alt="Captura de pantalla de 2025-10-22 21-07-56" src="https://github.com/user-attachments/assets/d4c7ad0e-5c4b-4721-a5b0-0b398e81db48" />
 
