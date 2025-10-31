@@ -1,6 +1,6 @@
 # Sprint 2: Gestió de la Informació del Sistema i Administració
 ## Sistemes de fitxhers i particions
- - Mida del sector
+### Mida del sector
  - Mida del block
  - Fragmentació interna
  - Fragmentació externa
