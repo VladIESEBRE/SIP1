@@ -13,7 +13,38 @@
   - La fragmentación externa se produce cuando, a medida que el sistema operativo crea, modifica y elimina archivos, estos dejan de guardarse en bloques contiguos del disco.
 Como consecuencia, el archivo queda dividido en varias partes separadas y el disco debe acceder a distintos puntos físicos para leerlo, lo que provoca una disminución del rendimiento.En Windows existe el desfragmentador de disco, que reorganiza los datos para mejorar la continuidad de los bloques. En Linux, normalmente no es necesaria la desfragmentación porque sus sistemas de archivos (como ext4) están diseñados para minimizar este problema.
 
-    foto defrag.
+## 1.
+
+ - Aquí podemos ver que cada sector lógico mide 512 bytes y cada sector físico real del disco también es de 512 bytes.
+   
+    <img width="743" height="491" alt="Captura de pantalla de 2025-10-31 11-55-03" src="https://github.com/user-attachments/assets/176f8cb0-743d-434b-a2ab-d974b7ac8d98" />
+## 2.
+
+ - El comando que sí sirve para ver el tamaño de bloque es: "tune2fs -l /dev/sdb1 | grep Block". Podemos ver que es de 4096 bytes.
+   
+ <img width="742" height="501" alt="Captura de pantalla de 2025-10-31 11-58-35" src="https://github.com/user-attachments/assets/44b761fe-87d9-4c5c-acc9-6d769a42321d" />
+
+## 3.
+
+ - Creamos un archivo llamado div.text con el contenido: "Per fi divendres"
+ - Comprobamos el tamaño real del archivo mediante el comando "du -b div.text"
+ - El 17 significa que 17 bytes es el tamaño real del contenido del archivo(cada carácter ocupa 1 byte y la frase tiene 17 caracteres).
+ - "du -sh div.text" nos muestra el tamaño ocupado en disco. Aunque el archivo solo contiene 17 bytes,ocupa 4 KB reales en el disco.
+ - El sistema de archivos ext4 usa bloques de 4096 bytes (4 KB).Aunque el archivo tenga 1, 10 o 17 bytes, siempre ocupará mínimo 1 bloque = 4 KB.
+
+
+<img width="742" height="501" alt="Captura de pantalla de 2025-10-31 12-01-36" src="https://github.com/user-attachments/assets/f95e0125-2dd2-45d2-840b-8fe66047c6e2" />
+
+## 4.
+ - La herramienta e4defrag muestra que la partición /dev/sda1 tiene el fragmentation score a 0, por lo que no necesita desfragmentación.
+Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios fragmentos. Siguen el sistema  now/best, 13/1 por ejemplo quiere decir que el 13 es el número de fragmentos actuales del archivo y el 1 es el número óptimo si estuviera completamente contiguo (normalmente 1).
+
+ <img width="742" height="501" alt="Captura de pantalla de 2025-10-31 12-17-23" src="https://github.com/user-attachments/assets/d53dc9cd-df48-4695-bc74-ef0d722113f1" />
+
+## 5.
+ - El comando "e4defrag /dev/sda1" analiza y desfragmenta la partición /dev/sda1. Reorganiza los bloques de los archivos para que estén contiguos, minimizando la fragmentación externa y mejorando el rendimiento.
+   
+   <img width="737" height="490" alt="Captura de pantalla de 2025-10-31 12-19-17" src="https://github.com/user-attachments/assets/f5227d50-958d-4db9-9be2-bac8d2b767d5" />
 
 #### Tipos de sistemas de archivos
 
@@ -42,11 +73,11 @@ Como consecuencia, el archivo queda dividido en varias partes separadas y el dis
  - Rendimiento: Excelente, muy poca fragmentación, fiable y rápido.
  - Uso típico: Particiones de Linux.
 
-##### Otros 
-exFAT: Muy bueno en memorias externas y discos grandes.
-XFS: muy rápido para archivos grandes (servidores).
-Btrfs: snapshots, compresión, RAID integrado.
-APFS: sistema de archivos moderno de Apple.
+##### Otros  
+ - exFAT: Muy bueno en memorias externas y discos grandes.
+ - XFS: muy rápido para archivos grandes (servidores).
+ - Btrfs: snapshots, compresión, RAID integrado.
+ - APFS: sistema de archivos moderno de Apple.
 
 #### Tipos de formateo 
 
@@ -62,7 +93,22 @@ APFS: sistema de archivos moderno de Apple.
 
  - Es el formateo que sobrescribe todos los sectores del disco, eliminando cualquier dato sin posibilidad de recuperación. Borra absolutamente todo y devuelve el disco a un estado vacío.
 
- - Particions/volums : GPARTED primeras capturas aqui, Comandes. Una partición te divide el disco a nivell fisic.Volum-es una capa de abstraccio q es posa per damunt de les particions( une todo el espacio q queda libre en un disco o un aparticion).BLOCK SIZE NO HA CAMBIADO A 2048, HAY Q COREGIR.
+ #### Particiones / Volúmenes
+ 
+ - Una partición es una división del disco a nivel físico. Un volumen es una capa de abstracción que se coloca por encima de las particiones físicas.
+ - Los volúmenes permiten unir el espacio libre de varias particiones o discos y gestionarlo como si fuese una sola unidad.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ - GPARTED primeras capturas aqui, Comandes. Una partición te divide el disco a nivell fisic.Volum-es una capa de abstraccio q es posa per damunt de les particions( une todo el espacio q queda libre en un disco o un aparticion).BLOCK SIZE NO HA CAMBIADO A 2048, HAY Q COREGIR.
 
 ## Còpies de seguretat i automatització de tasques
 
