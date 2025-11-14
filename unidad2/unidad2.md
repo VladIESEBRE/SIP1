@@ -93,12 +93,39 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
  - Es el formateo que sobrescribe todos los sectores del disco, eliminando cualquier dato sin posibilidad de recuperación. Borra absolutamente todo y devuelve el disco a un estado vacío.
 
- #### Particiones / Volúmenes
+#### Particiones / Volúmenes
  
  - Una partición es una división del disco a nivel físico. Un volumen es una capa de abstracción que se coloca por encima de las particiones físicas.
  - Los volúmenes permiten unir el espacio libre de varias particiones o discos y gestionarlo como si fuese una sola unidad.  
  
+## 1.Añadir disco virtual.
+  - En VirtualBox añadí un nuevo disco virtual de 10 GB (archivo Ubuntu clona_2.vdi).
+  
+   <img width="875" height="533" alt="Captura de pantalla de 2025-10-31 12-41-48" src="https://github.com/user-attachments/assets/32acfc5e-1114-419c-89b7-fa8021062e3d" />
+
+## 2.Comprobación
+ - Comprobamos que el sistema lo detecta como /dev/sdc.
+    <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-55-18" src="https://github.com/user-attachments/assets/a981e6e3-c0e3-400d-8d84-a2b4e7af01c6" />
+
+## 3.Instalamos Gparted
+ - GParted (GNOME Partition Editor) es un programa gráfico para gestionar particiones del disco. En este caso ya está instalado.
+   
+<img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-49-33" src="https://github.com/user-attachments/assets/11860273-1388-4241-8b27-1cebb0b75a70" />
+
+ ## 4.Crear y comprobar particiones
+  - Creamos una partición de 4,8GB en /sdc1 y 5,2GB en /sdc2
+    <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-57-13" src="https://github.com/user-attachments/assets/22adbf6b-a73e-4f75-a9ce-b3bbfce321f0" />
+    <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-02" src="https://github.com/user-attachments/assets/170824b7-2dbb-4389-97de-7138e68c6e47" />
+    <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-53" src="https://github.com/user-attachments/assets/20dedf64-56b2-43ab-b983-2f0e19749d0d" />
  
+ ## 5.Formatear una partición
+ - En esta captura se formatea la partición /dev/sdc1 usando el comando "mkfs.ext4 -b 2048". De esta forma se consigue un tamaño de bloque distinto al valor por defecto (4096 bytes).
+ 
+  <img width="742" height="480" alt="Captura de pantalla de 2025-11-14 13-21-03" src="https://github.com/user-attachments/assets/c3847f18-7fa3-470f-b335-eb26b7bb1062" />
+
+
+ ## 1.
+ ## 1.
  
  
  
