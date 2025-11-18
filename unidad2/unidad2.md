@@ -124,7 +124,10 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
   <img width="742" height="480" alt="Captura de pantalla de 2025-11-14 13-21-03" src="https://github.com/user-attachments/assets/c3847f18-7fa3-470f-b335-eb26b7bb1062" />
 
 
- ## 1.
+ ## 6.
+
+
+ 
  ## 1.
  
  
