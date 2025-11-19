@@ -13,18 +13,18 @@
   - La fragmentación externa se produce cuando, a medida que el sistema operativo crea, modifica y elimina archivos, estos dejan de guardarse en bloques contiguos del disco.
 Como consecuencia, el archivo queda dividido en varias partes separadas y el disco debe acceder a distintos puntos físicos para leerlo, lo que provoca una disminución del rendimiento.En Windows existe el desfragmentador de disco, que reorganiza los datos para mejorar la continuidad de los bloques. En Linux, normalmente no es necesaria la desfragmentación porque sus sistemas de archivos (como ext4) están diseñados para minimizar este problema.
 
-## 1.
+ ### 1.
 
  - Aquí podemos ver que cada sector lógico mide 512 bytes y cada sector físico real del disco también es de 512 bytes.
    
     <img width="743" height="491" alt="Captura de pantalla de 2025-10-31 11-55-03" src="https://github.com/user-attachments/assets/176f8cb0-743d-434b-a2ab-d974b7ac8d98" />
-## 2.
+ ### 2.
 
  - El comando que sí sirve para ver el tamaño de bloque es: "tune2fs -l /dev/sdb1 | grep Block". Podemos ver que es de 4096 bytes.
    
  <img width="742" height="501" alt="Captura de pantalla de 2025-10-31 11-58-35" src="https://github.com/user-attachments/assets/44b761fe-87d9-4c5c-acc9-6d769a42321d" />
 
-## 3.
+ ### 3.
 
  - Creamos un archivo llamado div.text con el contenido: "Per fi divendres"
  - Comprobamos el tamaño real del archivo mediante el comando "du -b div.text"
@@ -35,20 +35,20 @@ Como consecuencia, el archivo queda dividido en varias partes separadas y el dis
 
 <img width="742" height="501" alt="Captura de pantalla de 2025-10-31 12-01-36" src="https://github.com/user-attachments/assets/f95e0125-2dd2-45d2-840b-8fe66047c6e2" />
 
-## 4.
+ ### 4.
  - La herramienta e4defrag muestra que la partición /dev/sda1 tiene el fragmentation score a 0, por lo que no necesita desfragmentación.
 Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios fragmentos. Siguen el sistema  now/best, 13/1 por ejemplo quiere decir que el 13 es el número de fragmentos actuales del archivo y el 1 es el número óptimo si estuviera completamente contiguo (normalmente 1).
 
  <img width="742" height="501" alt="Captura de pantalla de 2025-10-31 12-17-23" src="https://github.com/user-attachments/assets/d53dc9cd-df48-4695-bc74-ef0d722113f1" />
 
-## 5.
+ ### 5.
  - El comando "e4defrag /dev/sda1" analiza y desfragmenta la partición /dev/sda1. Reorganiza los bloques de los archivos para que estén contiguos, minimizando la fragmentación externa y mejorando el rendimiento.
    
    <img width="737" height="490" alt="Captura de pantalla de 2025-10-31 12-19-17" src="https://github.com/user-attachments/assets/f5227d50-958d-4db9-9be2-bac8d2b767d5" />
 
-#### Tipos de sistemas de archivos
+## Tipos de sistemas de archivos
 
-##### FAT32 (Windows)
+#### FAT32 (Windows)
  - Acceso: Compatible con Windows, Linux, macOS, consolas, cámaras, etc.
  - Tamaño de bloques: Normalmente 4 KB (dependiendo del tamaño del disco).
  - Tamaño máximo de archivo: 4 GB (límite más problemático).
@@ -56,7 +56,7 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
  - Rendimiento: Bueno en dispositivos pequeños, pero limitado para discos grandes.
  - Uso típico: Pendrives, tarjetas SD.
 
-##### NTFS (Windows y Linux)
+#### NTFS (Windows y Linux)
  - Acceso: Windows: lectura y escritura total. Linux: lectura y escritura mediante ntfs-3g.
  - Tamaño de bloques: Normalmente 4 KB.
  - Tamaño máximo de archivo: Hasta 16 TB o más.
@@ -64,7 +64,7 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
  - Rendimiento: Muy bueno para sistemas Windows; gestiona bien archivos grandes.
  - Uso típico: Partición principal de Windows, discos internos.
 
-##### EXT4 (Linux)
+#### EXT4 (Linux)
 
  - Acceso: Linux: lectura y escritura.Windows: lectura/escritura solo con programas especiales (no nativo).
  - Tamaño de bloques: Normalmente 4 KB (configurable a 1024, 2048 o 4096).
@@ -73,13 +73,13 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
  - Rendimiento: Excelente, muy poca fragmentación, fiable y rápido.
  - Uso típico: Particiones de Linux.
 
-##### Otros  
+#### Otros  
  - exFAT: Muy bueno en memorias externas y discos grandes.
  - XFS: muy rápido para archivos grandes (servidores).
  - Btrfs: snapshots, compresión, RAID integrado.
  - APFS: sistema de archivos moderno de Apple.
 
-#### Tipos de formateo 
+## Tipos de formateo 
 
 ##### Formateo de alto nivel
 
@@ -98,46 +98,51 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
  - Una partición es una división del disco a nivel físico. Un volumen es una capa de abstracción que se coloca por encima de las particiones físicas.
  - Los volúmenes permiten unir el espacio libre de varias particiones o discos y gestionarlo como si fuese una sola unidad.  
  
-## 1.Añadir disco virtual.
+ ### 1.Añadir disco virtual.
   - En VirtualBox añadí un nuevo disco virtual de 10 GB (archivo Ubuntu clona_2.vdi).
   
    <img width="875" height="533" alt="Captura de pantalla de 2025-10-31 12-41-48" src="https://github.com/user-attachments/assets/32acfc5e-1114-419c-89b7-fa8021062e3d" />
 
-## 2.Comprobación
+ ### 2.Comprobación
  - Comprobamos que el sistema lo detecta como /dev/sdc.
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-55-18" src="https://github.com/user-attachments/assets/a981e6e3-c0e3-400d-8d84-a2b4e7af01c6" />
 
-## 3.Instalamos Gparted
+ ### 3.Instalamos Gparted
  - GParted (GNOME Partition Editor) es un programa gráfico para gestionar particiones del disco. En este caso ya está instalado.
    
 <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-49-33" src="https://github.com/user-attachments/assets/11860273-1388-4241-8b27-1cebb0b75a70" />
 
- ## 4.Crear y comprobar particiones
+ ### 4.Crear y comprobar particiones
   - Creamos una partición de 4,8GB en /sdc1 y 5,2GB en /sdc2
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-57-13" src="https://github.com/user-attachments/assets/22adbf6b-a73e-4f75-a9ce-b3bbfce321f0" />
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-02" src="https://github.com/user-attachments/assets/170824b7-2dbb-4389-97de-7138e68c6e47" />
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-53" src="https://github.com/user-attachments/assets/20dedf64-56b2-43ab-b983-2f0e19749d0d" />
  
- ## 5.Formatear una partición 
+ ### 5.Formatear una partición 
  - En esta captura se formatea la partición /dev/sdc1 usando el comando "mkfs.ext4 -b 2048". De esta forma se consigue un tamaño de bloque distinto al valor por defecto (4096 bytes).
  
   <img width="742" height="480" alt="Captura de pantalla de 2025-11-14 13-21-03" src="https://github.com/user-attachments/assets/c3847f18-7fa3-470f-b335-eb26b7bb1062" />
 
 
- ## 6.Comprobación
+ ### 6.Comprobación
  - Podemos ver que el block size ha cambiado a 2048.
    
 <img width="737" height="485" alt="Captura de pantalla de 2025-11-19 09-06-00" src="https://github.com/user-attachments/assets/a6565ad2-37a0-4fd7-bac0-2450c5b2713f" />
 
- ## 7.Formatear la segunda partición en NTFS desde GParted
+ ### 7.Formatear la segunda partición en NTFS desde GParted
   - Formatear como NTFS significa crear un sistema de archivos NTFS en una partición, eliminando la estructura anterior y preparándola para almacenar datos con el formato utilizado por Windows.
-  - Al final en Gparted podemos ver que aparece en verde y que pone NTFS.
+  - Al final en "/sdc2" podemos ver que aparece en verde y que pone NTFS.
     
     <img width="1144" height="663" alt="Captura de pantalla de 2025-10-31 13-02-42" src="https://github.com/user-attachments/assets/bbad731d-54f7-4281-b552-a6b70e4ec580" />
     <img width="1144" height="663" alt="Captura de pantalla de 2025-10-31 13-03-41" src="https://github.com/user-attachments/assets/cd476d04-a15c-461e-b9db-43d9ffeb4738" />
     <img width="780" height="548" alt="Captura de pantalla de 2025-11-19 09-16-11" src="https://github.com/user-attachments/assets/b931459e-5643-4c7a-8e44-70e2dd8a953c" />
 
-
+ ## Montaje y configuración en fstab
+ 
+ ### 1.Comprobación
+ ### 2.Comprobación
+ ### 3.Comprobación
+ ### 4.Comprobación
 
  
  
@@ -150,12 +155,12 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
  
  - GPARTED primeras capturas aqui, Comandes. Una partición te divide el disco a nivell fisic.Volum-es una capa de abstraccio q es posa per damunt de les particions( une todo el espacio q queda libre en un disco o un aparticion).BLOCK SIZE NO HA CAMBIADO A 2048, HAY Q COREGIR.
 
-## Còpies de seguretat i automatització de tasques
+# Còpies de seguretat i automatització de tasques
 
 
 
 
-## Gestió d'usuaris, grups i permisos
+# Gestió d'usuaris, grups i permisos
  - Fitxers implicats // explicar vlad:x:1000:1000 ( q significa cada cosa), diferencies 1000 numero usuario /el otro 1000 git number(es el grup principal q te asignat el ususari)
    passwd--tots usuaris ,shadow--estan las contraseñas(q es cada campo del final), group(usuarios de cada group), gshadow(contraseñas y usuarios, se ve quien es el usuario administrador a diferencia del group , se ve entre los dos puntos)
  - Comandes bàsiques: adduser  añadir usuario , hasat que noinicia usuario se se van a poner las carptasm esasa carpetas se craean automaticamente
@@ -167,4 +172,4 @@ Todo lo q hay en esta carpeta aparecen en todos los usuarios//skel para adduser 
 
 
 
-## Gestió de procesos
+# Gestió de procesos
