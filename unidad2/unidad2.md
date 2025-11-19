@@ -13,6 +13,9 @@
   - La fragmentación externa se produce cuando, a medida que el sistema operativo crea, modifica y elimina archivos, estos dejan de guardarse en bloques contiguos del disco.
 Como consecuencia, el archivo queda dividido en varias partes separadas y el disco debe acceder a distintos puntos físicos para leerlo, lo que provoca una disminución del rendimiento.En Windows existe el desfragmentador de disco, que reorganiza los datos para mejorar la continuidad de los bloques. En Linux, normalmente no es necesaria la desfragmentación porque sus sistemas de archivos (como ext4) están diseñados para minimizar este problema.
 
+
+ ## Demontración 
+ 
  ### 1.
 
  - Aquí podemos ver que cada sector lógico mide 512 bytes y cada sector físico real del disco también es de 512 bytes.
@@ -98,38 +101,38 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
  - Una partición es una división del disco a nivel físico. Un volumen es una capa de abstracción que se coloca por encima de las particiones físicas.
  - Los volúmenes permiten unir el espacio libre de varias particiones o discos y gestionarlo como si fuese una sola unidad.  
  
- ### 1.Añadir disco virtual.
+ ### 1. Añadir disco virtual.
   - En VirtualBox añadí un nuevo disco virtual de 10 GB (archivo Ubuntu clona_2.vdi).
   
    <img width="875" height="533" alt="Captura de pantalla de 2025-10-31 12-41-48" src="https://github.com/user-attachments/assets/32acfc5e-1114-419c-89b7-fa8021062e3d" />
 
- ### 2.Comprobación
+ ### 2. Comprobación
  - Comprobamos que el sistema lo detecta como /dev/sdc.
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-55-18" src="https://github.com/user-attachments/assets/a981e6e3-c0e3-400d-8d84-a2b4e7af01c6" />
 
- ### 3.Instalamos Gparted
+ ### 3. Instalamos Gparted
  - GParted (GNOME Partition Editor) es un programa gráfico para gestionar particiones del disco. En este caso ya está instalado.
    
 <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-49-33" src="https://github.com/user-attachments/assets/11860273-1388-4241-8b27-1cebb0b75a70" />
 
- ### 4.Crear y comprobar particiones
+ ### 4. Crear y comprobar particiones
   - Creamos una partición de 4,8GB en /sdc1 y 5,2GB en /sdc2
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-57-13" src="https://github.com/user-attachments/assets/22adbf6b-a73e-4f75-a9ce-b3bbfce321f0" />
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-02" src="https://github.com/user-attachments/assets/170824b7-2dbb-4389-97de-7138e68c6e47" />
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-53" src="https://github.com/user-attachments/assets/20dedf64-56b2-43ab-b983-2f0e19749d0d" />
  
- ### 5.Formatear una partición 
+ ### 5. Formatear una partición 
  - En esta captura se formatea la partición /dev/sdc1 usando el comando "mkfs.ext4 -b 2048". De esta forma se consigue un tamaño de bloque distinto al valor por defecto (4096 bytes).
  
   <img width="742" height="480" alt="Captura de pantalla de 2025-11-14 13-21-03" src="https://github.com/user-attachments/assets/c3847f18-7fa3-470f-b335-eb26b7bb1062" />
 
 
- ### 6.Comprobación
+ ### 6. Comprobación
  - Podemos ver que el block size ha cambiado a 2048.
    
 <img width="737" height="485" alt="Captura de pantalla de 2025-11-19 09-06-00" src="https://github.com/user-attachments/assets/a6565ad2-37a0-4fd7-bac0-2450c5b2713f" />
 
- ### 7.Formatear la segunda partición en NTFS desde GParted
+ ### 7. Formatear la segunda partición en NTFS desde GParted
   - Formatear como NTFS significa crear un sistema de archivos NTFS en una partición, eliminando la estructura anterior y preparándola para almacenar datos con el formato utilizado por Windows.
   - Al final en "/sdc2" podemos ver que aparece en verde y que pone NTFS.
     
@@ -139,30 +142,51 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
  ## Montaje y configuración en fstab
  
- ### 1.Comprobación
- ### 2.Comprobación
- ### 3.Comprobación
- ### 4.Comprobación
+ ### 1. Crear un directorio donde montar la partición
+  - Ese directorio será el punto de montaje.
+    
+ <img width="740" height="487" alt="Captura de pantalla de 2025-10-31 13-16-22" src="https://github.com/user-attachments/assets/776a2099-3555-46c9-9906-9f076ecc4df1" />
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- - GPARTED primeras capturas aqui, Comandes. Una partición te divide el disco a nivell fisic.Volum-es una capa de abstraccio q es posa per damunt de les particions( une todo el espacio q queda libre en un disco o un aparticion).BLOCK SIZE NO HA CAMBIADO A 2048, HAY Q COREGIR.
+ ### 2. Intentar crear un archivo antes de montar la partición
+  - Eso significa que aún NO está montada la partición, solo estás escribiendo en el directorio vacío /mnt/particio1.
 
-# Còpies de seguretat i automatització de tasques
+  <img width="740" height="487" alt="Captura de pantalla de 2025-10-31 13-19-44" src="https://github.com/user-attachments/assets/1bf898a6-d972-4ba7-946a-4d23134b3d8e" />
 
+ ### 3. Montar la partición EXT4 en ese directorio
+ - Despues de introducir el comando "mount -t ext4 /dev/sdb1 /mnt/particio1/" ,/mnt/particio1 ya no es un directorio vacío, ahora contiene el sistema de archivos real de /dev/sdb1.
+ - Por eso después, al hacer "ls" ves "lost+found+prova+timeshift".Esto demuestra que la partición está montada correctamente.
 
+   <img width="740" height="487" alt="Captura de pantalla de 2025-10-31 13-21-05" src="https://github.com/user-attachments/assets/26df6852-57a2-45f8-b3ae-130787919908" />
 
+ ### 4. Editar el archivo /etc/fstab
+ - Hemos añadido una linea al final. Esto significa que la partición /dev/sdb1 se montará automáticamente en /mnt/particio1, usando sistema de archivos EXT4 y con permisos de lectura/escritura
+ - Esto hace que el montaje sea permanente, incluso después de reiniciar.
+   
+<img width="740" height="487" alt="Captura de pantalla de 2025-10-31 13-24-20" src="https://github.com/user-attachments/assets/41b0ca66-0851-424d-ada1-ef00990e7b36" />
 
-# Gestió d'usuaris, grups i permisos
+ ### 5. Comprobar que funciona
+  - Confirmación de que la partición está correctamente montada.
+
+    <img width="740" height="487" alt="Captura de pantalla de 2025-10-31 13-28-46" src="https://github.com/user-attachments/assets/f815066d-5519-447d-a284-f4d8df92c863" />
+
+ # Còpies de seguretat i automatització de tasques
+
+ # Gestió d'usuaris, grups i permisos
+
+ ## Fitxers implicats
+ 
+ ### 1. passwd
+ - Este archivo almacena información básica de cada usuario, no contiene contraseñas.
+ - "vlad" es el nombre del usuario,	la contraseña	"x" significa que la contraseña está en /etc/shadow, 1000	UID	es el User ID (identificador del usuario), 1000	GID	es el Group ID del grupo principal del usuario (En Linux, cada nuevo usuario tiene un grupo propio con el mismo número).
+
+ <img width="927" height="595" alt="Captura de pantalla de 2025-11-04 11-48-53" src="https://github.com/user-attachments/assets/688e0882-69b3-4303-8470-4d17a64dbd36" />
+
+### 1. passwd
+### 1. passwd
+### 1. passwd
  - Fitxers implicats // explicar vlad:x:1000:1000 ( q significa cada cosa), diferencies 1000 numero usuario /el otro 1000 git number(es el grup principal q te asignat el ususari)
    passwd--tots usuaris ,shadow--estan las contraseñas(q es cada campo del final), group(usuarios de cada group), gshadow(contraseñas y usuarios, se ve quien es el usuario administrador a diferencia del group , se ve entre los dos puntos)
+ ## Comandes bàsiques 
  - Comandes bàsiques: adduser  añadir usuario , hasat que noinicia usuario se se van a poner las carptasm esasa carpetas se craean automaticamente
  - useradd vesper (comanda larga o paso a paso)ponerle contraseña,crear carpeta home(si la creamo como root le pasamos permisos"chown". .tiene que aparecer usuario nuevo y la comprobacion en terminal//usermod. Para borrar usuario ,userdel o userdel -r paraborar todo  usermod-L (bloquea usuario, signo exclamacion) usermod -U(para desbloquear), creamos grupo y cambiamos el nombre,
    // para cambiar el grupo principal usermod -g proves prova4// Si hay un usuario principal del grupo , el grupo se se puede borrar//directorio skel tiene 3 ficheros ocultos para todos los usuarios
