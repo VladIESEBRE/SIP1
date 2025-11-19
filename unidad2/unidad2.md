@@ -118,17 +118,27 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-02" src="https://github.com/user-attachments/assets/170824b7-2dbb-4389-97de-7138e68c6e47" />
     <img width="731" height="478" alt="Captura de pantalla de 2025-10-31 12-58-53" src="https://github.com/user-attachments/assets/20dedf64-56b2-43ab-b983-2f0e19749d0d" />
  
- ## 5.Formatear una partición
+ ## 5.Formatear una partición 
  - En esta captura se formatea la partición /dev/sdc1 usando el comando "mkfs.ext4 -b 2048". De esta forma se consigue un tamaño de bloque distinto al valor por defecto (4096 bytes).
  
   <img width="742" height="480" alt="Captura de pantalla de 2025-11-14 13-21-03" src="https://github.com/user-attachments/assets/c3847f18-7fa3-470f-b335-eb26b7bb1062" />
 
 
- ## 6.
+ ## 6.Comprobación
+ - Podemos ver que el block size ha cambiado a 2048.
+   
+<img width="737" height="485" alt="Captura de pantalla de 2025-11-19 09-06-00" src="https://github.com/user-attachments/assets/a6565ad2-37a0-4fd7-bac0-2450c5b2713f" />
+
+ ## 7.Formatear la segunda partición en NTFS desde GParted
+  - Formatear como NTFS significa crear un sistema de archivos NTFS en una partición, eliminando la estructura anterior y preparándola para almacenar datos con el formato utilizado por Windows.
+  - Al final en Gparted podemos ver que aparece en verde y que pone NTFS.
+    
+    <img width="1144" height="663" alt="Captura de pantalla de 2025-10-31 13-02-42" src="https://github.com/user-attachments/assets/bbad731d-54f7-4281-b552-a6b70e4ec580" />
+    <img width="1144" height="663" alt="Captura de pantalla de 2025-10-31 13-03-41" src="https://github.com/user-attachments/assets/cd476d04-a15c-461e-b9db-43d9ffeb4738" />
+    <img width="780" height="548" alt="Captura de pantalla de 2025-11-19 09-16-11" src="https://github.com/user-attachments/assets/b931459e-5643-4c7a-8e44-70e2dd8a953c" />
 
 
- 
- ## 1.
+
  
  
  
