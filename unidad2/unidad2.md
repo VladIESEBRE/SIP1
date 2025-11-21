@@ -196,12 +196,17 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
 ### 4. Gshadow
  - Es donde Linux guarda contraseñas de los grupos, administradores de cada grupo y miembros de cada grupo. Este archivo es la versión segura de /etc/group.
- - Cada línea tiene 4 campos: "adm:*::syslog,vlad" --> nombre del grupo(adm), contraseña(*), lista de administradores (vacio en este caso) y lista de usuarios(syslog,vlad).
+ - Cada línea tiene 4 campos: "adm: * ::syslog,vlad" --> nombre del grupo(adm), contraseña( * ), lista de administradores (vacio en este caso) y lista de usuarios(syslog,vlad).
  - A diferencia de /etc/group, este archivo solo puede ser leído por root y muestra quién administra cada grupo.
    
 <img width="736" height="488" alt="Captura de pantalla de 2025-11-21 10-36-52" src="https://github.com/user-attachments/assets/a4a3f8fb-71ae-4f7f-8676-a1d2ad844246" />
 
  ## Comandes bàsiques 
+
+ ### 1. Crear usuario con adduser
+  - Cuando creamos un usuario con useradd, el sistema solo añade la entrada del usuario en /etc/passwd, /etc/group, /etc/shadow y /etc/gshadow. La carpeta /home/usuario NO se crea hasta que el usuario inicia sesión por primera vez. Al iniciar sesión, Linux crea automáticamente las carpetas: Documents, Downloads, Desktop, etc.
+    
+ 
  - Comandes bàsiques: adduser  añadir usuario , hasat que noinicia usuario se se van a poner las carptasm esasa carpetas se craean automaticamente
  - useradd vesper (comanda larga o paso a paso)ponerle contraseña,crear carpeta home(si la creamo como root le pasamos permisos"chown". .tiene que aparecer usuario nuevo y la comprobacion en terminal//usermod. Para borrar usuario ,userdel o userdel -r paraborar todo  usermod-L (bloquea usuario, signo exclamacion) usermod -U(para desbloquear), creamos grupo y cambiamos el nombre,
    // para cambiar el grupo principal usermod -g proves prova4// Si hay un usuario principal del grupo , el grupo se se puede borrar//directorio skel tiene 3 ficheros ocultos para todos los usuarios
