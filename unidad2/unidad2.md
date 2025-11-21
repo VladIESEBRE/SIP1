@@ -204,7 +204,7 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
  ## Comandes bàsiques 
 
  ### 1. Crear usuario con adduser
-  - Cuando creamos un usuario con useradd, el sistema solo añade la entrada del usuario en /etc/passwd, /etc/group, /etc/shadow y /etc/gshadow. La carpeta /home/usuario NO se crea hasta que el usuario inicia sesión por primera vez. Al iniciar sesión, Linux crea automáticamente las carpetas: Documents, Downloads, Desktop, etc.
+  - Cuando creamos un usuario con useradd, el sistema solo añade la entrada del usuario en /etc/passwd, /etc/group, /etc/shadow y /etc/gshadow. La carpeta /home/usuario no se crea hasta que el usuario inicia sesión por primera vez. Al iniciar sesión, Linux crea automáticamente las carpetas: Documents, Downloads, Desktop, etc.
     
  
  - Comandes bàsiques: adduser  añadir usuario , hasat que noinicia usuario se se van a poner las carptasm esasa carpetas se craean automaticamente
