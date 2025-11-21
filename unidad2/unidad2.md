@@ -14,7 +14,7 @@
 Como consecuencia, el archivo queda dividido en varias partes separadas y el disco debe acceder a distintos puntos físicos para leerlo, lo que provoca una disminución del rendimiento.En Windows existe el desfragmentador de disco, que reorganiza los datos para mejorar la continuidad de los bloques. En Linux, normalmente no es necesaria la desfragmentación porque sus sistemas de archivos (como ext4) están diseñados para minimizar este problema.
 
 
- ## Demontración 
+ ## Demonstración 
  
  ### 1.
 
@@ -181,11 +181,26 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
  <img width="927" height="595" alt="Captura de pantalla de 2025-11-04 11-48-53" src="https://github.com/user-attachments/assets/688e0882-69b3-4303-8470-4d17a64dbd36" />
 
-### 1. passwd
-### 1. passwd
-### 1. passwd
- - Fitxers implicats // explicar vlad:x:1000:1000 ( q significa cada cosa), diferencies 1000 numero usuario /el otro 1000 git number(es el grup principal q te asignat el ususari)
-   passwd--tots usuaris ,shadow--estan las contraseñas(q es cada campo del final), group(usuarios de cada group), gshadow(contraseñas y usuarios, se ve quien es el usuario administrador a diferencia del group , se ve entre los dos puntos)
+### 2. Group
+ - Es el archivo donde Linux guarda todos los grupos del sistema y qué usuarios pertenecen a cada grupo.
+ - Cada línea tiene: nombre del grupo, contraseña (x), GID y usuarios miembros.
+   
+   <img width="927" height="595" alt="Captura de pantalla de 2025-11-04 11-50-34" src="https://github.com/user-attachments/assets/d847381f-6d7b-4f8a-9135-4f030eafc9c8" />
+
+### 3. Shadow
+ - Es donde Linux guarda las contraseñas cifradas, la información de expiración de la contraseña y los datos de seguridad de cada usuario.
+ - El 0:99999:7::: del final significa: el mínimo de días antes de poder cambiar la contraseña, el máximo de días antes de expirar y los días de aviso antes de expirar.
+   
+<img width="927" height="595" alt="Captura de pantalla de 2025-11-04 11-51-08" src="https://github.com/user-attachments/assets/50f43b73-2526-41ec-943c-6d42e16d097e" />
+
+
+### 4. Gshadow
+ - Es donde Linux guarda contraseñas de los grupos, administradores de cada grupo y miembros de cada grupo. Este archivo es la versión segura de /etc/group.
+ - Cada línea tiene 4 campos: "adm:*::syslog,vlad" --> nombre del grupo(adm), contraseña(*), lista de administradores (vacio en este caso) y lista de usuarios(syslog,vlad).
+ - A diferencia de /etc/group, este archivo solo puede ser leído por root y muestra quién administra cada grupo.
+   
+<img width="736" height="488" alt="Captura de pantalla de 2025-11-21 10-36-52" src="https://github.com/user-attachments/assets/a4a3f8fb-71ae-4f7f-8676-a1d2ad844246" />
+
  ## Comandes bàsiques 
  - Comandes bàsiques: adduser  añadir usuario , hasat que noinicia usuario se se van a poner las carptasm esasa carpetas se craean automaticamente
  - useradd vesper (comanda larga o paso a paso)ponerle contraseña,crear carpeta home(si la creamo como root le pasamos permisos"chown". .tiene que aparecer usuario nuevo y la comprobacion en terminal//usermod. Para borrar usuario ,userdel o userdel -r paraborar todo  usermod-L (bloquea usuario, signo exclamacion) usermod -U(para desbloquear), creamos grupo y cambiamos el nombre,
