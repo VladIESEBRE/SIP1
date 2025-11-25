@@ -267,10 +267,12 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 #### Paso 5
 
  - Podemos crear un grupo (test en este caso ) y añadir usuarios (vesper3 en este caso) o eliminarlo del grupo
+ - Tambien podemos ver que si el grupo tiene usuarios dentro, no se puede borrar.
   
 <img width="743" height="481" alt="Captura de pantalla de 2025-11-25 21-05-17" src="https://github.com/user-attachments/assets/e283f484-bfcf-4b02-9b34-75603e6627ec" />
 <img width="745" height="488" alt="Captura de pantalla de 2025-11-25 21-38-05" src="https://github.com/user-attachments/assets/c17bcb64-5c5c-401b-a6d2-4ee90a0c96a1" />
-
+<img width="746" height="488" alt="Captura de pantalla de 2025-11-07 11-58-28" src="https://github.com/user-attachments/assets/c8365345-3ee2-4106-af4e-ce0382656323" />
+<img width="746" height="488" alt="Captura de pantalla de 2025-11-07 12-06-10" src="https://github.com/user-attachments/assets/2b6205c1-4436-4ee0-855a-a280f738de34" />
 
 #### Paso 6
 
@@ -278,12 +280,63 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
 <img width="741" height="485" alt="Captura de pantalla de 2025-11-25 21-12-45" src="https://github.com/user-attachments/assets/32c04e0d-1f76-4bc8-840a-98320ff4c984" />
 
+### 3.Ver el contenido de /etc/skel
 
- - useradd vesper (comanda larga o paso a paso)ponerle contraseña,crear carpeta home(si la creamo como root le pasamos permisos"chown". .tiene que aparecer usuario nuevo y la comprobacion en terminal//usermod. Para borrar usuario ,userdel o userdel -r paraborar todo  usermod-L (bloquea usuario, signo exclamacion) usermod -U(para desbloquear), creamos grupo y cambiamos el nombre,
+  - El directorio skel tiene 3 ficheros ocultos para todos los usuarios. Todo lo q hay en esta carpeta aparece para todos los usuarios.
+  - Si creamos acces_directe y fitxer_compartit y despues creamos un nuevo usuario (prova5) e iniciamos sesión, podemos ver que los ficheros que hemos creado están ahí.
+
+<img width="746" height="488" alt="Captura de pantalla de 2025-11-07 12-11-06" src="https://github.com/user-attachments/assets/28c9d96a-4334-4766-b10e-bdb1c491ea65" />
+<img width="1008" height="735" alt="Captura de pantalla de 2025-11-07 12-23-25" src="https://github.com/user-attachments/assets/3ff775d3-8da0-4d66-8fc0-bcee2c0a79e5" />
+
+
+ ## Personalització de comandes
+
+### 1. Editar /etc/adduser.conf
+
+  - Activar LETTERHOMES que crea un directorio con la primera letra del usuario en el /home al crear un usuario nuevo.
+
+    <img width="739" height="486" alt="Captura de pantalla de 2025-11-25 22-01-44" src="https://github.com/user-attachments/assets/4e746ca4-200f-44c8-ba31-f6c4a0bd76d7" />
+    <img width="739" height="486" alt="Captura de pantalla de 2025-11-25 22-04-12" src="https://github.com/user-attachments/assets/04cd76c3-05c7-4227-98d0-897aab67da4b" />
+
+### 2. Editar /etc/useradd.conf
+
+   - Cambiar EXPIRE date global. Todos los usuarios nuevos creados con useradd tendrán fecha de expiración.
+
+<img width="739" height="486" alt="Captura de pantalla de 2025-11-25 22-11-11" src="https://github.com/user-attachments/assets/45ac04ca-af02-44d8-9d17-242c41b8c73c" />
+<img width="739" height="486" alt="Captura de pantalla de 2025-11-25 22-12-56" src="https://github.com/user-attachments/assets/db316a31-6544-4f53-bf05-1c79b94e0303" />
+
+### 3. Editar /etc/login.defs
+
+  - Cambiar el número mínimo de días entre cambios de contraseña de 0 a 5.
+
+    <img width="746" height="492" alt="Captura de pantalla de 2025-11-25 22-19-52" src="https://github.com/user-attachments/assets/91effcfa-ec15-4f37-884b-437038508bd4" />
+    <img width="746" height="492" alt="Captura de pantalla de 2025-11-25 22-23-03" src="https://github.com/user-attachments/assets/0a776017-8df5-427e-8ec9-1e2d4acb9065" />
+
+
+### 4. Editar /etc/skel/.profile
+
+  - Mensaje de bienvenida con fecha y hora.
+
+    <img width="741" height="485" alt="Captura de pantalla de 2025-11-25 22-30-21" src="https://github.com/user-attachments/assets/f81d6178-8c44-440b-960c-93d809e4326d" />
+    <img width="741" height="485" alt="Captura de pantalla de 2025-11-25 22-32-44" src="https://github.com/user-attachments/assets/79b8552e-2c59-4db7-9398-1788ca137917" />
+
+### 5. Editar /etc/skel/.bashrc
+
+   - Crear un alias personalizado
+
+  <img width="741" height="485" alt="Captura de pantalla de 2025-11-25 22-37-08" src="https://github.com/user-attachments/assets/4713b2b9-d97e-4cd2-9442-813169719479" />
+  <img width="741" height="485" alt="Captura de pantalla de 2025-11-25 22-39-28" src="https://github.com/user-attachments/assets/030a6e08-2bdc-46d4-a14a-01c9b0cc62ee" />
+
+
+
+### 4. Editar /etc/skel/.profile
+### 4. Editar /etc/skel/.profile
+
+
    // para cambiar el grupo principal usermod -g proves prova4// Si hay un usuario principal del grupo , el grupo se se puede borrar//directorio skel tiene 3 ficheros ocultos para todos los usuarios
 Todo lo q hay en esta carpeta aparecen en todos los usuarios//skel para adduser adduser.conf, logind defs tmb useradd,default/useradd solo useradd// PRACTICA uno para adduser y otro para useradd(hacer cambios)(las fotos q he hecho son solo de explicación)// nano profilee(en sker)//PRACTICA en cada uno d elos 3 nano .profile etc...///VAR--.profile,
  
- - Personalització de comandes
+ 
 
 
 
