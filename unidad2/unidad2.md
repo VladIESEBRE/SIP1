@@ -234,15 +234,50 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 ### 2. Crear usuario con useradd
 
 #### Paso 1
+  
+  - A diferencia de adduser , useradd no es interactivo, no crea la carpeta /home (a menos que uses -m),no pide contraseña (hay que usar passwd después) y necesitas crear permisos tú mismo. Es más difícil, pero más flexible
+  - Se puede crear usuario de forma rápida con "sudo useradd vesper -m -s /bin/bash" o de forma larga "sudo useradd vesper -s /bin/bash". Lo voy a hacer de forma larga.
+  - 1.Crear usuario sin home -sudo useradd vesper -s /bin/bash
+  - 2.Crear su carpeta /home -sudo mkdir /home/vesper
+  - 3.Darle permisos correctos al usuario -sudo chown vesper:vesper /home/vesper
+
+    <img width="924" height="489" alt="Captura de pantalla de 2025-11-25 20-23-51" src="https://github.com/user-attachments/assets/1b95807c-b821-491f-94b7-aa1d7b7b0acd" />
 
 
 #### Paso 2
 
+- Asignar contraseña al usuario -grep vesper /etc/passwd
+- Comprobar passwd, group y shadow
+
+<img width="924" height="489" alt="Captura de pantalla de 2025-11-25 20-26-54" src="https://github.com/user-attachments/assets/5e062544-fffb-4fcb-bc16-2694d76f2252" />
+
 #### Paso 3
+
+  - Iniciamos sesión en vesper3 y comprobamos que han aparecido las carpetas en /home 
+
+  <img width="742" height="486" alt="Captura de pantalla de 2025-11-25 20-39-56" src="https://github.com/user-attachments/assets/2d7c93ba-6a3d-4e47-8a38-ecebe340f793" />
 
 
 #### Paso 4
+
+  - Podemos modificar el usuario. Le podemos cambiar el shell, bloquear (aparece "!" en shadow) o desbloquear.
+    
+  <img width="740" height="485" alt="Captura de pantalla de 2025-11-25 21-02-35" src="https://github.com/user-attachments/assets/f7240980-f78f-4894-bf19-6dd9ba90795e" />
+
+#### Paso 5
+
+ - Podemos crear un grupo (test en este caso ) y añadir usuarios (vesper3 en este caso) o eliminarlo del grupo
   
+<img width="743" height="481" alt="Captura de pantalla de 2025-11-25 21-05-17" src="https://github.com/user-attachments/assets/e283f484-bfcf-4b02-9b34-75603e6627ec" />
+<img width="745" height="488" alt="Captura de pantalla de 2025-11-25 21-38-05" src="https://github.com/user-attachments/assets/c17bcb64-5c5c-401b-a6d2-4ee90a0c96a1" />
+
+
+#### Paso 6
+
+  - Podemos borrar solo el usuario con "sudo userdel vesper" o el usuario y la carpeta /home con "sudo userdel -r vesper"
+
+<img width="741" height="485" alt="Captura de pantalla de 2025-11-25 21-12-45" src="https://github.com/user-attachments/assets/32c04e0d-1f76-4bc8-840a-98320ff4c984" />
+
 
  - useradd vesper (comanda larga o paso a paso)ponerle contraseña,crear carpeta home(si la creamo como root le pasamos permisos"chown". .tiene que aparecer usuario nuevo y la comprobacion en terminal//usermod. Para borrar usuario ,userdel o userdel -r paraborar todo  usermod-L (bloquea usuario, signo exclamacion) usermod -U(para desbloquear), creamos grupo y cambiamos el nombre,
    // para cambiar el grupo principal usermod -g proves prova4// Si hay un usuario principal del grupo , el grupo se se puede borrar//directorio skel tiene 3 ficheros ocultos para todos los usuarios
