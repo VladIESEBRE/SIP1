@@ -205,9 +205,45 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
  ### 1. Crear usuario con adduser
   - Cuando creamos un usuario con useradd, el sistema solo añade la entrada del usuario en /etc/passwd, /etc/group, /etc/shadow y /etc/gshadow. La carpeta /home/usuario no se crea hasta que el usuario inicia sesión por primera vez. Al iniciar sesión, Linux crea automáticamente las carpetas: Documents, Downloads, Desktop, etc.
+
+#### Paso 1
+
+  - Creamos usuario con "sudo adduser gina".
     
- 
- - Comandes bàsiques: adduser  añadir usuario , hasat que noinicia usuario se se van a poner las carptasm esasa carpetas se craean automaticamente
+    <img width="1101" height="675" alt="Captura de pantalla de 2025-11-25 19-35-50" src="https://github.com/user-attachments/assets/ab3c7d7e-8e67-4bef-baf0-5b58ecc2eab4" />
+
+#### Paso 2
+
+  - Comprobamos el /home. No aparecen carpetas personales (Documentos, Música, etc.) todavía.
+
+  <img width="1086" height="665" alt="Captura de pantalla de 2025-11-25 19-40-06" src="https://github.com/user-attachments/assets/86ba114d-0c7f-4458-aa3a-ae38e38f331b" />
+
+#### Paso 3
+
+  - Iniciamos sesión como Gina y comprabamos otra vez /home. Podemos encontrar el resto de las carpetas ahora.
+
+<img width="1107" height="578" alt="Captura de pantalla de 2025-11-25 19-41-49" src="https://github.com/user-attachments/assets/fbaa646b-9c44-473a-b1f1-e43fb67b0513" />
+<img width="740" height="491" alt="Captura de pantalla de 2025-11-25 19-44-27" src="https://github.com/user-attachments/assets/c6aa2e7f-7ccc-41f8-bd98-dcf390a1fdfc" />
+
+#### Paso 4
+  - Si lo queremos borrar escribimos "sudo deluser --remove-home gina"
+
+    <img width="741" height="479" alt="Captura de pantalla de 2025-11-25 20-01-34" src="https://github.com/user-attachments/assets/5ba70d40-30ca-4aea-b2e7-c16c50ca8804" />
+
+
+### 2. Crear usuario con useradd
+
+#### Paso 1
+
+
+#### Paso 2
+
+#### Paso 3
+
+
+#### Paso 4
+  
+
  - useradd vesper (comanda larga o paso a paso)ponerle contraseña,crear carpeta home(si la creamo como root le pasamos permisos"chown". .tiene que aparecer usuario nuevo y la comprobacion en terminal//usermod. Para borrar usuario ,userdel o userdel -r paraborar todo  usermod-L (bloquea usuario, signo exclamacion) usermod -U(para desbloquear), creamos grupo y cambiamos el nombre,
    // para cambiar el grupo principal usermod -g proves prova4// Si hay un usuario principal del grupo , el grupo se se puede borrar//directorio skel tiene 3 ficheros ocultos para todos los usuarios
 Todo lo q hay en esta carpeta aparecen en todos los usuarios//skel para adduser adduser.conf, logind defs tmb useradd,default/useradd solo useradd// PRACTICA uno para adduser y otro para useradd(hacer cambios)(las fotos q he hecho son solo de explicación)// nano profilee(en sker)//PRACTICA en cada uno d elos 3 nano .profile etc...///VAR--.profile,
