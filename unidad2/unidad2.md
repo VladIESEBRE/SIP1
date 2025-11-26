@@ -329,7 +329,12 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
 
 
-### 4. Editar /etc/skel/.profile
+### 4. Editar /etc/skel/.bash_logout
+
+  - 
+
+
+
 ### 4. Editar /etc/skel/.profile
 
 
