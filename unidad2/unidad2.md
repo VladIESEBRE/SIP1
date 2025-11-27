@@ -331,17 +331,24 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
 ### 4. Editar /etc/skel/.bash_logout
 
-  - 
+  - Mensaje al cerrar sesión
+
+    <img width="742" height="480" alt="Captura de pantalla de 2025-11-27 21-26-23" src="https://github.com/user-attachments/assets/f5070bc8-80e9-4ba3-952c-58ac64093dfd" />
+    <img width="742" height="480" alt="Captura de pantalla de 2025-11-27 21-27-35" src="https://github.com/user-attachments/assets/7f18a7cb-710e-4a04-985b-0ed65b4cb667" />
 
 
 
-### 4. Editar /etc/skel/.profile
 
+### 4. Sesión TTY (modo consola)
 
-   // para cambiar el grupo principal usermod -g proves prova4// Si hay un usuario principal del grupo , el grupo se se puede borrar//directorio skel tiene 3 ficheros ocultos para todos los usuarios
-Todo lo q hay en esta carpeta aparecen en todos los usuarios//skel para adduser adduser.conf, logind defs tmb useradd,default/useradd solo useradd// PRACTICA uno para adduser y otro para useradd(hacer cambios)(las fotos q he hecho son solo de explicación)// nano profilee(en sker)//PRACTICA en cada uno d elos 3 nano .profile etc...///VAR--.profile,
+  - Estamos en un terminal TTY, no en GNOME. Esto pasa cuando pulsas Ctrl + Alt + F3 o arrancas sin entorno gráfico.
+  - Hemos iniciado sesión como prova10. Su directorio HOME está en /var/prova10 (porque lo cambiamos en adduser.conf). En la segunda foto podemos ver que todo lo que editamos en /etc/skel se copió correctamente. El usuario prova10 heredó los archivos .bashrc, .bash_logou y  .profile .
+  - En la tercera foto creamos un archivo hola dentro de imagenes y en la cuarta lo revisamos en GNOME.
  
- 
+ <img width="1279" height="775" alt="Captura de pantalla de 2025-11-07 12-42-56" src="https://github.com/user-attachments/assets/da092b2d-1d0b-45f7-b575-774760f9d3e5" />
+<img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-47-38" src="https://github.com/user-attachments/assets/92f3a3ea-a780-49a0-a69e-8e13e4d6c5e9" />
+<img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-54-06" src="https://github.com/user-attachments/assets/e6a86131-3e07-41c5-861f-77d0bf01fe0c" />
+
 
 
 
