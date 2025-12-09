@@ -349,6 +349,46 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 <img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-47-38" src="https://github.com/user-attachments/assets/92f3a3ea-a780-49a0-a69e-8e13e4d6c5e9" />
 <img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-54-06" src="https://github.com/user-attachments/assets/e6a86131-3e07-41c5-861f-77d0bf01fe0c" />
 
+ ## Gestión de permisos
+ 1)d directori, - fitxer(parte izqueirda q significa de 3 en 3), arxiu la x no esta, rw el usuario lo puede editar, si solo una r solo lectura.
+ <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
+
+
+ #### Paso 1
+creamos 4 usuarios(foto del cat)
+<img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-46-33" src="https://github.com/user-attachments/assets/a108e2eb-e565-48e8-8258-16803862d43c" />
+
+ <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-47-54" src="https://github.com/user-attachments/assets/c769a530-0fb6-4403-8842-712084abfdac" />
+
+ #### Paso 2
+
+<img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-52-21" src="https://github.com/user-attachments/assets/dd472021-f692-464b-a44c-d483afca02e3" />
+
+ 
+ #### Paso 3
+
+
+ 
+ #### Paso 4
+
+ 
+ #### Paso 5
+
+ 
+ #### Paso 6
+
+ 
+ #### Paso 7
+
+ 
+ #### Paso 8
+
+ 
+ #### Paso 9
+
+ 
+ #### Paso 10
+ 
 
 
 
