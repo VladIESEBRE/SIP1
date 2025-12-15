@@ -169,8 +169,6 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
     <img width="740" height="487" alt="Captura de pantalla de 2025-10-31 13-28-46" src="https://github.com/user-attachments/assets/f815066d-5519-447d-a284-f4d8df92c863" />
 
- # Còpies de seguretat i automatització de tasques
-
  # Gestió d'usuaris, grups i permisos
 
  ## Fitxers implicats
@@ -390,6 +388,5 @@ creamos 4 usuarios(foto del cat)
  #### Paso 10
  
 
-
-
 # Gestió de procesos
+# Còpies de seguretat i automatització de tasques
