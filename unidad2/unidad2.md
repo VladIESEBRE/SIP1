@@ -353,28 +353,32 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
 
  #### Paso 1
-creamos 4 usuarios(foto del cat)
+creamos 4 usuarios(foto del cat),añadimos 2 usuarios al grupo parchis q hemos creado,roig i blau
+
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-46-33" src="https://github.com/user-attachments/assets/a108e2eb-e565-48e8-8258-16803862d43c" />
+vamos a var y hacemos la carpeta llamada compartida
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-47-54" src="https://github.com/user-attachments/assets/c769a530-0fb6-4403-8842-712084abfdac" />
 
  #### Paso 2
 
+ cambiamos el propietario con chown y el proprietario de grupo,parchis.
+
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-52-21" src="https://github.com/user-attachments/assets/dd472021-f692-464b-a44c-d483afca02e3" />
 
  
  #### Paso 3
-
+y quitamos el poder de entrar y cambiar a verde con chmod (3 formas diferentes)
 
  
  #### Paso 4
-
+comprobamos que groc tiene todos los permisos,entrar y crear carpeta
  
  #### Paso 5
-
+comprobamos groc ( no puede crear o borrar )
  
  #### Paso 6
-
+comprobamos verd que no tiene ni un permiso
  
  #### Paso 7
 
