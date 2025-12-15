@@ -348,6 +348,34 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 <img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-54-06" src="https://github.com/user-attachments/assets/e6a86131-3e07-41c5-861f-77d0bf01fe0c" />
 
  ## Gestión de permisos
+ 
+ En Linux, los permisos controlan quién puede acceder a archivos y directorios. Se basan en el modelo UGO, que distingue entre usuario propietario (U), grupo (G) y otros (O).
+Los permisos básicos son:
+ - r (read): permite leer el contenido.
+ - w (write): permite modificar el contenido.
+ - x (execute): permite ejecutar un archivo o acceder a un directorio.
+
+ Estos permisos pueden representarse de forma simbólica (rwx) o numérica. El comando chmod permite modificar los permisos, mientras que chown y chgrp sirven para cambiar el propietario y el grupo de un archivo o directorio.
+ La umask define los permisos por defecto al crear archivos y carpetas, restando permisos a los valores base (666 para archivos y 777 para directorios).
+ Existen permisos especiales como el sticky bit, el SUID y el SGID, que aportan un control adicional en situaciones concretas.
+ Por último, las ACL (Access Control Lists) permiten asignar permisos más detallados a usuarios o grupos específicos, más allá del sistema tradicional UGO.
+
+  La primera letra indica el tipo de archivo:
+ - - → archivo normal 
+
+ - d → directorio
+
+ - l → enlace simbólico 
+
+  En el caso de la foto :
+
+prova empieza por - → archivo
+prova2 empieza por d → directorio
+
+ Después del primer carácter vienen 9 letras, divididas en 3 bloques de 3: r, w, x. En directorios, x significa poder entrar ,si no aparece la letra, no tiene ese permiso.
+ En "prova" (rw-) el usuario :  r → puede leer, w → puede modificar, x → no puede ejecutar, el grupo: (r--) solo lectura, Otros: (r--) solo lectura.
+ En "prova2" el usuario: (rwx) puede ver, entrar y crear/borrar cosas dentro, el grupo y otros: (r-x) pueden ver y entrar, no pueden crear ni borrar archivos.
+
  1)d directori, - fitxer(parte izqueirda q significa de 3 en 3), arxiu la x no esta, rw el usuario lo puede editar, si solo una r solo lectura.
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
 
