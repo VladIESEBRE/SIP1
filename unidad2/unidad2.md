@@ -361,11 +361,11 @@ Los permisos básicos son:
  Por último, las ACL (Access Control Lists) permiten asignar permisos más detallados a usuarios o grupos específicos, más allá del sistema tradicional UGO.
 
   La primera letra indica el tipo de archivo:
- - - → archivo normal 
+ - "-" → archivo normal 
 
- - d → directorio
+ - "d" → directorio
 
- - l → enlace simbólico 
+ - "l" → enlace simbólico 
 
   En el caso de la foto :
 
@@ -376,52 +376,62 @@ prova2 empieza por d → directorio
  En "prova" (rw-) el usuario :  r → puede leer, w → puede modificar, x → no puede ejecutar, el grupo: (r--) solo lectura, Otros: (r--) solo lectura.
  En "prova2" el usuario: (rwx) puede ver, entrar y crear/borrar cosas dentro, el grupo y otros: (r-x) pueden ver y entrar, no pueden crear ni borrar archivos.
 
- 1)d directori, - fitxer(parte izqueirda q significa de 3 en 3), arxiu la x no esta, rw el usuario lo puede editar, si solo una r solo lectura.
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
 
 
  #### Paso 1
-creamos 4 usuarios(foto del cat),añadimos 2 usuarios al grupo parchis q hemos creado,roig i blau
+ 
+ - Creamos 4 usuarios(roig, verd,groc y blau),añadimos los usuarios roig y blau al grupo parchis q hemos creado.
 
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-46-33" src="https://github.com/user-attachments/assets/a108e2eb-e565-48e8-8258-16803862d43c" />
-vamos a var y hacemos la carpeta llamada compartida
+
+ #### Paso 2
+ 
+ - Vamos a "/var" y hacemos una carpeta llamada "compartida".
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-47-54" src="https://github.com/user-attachments/assets/c769a530-0fb6-4403-8842-712084abfdac" />
 
- #### Paso 2
+ #### Paso 3
 
- cambiamos el propietario con chown y el proprietario de grupo,parchis.
+ - Utilizamos el comando chown para cambiar el propietario de la carpeta y chgrp para modificar el grupo propietario.
 
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-52-21" src="https://github.com/user-attachments/assets/dd472021-f692-464b-a44c-d483afca02e3" />
 
  
- #### Paso 3
-y quitamos el poder de entrar y cambiar a verde con chmod (3 formas diferentes)
+ #### Paso 4
+
+ - En el directorio compartida, hemos quitado los permisos de acceso usando tres métodos distintos con chmod:
+ - Forma numérica (octal) "chmod 750 compartida"
+ - Forma simbólica quitando permisos a otros "chmod o=--- compartida"
+ - Forma simbólica quitando solo el permiso de ejecución "chmod o-r,o-x compartida" o equivalente "chmod o-rx compartida".Al quitar la x, los usuarios no pueden entrar en la carpeta.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-55-44" src="https://github.com/user-attachments/assets/03f37b7a-ba7d-4f90-adcf-595403397cfa" />
 
  
- #### Paso 4
-comprobamos que groc tiene todos los permisos,entrar y crear carpeta
+ #### Paso 5
+ 
+ - Comprobamos que groc tiene todos los permisos,entramos y creamos una carpeta.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-56-50" src="https://github.com/user-attachments/assets/44a3aa2b-1723-4653-97c8-21f416ad3855" />
-
  
- #### Paso 5
-comprobamos groc ( no puede crear o borrar )
+ #### Paso 6
+
+ - Comprobamos que el usuario groc no puede crear o borrar ficheros.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-58-36" src="https://github.com/user-attachments/assets/e08a035a-05d0-43eb-adb8-f3917bee6f5b" />
 
+ #### Paso 7
  
- #### Paso 6
-comprobamos verd que no tiene ni un permiso
+ - Comprobamos que el usuario verd no tiene ningun permiso.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 12-00-00" src="https://github.com/user-attachments/assets/c9592f62-cc1b-4120-a540-587bdde2fb26" />
 
  
  ### PERMISOS ESPECIALES
 
- creamos usuario morat,PERMISOS ESPECIALES,para comprobar getfacl,le damos permiso a morat ,comprobamos y al final aparece un mas que nos indica q se hace una excepcion .comprobacion de que ha funionado ,tiene permisos
+ - Creamos un nuevo usuario llamado "morat"
+ - Mediante setfacl hemos asignado permisos completos al usuario morat y lo hemos hemos verificado mediante el comando getfacl; el símbolo + confirma que existen ACL activas y que el usuario tiene permisos efectivos.
+ - En la segunda foto comprobamos que "morat" tiene los permisos.
 
  <img width="732" height="481" alt="Captura de pantalla de 2025-12-09 12-06-28" src="https://github.com/user-attachments/assets/adc60ccd-3260-4b34-86f9-a62ce597c439" />
 
