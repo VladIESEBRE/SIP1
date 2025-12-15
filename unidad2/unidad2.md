@@ -370,27 +370,90 @@ vamos a var y hacemos la carpeta llamada compartida
  #### Paso 3
 y quitamos el poder de entrar y cambiar a verde con chmod (3 formas diferentes)
 
+<img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-55-44" src="https://github.com/user-attachments/assets/03f37b7a-ba7d-4f90-adcf-595403397cfa" />
+
  
  #### Paso 4
 comprobamos que groc tiene todos los permisos,entrar y crear carpeta
+
+<img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-56-50" src="https://github.com/user-attachments/assets/44a3aa2b-1723-4653-97c8-21f416ad3855" />
+
  
  #### Paso 5
 comprobamos groc ( no puede crear o borrar )
+
+<img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-58-36" src="https://github.com/user-attachments/assets/e08a035a-05d0-43eb-adb8-f3917bee6f5b" />
+
  
  #### Paso 6
 comprobamos verd que no tiene ni un permiso
- 
- #### Paso 7
+
+<img width="736" height="485" alt="Captura de pantalla de 2025-12-09 12-00-00" src="https://github.com/user-attachments/assets/c9592f62-cc1b-4120-a540-587bdde2fb26" />
 
  
+ ### PERMISOS ESPECIALES
+
+ creamos usuario morat,PERMISOS ESPECIALES,para comprobar getfacl,le damos permiso a morat ,comprobamos y al final aparece un mas que nos indica q se hace una excepcion .comprobacion de que ha funionado ,tiene permisos
+
+ <img width="732" height="481" alt="Captura de pantalla de 2025-12-09 12-06-28" src="https://github.com/user-attachments/assets/adc60ccd-3260-4b34-86f9-a62ce597c439" />
+
+<img width="732" height="481" alt="Captura de pantalla de 2025-12-09 12-08-09" src="https://github.com/user-attachments/assets/14ccdbb6-f946-4dce-91e2-17023b67230e" />
+
+
  #### Paso 8
+denegamos a rojo permisos y comprobamos 
+ <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-24" src="https://github.com/user-attachments/assets/ea5232e1-85b7-4618-8289-1bd44090cf5e" />
+ <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-57" src="https://github.com/user-attachments/assets/73472222-205d-4c75-9938-332edd7b8e11" />
 
- 
+
  #### Paso 9
+en setfacl nos neteja todas las exepciones que hemos heccho
+
+<img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-12-40" src="https://github.com/user-attachments/assets/84b72e7a-ce9e-4fc8-a493-9ffbebc1eac4" />
 
  
  #### Paso 10
- 
 
-# Gestió de procesos
+  cambiamos el root y el grupy damos acceso a todos
+ <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-14-17" src="https://github.com/user-attachments/assets/a838eea1-a5ab-4dd6-8cb0-39b4c45e2625" />
+
+ #### Paso 11
+entramos en blau y vemos que tiene permisos y borramos morat que no es de el
+
+ <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-16-05" src="https://github.com/user-attachments/assets/f52ca467-9a95-410a-a755-91c9af73625a" />
+
+ #### Paso 12
+como hacer para que un usuario pueda solo borrar lo suyo, tenemos q ativar el sticky q es especial para carpetas compartidas, 2 formas,la x the others cambia por la t 
+
+<img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-19-45" src="https://github.com/user-attachments/assets/42113733-b9bc-4f7d-b409-fc159af03b69" />
+
+
+ #### Paso 10
+ prueba verd podemos crear ficherso pero no podemos borrar ficheros que no son suyos
+
+
+ <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-21-41" src="https://github.com/user-attachments/assets/f91fbb5e-0093-4dc3-98f4-08df00a1a4ef" />
+
 # Còpies de seguretat i automatització de tasques
+ - copias de seguretat i automatitzacio:index: teoria copies de seguretat, teoria comandes backups(cp, rsync, dd), Practica comandes backups(cp rsync dd)Practica programes Backups(Deja-Dup,Duplicity), Teoria Automatitzacio scripts cron i anacron, Practica automatitzacio(cron, anacron)
+ - teoria copies de seguretat
+que es?tipus(completa//lentas ocupan mucho pero es lo mejor,diferencial//continene solo la diferencia de la ultima completa ocupa menos y es mas rapida, y incremental//solo tiene la diferencia de la ultima copia oupan muy poco //hacer una minitaula con la definicion),diferencia con imatge de sistema y instantaneas,redundancias(raids),
+
+ #### Paso 10
+
+
+
+ 
+ #### Paso 10
+
+
+ 
+ #### Paso 10
+
+
+ 
+ #### Paso 10
+
+
+ 
+ #### Paso 10
