@@ -707,13 +707,38 @@ Esto demuestra que `dd` permite clonar discos o particiones completas, aunque no
 ### Objetivo
 Realizar copias de seguridad **completas e incrementales** utilizando el comando **Duplicity** desde la línea de comandos.
 
+Duplicity permite realizar copias de seguridad completas e incrementales desde la terminal.
+La primera copia es completa y las siguientes solo almacenan los cambios, reduciendo el tiempo y el espacio necesario para las copias de seguridad.
 ---
 
-### Paso1. Preparación del destino de la copia
+### Paso 1 
 
-Primero se crea el directorio donde se almacenarán las copias de seguridad:
+Antes de usar Duplicity es necesario instalar el paquete, ya que no viene instalado por defecto en el sistema.
 
+Después se crea el directorio donde se almacenarán las copias de seguridad:
 sudo mkdir -p /var/backups-duplicity
+
+Se realiza la primera copia completa del directorio /home/vlad/Documentos: sudo duplicity full /home/vlad/Documentos file:///var/backups-duplicity
+Esta copia guarda todos los archivos y carpetas del directorio origen.
+
+<img width="828" height="580" alt="Captura de pantalla de 2025-12-17 23-25-29" src="https://github.com/user-attachments/assets/cb56e2d2-802d-496d-a36e-450967057db7" />
+
+### Paso 2
+
+Para comprobar el funcionamiento de las copias incrementales, creamos el fichero "prueba1" y la carpeta "carpeta1" en el directorio origen
+
+Se ejecuta nuevamente Duplicity sin indicar full: sudo duplicity /home/vlad/Documentos file:///var/backups-duplicity
+
+Duplicity detecta que ya existe una copia completa y guarda solo los cambios, creando una copia incremental.
+
+<img width="822" height="575" alt="Captura de pantalla de 2025-12-17 23-31-28" src="https://github.com/user-attachments/assets/d3b9ec75-d540-4d0e-a8d8-522b54f216af" />
+
+### Paso 3
+
+Para verificar que existen copias completas e incrementales se usa: sudo duplicity collection-status file:///var/backups-duplicity
+El resultado muestra la copia completa inicial y las copias incrementales posteriores.
+
+<img width="822" height="575" alt="Captura de pantalla de 2025-12-17 23-32-47" src="https://github.com/user-attachments/assets/bdee44f2-5273-456b-9190-a7da012852e0" />
 
 
 ### 5. Teoría de automatización
