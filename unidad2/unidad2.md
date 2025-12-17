@@ -369,8 +369,8 @@ Los permisos básicos son:
 
   En el caso de la foto :
 
-prova empieza por - → archivo
-prova2 empieza por d → directorio
+ - prova empieza por "-" → archivo
+ - prova2 empieza por "d" → directorio
 
  Después del primer carácter vienen 9 letras, divididas en 3 bloques de 3: r, w, x. En directorios, x significa poder entrar ,si no aparece la letra, no tiene ese permiso.
  En "prova" (rw-) el usuario :  r → puede leer, w → puede modificar, x → no puede ejecutar, el grupo: (r--) solo lectura, Otros: (r--) solo lectura.
