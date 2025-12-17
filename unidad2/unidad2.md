@@ -476,13 +476,49 @@ Los permisos básicos son:
 
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-21-41" src="https://github.com/user-attachments/assets/f91fbb5e-0093-4dc3-98f4-08df00a1a4ef" />
 
-# 📦 Copias de Seguridad y Automatización
+# Copias de Seguridad y Automatización
 
-## 📑 Índice
 
-### 1. Teoría de las copias de seguridad
-- Qué es una copia de seguridad
-- Tipos de copias de seguridad (completa, incremental y diferencial)
+## 1. Teoría de las copias de seguridad
+
+### ¿Qué es una copia de seguridad?
+Una **copia de seguridad** es una duplicación de datos que se realiza con el objetivo de **proteger la información** y poder recuperarla en caso de pérdida, fallo del sistema, errores humanos, ataques o averías de hardware.
+
+---
+
+### Tipos de copias de seguridad
+
+| Tipo | Definición | Ventajas | Inconvenientes |
+|-----|-----------|----------|----------------|
+| **Completa** | Copia todos los datos seleccionados en cada ejecución | Es la más segura y fácil de restaurar | Es lenta y ocupa mucho espacio |
+| **Diferencial** | Copia solo los cambios desde la última copia completa | Más rápida y ocupa menos que la completa | El tamaño aumenta con el tiempo |
+| **Incremental** | Copia solo los cambios desde la última copia realizada | Muy rápida y ocupa muy poco espacio | Restauración más compleja |
+
+---
+
+### Diferencia entre copia de seguridad, imagen de sistema e instantáneas
+
+- **Copia de seguridad**  
+  Guarda archivos y carpetas concretas para poder recuperarlos de forma individual.
+
+- **Imagen de sistema**  
+  Es una copia exacta de todo el sistema (sistema operativo, programas y datos).  
+  Permite restaurar el equipo completo en caso de fallo grave.
+
+- **Instantáneas (snapshots)**  
+  Capturan el estado de un sistema o disco en un momento concreto.  
+  Son rápidas, pero dependen del sistema de archivos y no sustituyen a una copia externa.
+
+---
+
+### Redundancia de datos (RAID)
+
+La **redundancia** consiste en duplicar datos para aumentar la **seguridad y disponibilidad** del sistema.  
+Un ejemplo común es **RAID**, que combina varios discos duros para mejorar la tolerancia a fallos.
+RAID **no es una copia de seguridad**, ya que solo protege frente a fallos de hardware y no ante borrados accidentales, virus o errores humanos.
+
+---
+
 
 ### 2. Teoría de comandos para copias de seguridad
 - `cp`
