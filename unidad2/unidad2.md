@@ -439,7 +439,7 @@ Los permisos básicos son:
 
 
  #### Paso 8
- - Denegamos a rojo permisos y comprobamos 
+ - Denegamos al usuario roig permisos y comprobamos 
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-24" src="https://github.com/user-attachments/assets/ea5232e1-85b7-4618-8289-1bd44090cf5e" />
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-57" src="https://github.com/user-attachments/assets/73472222-205d-4c75-9938-332edd7b8e11" />
 
@@ -476,10 +476,37 @@ Los permisos básicos son:
 
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-21-41" src="https://github.com/user-attachments/assets/f91fbb5e-0093-4dc3-98f4-08df00a1a4ef" />
 
-# Còpies de seguretat i automatització de tasques
- - copias de seguretat i automatitzacio:index: teoria copies de seguretat, teoria comandes backups(cp, rsync, dd), Practica comandes backups(cp rsync dd)Practica programes Backups(Deja-Dup,Duplicity), Teoria Automatitzacio scripts cron i anacron, Practica automatitzacio(cron, anacron)
- - teoria copies de seguretat
-que es?tipus(completa//lentas ocupan mucho pero es lo mejor,diferencial//continene solo la diferencia de la ultima completa ocupa menos y es mas rapida, y incremental//solo tiene la diferencia de la ultima copia oupan muy poco //hacer una minitaula con la definicion),diferencia con imatge de sistema y instantaneas,redundancias(raids),
+# 📦 Copias de Seguridad y Automatización
+
+## 📑 Índice
+
+### 1. Teoría de las copias de seguridad
+- Qué es una copia de seguridad
+- Tipos de copias de seguridad (completa, incremental y diferencial)
+
+### 2. Teoría de comandos para copias de seguridad
+- `cp`
+- `rsync`
+- `dd`
+
+### 3. Práctica: comandos de copias de seguridad
+- Práctica con `cp`
+- Práctica con `rsync`
+- Práctica con `dd`
+
+### 4. Práctica: programas de copias de seguridad
+- Deja-Dup
+- Duplicity
+
+### 5. Teoría de automatización
+- Scripts
+- `cron`
+- `anacron`
+
+### 6. Práctica de automatización
+- Automatización con `cron`
+- Automatización con `anacron`
+
 
  #### Paso 10
 
