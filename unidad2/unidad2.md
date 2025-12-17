@@ -792,6 +792,7 @@ Actualmente, **trabajan conjuntamente**, permitiendo una automatización más fl
  ### Paso 1 (Automatización con `cron`)
 
  Abrimos "cron" mediante: nano/etc/crontab
+ 
  En este archivo se configuran las tareas **diarias, semanales y mensuales** del sistema, que se ejecutan cuando el equipo vuelve a encenderse si no pudieron realizarse antes.
 
 <img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-02-44" src="https://github.com/user-attachments/assets/47cc49a6-18a8-4cbb-8c6f-1bae9207acd9" />
