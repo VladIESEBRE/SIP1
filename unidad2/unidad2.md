@@ -594,7 +594,7 @@ En Linux existen varios comandos para realizar copias de seguridad. Cada uno tie
 - El comando `dd` no se recomienda para copias de seguridad habituales de archivos, ya que no discrimina datos y puede sobrescribir información si se usa incorrectamente.
 
 
-### 3. Práctica: comandos de copias de seguridad
+## 3. Práctica: comandos de copias de seguridad
 
  ### Paso 1
  
@@ -679,10 +679,42 @@ Esto confirma que `rsync` sincroniza correctamente el contenido entre origen y d
 <img width="738" height="490" alt="Captura de pantalla de 2025-12-12 12-47-26" src="https://github.com/user-attachments/assets/a782b487-cda8-4ed1-a145-948208343df4" />
 
 
+### Paso 6
 
-### 4. Práctica: programas de copias de seguridad
-- Deja-Dup
-- Duplicity
+En esta foto se realiza el clonado completo de un disco utilizando el comando `dd`.
+
+Primero, se crea el directorio `/var/clonacio` y se monta la partición `/dev/sdc1` para su uso.  
+A continuación, se ejecuta el comando:
+
+dd if=/dev/sdb1 of=/dev/sdc1 bs=1M status=progress
+
+Este comando copia el contenido del disco origen (`/dev/sdb1`) al disco destino (`/dev/sdc1`) bloque a bloque.  
+La opción `bs=1M` mejora el rendimiento y `status=progress` muestra el avance del proceso.
+
+Para verificar que la clonación se ha realizado correctamente, se utiliza:
+
+md5sum /dev/sdb1 /dev/sdc1
+
+El resultado muestra el mismo valor hash en ambos discos, lo que confirma que la copia es **idéntica**.
+
+Esto demuestra que `dd` permite clonar discos o particiones completas, aunque no es un método inteligente para copias de archivos.
+
+<img width="738" height="490" alt="Captura de pantalla de 2025-12-12 12-51-26" src="https://github.com/user-attachments/assets/96bc97f9-4843-467f-9c3d-77ed435b3bc2" />
+
+
+## 4. Copias de seguridad con Duplicity 
+
+### Objetivo
+Realizar copias de seguridad **completas e incrementales** utilizando el comando **Duplicity** desde la línea de comandos.
+
+---
+
+### Paso1. Preparación del destino de la copia
+
+Primero se crea el directorio donde se almacenarán las copias de seguridad:
+
+sudo mkdir -p /var/backups-duplicity
+
 
 ### 5. Teoría de automatización
 - Scripts
