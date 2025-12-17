@@ -436,26 +436,26 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
 
 
- #### Paso 1
+ ### Paso 1
  
  - Creamos 4 usuarios(roig, verd,groc y blau),añadimos los usuarios roig y blau al grupo parchis q hemos creado.
 
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-46-33" src="https://github.com/user-attachments/assets/a108e2eb-e565-48e8-8258-16803862d43c" />
 
- #### Paso 2
+ ### Paso 2
  
  - Vamos a "/var" y hacemos una carpeta llamada "compartida".
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-47-54" src="https://github.com/user-attachments/assets/c769a530-0fb6-4403-8842-712084abfdac" />
 
- #### Paso 3
+ ### Paso 3
 
  - Utilizamos el comando chown para cambiar el propietario de la carpeta y chgrp para modificar el grupo propietario.
 
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-52-21" src="https://github.com/user-attachments/assets/dd472021-f692-464b-a44c-d483afca02e3" />
 
  
- #### Paso 4
+ ### Paso 4
 
  - En el directorio compartida, hemos quitado los permisos de acceso usando tres métodos distintos con chmod:
  - Forma numérica (octal) "chmod 750 compartida"
@@ -465,26 +465,26 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-55-44" src="https://github.com/user-attachments/assets/03f37b7a-ba7d-4f90-adcf-595403397cfa" />
 
  
- #### Paso 5
+ ### Paso 5
  
  - Comprobamos que groc tiene todos los permisos,entramos y creamos una carpeta.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-56-50" src="https://github.com/user-attachments/assets/44a3aa2b-1723-4653-97c8-21f416ad3855" />
  
- #### Paso 6
+ ### Paso 6
 
  - Comprobamos que el usuario groc no puede crear o borrar ficheros.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-58-36" src="https://github.com/user-attachments/assets/e08a035a-05d0-43eb-adb8-f3917bee6f5b" />
 
- #### Paso 7
+ ### Paso 7
  
  - Comprobamos que el usuario verd no tiene ningun permiso.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 12-00-00" src="https://github.com/user-attachments/assets/c9592f62-cc1b-4120-a540-587bdde2fb26" />
 
  
- ### PERMISOS ESPECIALES
+ ## PERMISOS ESPECIALES
 
  - Creamos un nuevo usuario llamado "morat"
  - Mediante setfacl hemos asignado permisos completos al usuario morat y lo hemos hemos verificado mediante el comando getfacl; el símbolo + confirma que existen ACL activas y que el usuario tiene permisos efectivos.
@@ -495,38 +495,38 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 <img width="732" height="481" alt="Captura de pantalla de 2025-12-09 12-08-09" src="https://github.com/user-attachments/assets/14ccdbb6-f946-4dce-91e2-17023b67230e" />
 
 
- #### Paso 8
+ ### Paso 8
  - Denegamos al usuario roig permisos y comprobamos 
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-24" src="https://github.com/user-attachments/assets/ea5232e1-85b7-4618-8289-1bd44090cf5e" />
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-57" src="https://github.com/user-attachments/assets/73472222-205d-4c75-9938-332edd7b8e11" />
 
 
- #### Paso 9
+ ### Paso 9
 
  - Con setfacl -b se han eliminado todas las excepciones ACL, restaurando únicamente los permisos estándar UGO del directorio.
 
 <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-12-40" src="https://github.com/user-attachments/assets/84b72e7a-ce9e-4fc8-a493-9ffbebc1eac4" />
 
  
- #### Paso 10
+ ### Paso 10
 
  - Cambiamos el propietario y el grupo del directorio a root y concedimos permisos completos a todos los usuarios mediante chmod 777.
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-14-17" src="https://github.com/user-attachments/assets/a838eea1-a5ab-4dd6-8cb0-39b4c45e2625" />
 
- #### Paso 11
+ ### Paso 11
 
  - Al conceder permisos 777, cualquier usuario puede acceder al directorio y borrar archivos aunque no sean de su propiedad, como se comprueba con el usuario blau.
 
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-16-05" src="https://github.com/user-attachments/assets/f52ca467-9a95-410a-a755-91c9af73625a" />
 
- #### Paso 12
+ ### Paso 12
 
  - Para evitar que los usuarios borren archivos ajenos en una carpeta compartida, se ha activado el sticky bit mediante chmod o+t o chmod 1777.
 
 <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-19-45" src="https://github.com/user-attachments/assets/42113733-b9bc-4f7d-b409-fc159af03b69" />
 
 
- #### Paso 10
+ ### Paso 10
 
   - Con el sticky bit activado, los usuarios pueden crear archivos en la carpeta compartida, pero solo pueden borrar los que son de su propiedad, como se comprueba con el usuario verd.
 
@@ -577,15 +577,108 @@ RAID **no es una copia de seguridad**, ya que solo protege frente a fallos de ha
 ---
 
 
-### 2. Teoría de comandos para copias de seguridad
-- `cp`
-- `rsync`
-- `dd`
+## 2. Teoría de comandos para copias de seguridad
+
+En Linux existen varios comandos para realizar copias de seguridad. Cada uno tiene un uso distinto según el tipo de datos y el entorno donde se utilice.
+
+## Comandos de copia de seguridad
+
+| Comando | Definición | Características |
+|-------|-----------|----------------|
+| **cp** | Realiza una copia simple de archivos o directorios | No es inteligente, equivale a *copiar y pegar* (Ctrl+C / Ctrl+V). Solo se usa en sistemas locales |
+| **rsync** | Sincroniza archivos y carpetas | Permite copias locales y remotas mediante **SSH**. Solo copia los cambios, por lo que es rápido y eficiente |
+| **dd** | Clona discos o particiones completas | No es inteligente. Copia bloque a bloque. Se usa para clonar discos, no para copias de archivos |
+
+---
+
+- El comando `dd` no se recomienda para copias de seguridad habituales de archivos, ya que no discrimina datos y puede sobrescribir información si se usa incorrectamente.
+
 
 ### 3. Práctica: comandos de copias de seguridad
-- Práctica con `cp`
-- Práctica con `rsync`
-- Práctica con `dd`
+
+ ### Paso 1
+ 
+Se crea un sistema de archivos EXT4 en la partición `/dev/sdb1` usando:
+
+mkfs.ext4 /dev/sdb1
+
+Este proceso borra el contenido anterior y deja el dispositivo listo para su uso.  
+A continuación, se accede al directorio `/var` y se crea la carpeta `copies`, que se utilizará como destino o punto de montaje para las copias.
+
+<img width="741" height="496" alt="Captura de pantalla de 2025-12-12 12-37-10" src="https://github.com/user-attachments/assets/1133f6c8-228b-454d-91b1-91ce5f44b47b" />
+
+### Paso 2
+
+Después de crear el sistema de archivos, se monta la partición `/dev/sdb1` en el directorio `/var/copies` mediante el comando:
+
+mount -t ext4 /dev/sdb1 /var/copies
+
+A continuación, se utiliza `df -T` para comprobar que el dispositivo se ha montado correctamente.  
+La salida confirma que `/dev/sdb1` utiliza el sistema de archivos **ext4** y está montado en `/var/copies`, quedando listo para almacenar copias de seguridad.
+
+<img width="743" height="492" alt="Captura de pantalla de 2025-12-12 12-39-12" src="https://github.com/user-attachments/assets/107e4a31-948c-47fc-b480-b554c9beb9b4" />
+
+### Paso 3
+ 
+En las siguientes fotos se realiza una copia de seguridad simple utilizando el comando `cp`.
+
+Primero, se crean un archivo (`prova`) y un directorio (`prova2`) en el directorio `/home/vlad/Documentos`.  
+A continuación, se copian todos los archivos y carpetas de este directorio al destino `/var/copies` usando:
+
+cp -R /home/vlad/Documentos/* /var/copies/
+
+El parámetro `-R` permite copiar directorios de forma recursiva.
+
+Finalmente, se comprueba la copia con `ls /var/copies`, verificando que los elementos `prova` y `prova2` se han copiado correctamente.
+
+
+<img width="735" height="489" alt="Captura de pantalla de 2025-12-12 12-44-11" src="https://github.com/user-attachments/assets/d89727d5-c4f4-44a8-a0b8-1a2a77cb56e5" />
+
+
+### Paso 4
+
+Después de realizar la primera copia, se modifica el contenido del directorio origen.  
+Se crea un nuevo archivo llamado `divendres` y se elimina el archivo `prova`:
+
+A continuación, se vuelve a ejecutar el comando de copia:
+
+cp -R /home/vlad/Documentos/* /var/copies/
+
+Finalmente, se comprueba el contenido del destino con.  
+Se observa que el nuevo archivo `divendres` se ha copiado correctamente, pero el archivo `prova` sigue existiendo en el destino.
+
+Esto demuestra que el comando `cp` **no es inteligente**, ya que copia archivos nuevos o modificados, pero **no elimina los archivos borrados en el origen**, por lo que no sincroniza carpetas.
+
+<img width="735" height="487" alt="Captura de pantalla de 2025-12-12 12-44-52" src="https://github.com/user-attachments/assets/f1f682ea-c047-4c9d-bb72-378af2b99579" />
+
+### Paso 5
+
+En las siguientes fotos se comprueba el funcionamiento del comando `rsync`, que permite sincronizar carpetas de forma inteligente.
+
+Primero, se realizan cambios en el directorio origen `/home/vlad/Documentos`:  
+se crea el archivo `dissabte`, se crea el directorio `nadal` y se elimina el directorio `prova2`.
+
+A continuación, se ejecuta el comando:
+
+rsync -av --delete /home/vlad/Documentos/ /var/copies/
+
+Las opciones utilizadas son:
+- `-a`: modo archivo (mantiene permisos y estructura)
+- `-v`: muestra información del proceso
+- `--delete`: elimina en el destino los archivos que ya no existen en el origen
+
+El resultado muestra que `rsync` elimina automáticamente los archivos y carpetas borrados en el origen (`prova2`, `prova`, `lost+found`) y copia los nuevos elementos.
+
+Esto demuestra que `rsync` **sí es inteligente**, ya que sincroniza completamente el contenido entre origen y destino.
+
+Finalmente, al listar el contenido del destino con `ls /var/copies`, se comprueba que ambos directorios contienen los mismos archivos y carpetas (`dissabte`, `divendres` y `nadal`).
+
+Esto confirma que `rsync` sincroniza correctamente el contenido entre origen y destino, manteniendo ambos directorios idénticos.
+
+<img width="738" height="490" alt="Captura de pantalla de 2025-12-12 12-47-19" src="https://github.com/user-attachments/assets/45cbd758-abcd-47bf-9f46-1d3cb4beb36e" />
+<img width="738" height="490" alt="Captura de pantalla de 2025-12-12 12-47-26" src="https://github.com/user-attachments/assets/a782b487-cda8-4ed1-a145-948208343df4" />
+
+
 
 ### 4. Práctica: programas de copias de seguridad
 - Deja-Dup
@@ -601,7 +694,7 @@ RAID **no es una copia de seguridad**, ya que solo protege frente a fallos de ha
 - Automatización con `anacron`
 
 
- #### Paso 10
+ ### Paso 10
 
 
 
