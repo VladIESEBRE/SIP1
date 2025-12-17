@@ -349,32 +349,89 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 
  ## Gestión de permisos
  
- En Linux, los permisos controlan quién puede acceder a archivos y directorios. Se basan en el modelo UGO, que distingue entre usuario propietario (U), grupo (G) y otros (O).
+En Linux, los permisos controlan quién puede acceder a archivos y directorios. Se basan en el modelo **UGO**, que distingue entre:
+
+- **U (User)** → usuario propietario  
+- **G (Group)** → grupo  
+- **O (Others)** → otros usuarios  
+
+### Permisos básicos
+
 Los permisos básicos son:
- - r (read): permite leer el contenido.
- - w (write): permite modificar el contenido.
- - x (execute): permite ejecutar un archivo o acceder a un directorio.
 
- Estos permisos pueden representarse de forma simbólica (rwx) o numérica. El comando chmod permite modificar los permisos, mientras que chown y chgrp sirven para cambiar el propietario y el grupo de un archivo o directorio.
- La umask define los permisos por defecto al crear archivos y carpetas, restando permisos a los valores base (666 para archivos y 777 para directorios).
- Existen permisos especiales como el sticky bit, el SUID y el SGID, que aportan un control adicional en situaciones concretas.
- Por último, las ACL (Access Control Lists) permiten asignar permisos más detallados a usuarios o grupos específicos, más allá del sistema tradicional UGO.
+- **r (read)**: permite leer el contenido.
+- **w (write)**: permite modificar el contenido.
+- **x (execute)**: permite ejecutar un archivo o acceder a un directorio.
 
-  La primera letra indica el tipo de archivo:
- - "-" → archivo normal 
+Estos permisos pueden representarse de forma **simbólica** (`rwx`) o **numérica**.
 
- - "d" → directorio
+### Gestión de permisos y propietarios
 
- - "l" → enlace simbólico 
+- **chmod**: modifica los permisos de archivos y directorios.
+- **chown**: cambia el propietario.
+- **chgrp**: cambia el grupo propietario.
 
-  En el caso de la foto :
+La **umask** define los permisos por defecto al crear archivos y carpetas, restando permisos a los valores base:
+- **666** para archivos
+- **777** para directorios
 
- - prova empieza por "-" → archivo
- - prova2 empieza por "d" → directorio
+Existen permisos especiales como el **sticky bit**, el **SUID** y el **SGID**, que aportan un control adicional en situaciones concretas.
 
- Después del primer carácter vienen 9 letras, divididas en 3 bloques de 3: r, w, x. En directorios, x significa poder entrar ,si no aparece la letra, no tiene ese permiso.
- En "prova" (rw-) el usuario :  r → puede leer, w → puede modificar, x → no puede ejecutar, el grupo: (r--) solo lectura, Otros: (r--) solo lectura.
- En "prova2" el usuario: (rwx) puede ver, entrar y crear/borrar cosas dentro, el grupo y otros: (r-x) pueden ver y entrar, no pueden crear ni borrar archivos.
+Por último, las **ACL (Access Control Lists)** permiten asignar permisos más detallados a usuarios o grupos específicos, más allá del sistema tradicional UGO.
+
+---
+
+### Tipo de archivo
+
+La **primera letra** de los permisos indica el tipo de archivo:
+
+- `-` → archivo normal
+- `d` → directorio
+- `l` → enlace simbólico
+
+### Ejemplo práctico
+
+- **prova** empieza por `-` → es un archivo
+- **prova2** empieza por `d` → es un directorio
+
+---
+
+### Estructura de los permisos
+
+Después del primer carácter aparecen **9 letras**, divididas en **3 bloques de 3**: rwx r-x r--
+Corresponden a:
+- Usuario
+- Grupo
+- Otros
+
+Si una letra **no aparece**, significa que ese permiso **no está concedido**.
+
+### Significado en directorios
+En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
+
+---
+
+### Análisis de permisos en los ejemplos
+
+### Archivo `prova` (`rw-r--r--`)
+
+- **Usuario** (`rw-`):
+  - `r` → puede leer
+  - `w` → puede modificar
+  - `x` → no puede ejecutar
+- **Grupo** (`r--`): solo lectura
+- **Otros** (`r--`): solo lectura
+
+---
+
+### Directorio `prova2` (`rwxr-xr-x`)
+
+- **Usuario** (`rwx`): puede ver, entrar y crear o borrar archivos.
+- **Grupo** (`r-x`): puede ver y entrar, pero no crear ni borrar archivos.
+- **Otros** (`r-x`): puede ver y entrar, pero no crear ni borrar archivos.
+
+
+
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
 
