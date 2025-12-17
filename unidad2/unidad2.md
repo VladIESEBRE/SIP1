@@ -439,35 +439,39 @@ Los permisos básicos son:
 
 
  #### Paso 8
-denegamos a rojo permisos y comprobamos 
+ - Denegamos a rojo permisos y comprobamos 
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-24" src="https://github.com/user-attachments/assets/ea5232e1-85b7-4618-8289-1bd44090cf5e" />
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-57" src="https://github.com/user-attachments/assets/73472222-205d-4c75-9938-332edd7b8e11" />
 
 
  #### Paso 9
-en setfacl nos neteja todas las exepciones que hemos heccho
+
+ - Con setfacl -b se han eliminado todas las excepciones ACL, restaurando únicamente los permisos estándar UGO del directorio.
 
 <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-12-40" src="https://github.com/user-attachments/assets/84b72e7a-ce9e-4fc8-a493-9ffbebc1eac4" />
 
  
  #### Paso 10
 
-  cambiamos el root y el grupy damos acceso a todos
+ - Cambiamos el propietario y el grupo del directorio a root y concedimos permisos completos a todos los usuarios mediante chmod 777.
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-14-17" src="https://github.com/user-attachments/assets/a838eea1-a5ab-4dd6-8cb0-39b4c45e2625" />
 
  #### Paso 11
-entramos en blau y vemos que tiene permisos y borramos morat que no es de el
+
+ - Al conceder permisos 777, cualquier usuario puede acceder al directorio y borrar archivos aunque no sean de su propiedad, como se comprueba con el usuario blau.
 
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-16-05" src="https://github.com/user-attachments/assets/f52ca467-9a95-410a-a755-91c9af73625a" />
 
  #### Paso 12
-como hacer para que un usuario pueda solo borrar lo suyo, tenemos q ativar el sticky q es especial para carpetas compartidas, 2 formas,la x the others cambia por la t 
+
+ - Para evitar que los usuarios borren archivos ajenos en una carpeta compartida, se ha activado el sticky bit mediante chmod o+t o chmod 1777.
 
 <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-19-45" src="https://github.com/user-attachments/assets/42113733-b9bc-4f7d-b409-fc159af03b69" />
 
 
  #### Paso 10
- prueba verd podemos crear ficherso pero no podemos borrar ficheros que no son suyos
+
+  - Con el sticky bit activado, los usuarios pueden crear archivos en la carpeta compartida, pero solo pueden borrar los que son de su propiedad, como se comprueba con el usuario verd.
 
 
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-21-41" src="https://github.com/user-attachments/assets/f91fbb5e-0093-4dc3-98f4-08df00a1a4ef" />
