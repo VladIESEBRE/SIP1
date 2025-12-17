@@ -704,11 +704,8 @@ Esto demuestra que `dd` permite clonar discos o particiones completas, aunque no
 
 ## 4. Copias de seguridad con Duplicity 
 
-### Objetivo
-Realizar copias de seguridad **completas e incrementales** utilizando el comando **Duplicity** desde la línea de comandos.
-
-Duplicity permite realizar copias de seguridad completas e incrementales desde la terminal.
 La primera copia es completa y las siguientes solo almacenan los cambios, reduciendo el tiempo y el espacio necesario para las copias de seguridad.
+ 
 ---
 
 ### Paso 1 
@@ -741,31 +738,191 @@ El resultado muestra la copia completa inicial y las copias incrementales poster
 <img width="822" height="575" alt="Captura de pantalla de 2025-12-17 23-32-47" src="https://github.com/user-attachments/assets/bdee44f2-5273-456b-9190-a7da012852e0" />
 
 
-### 5. Teoría de automatización
-- Scripts
-- `cron`
-- `anacron`
+## 5. Teoría de automatización
 
-### 6. Práctica de automatización
-- Automatización con `cron`
-- Automatización con `anacron`
+## Automatización: scripts, cron y anacron
+
+## ¿Qué es un script?
+Un **script** es un archivo que contiene una serie de comandos que se ejecutan de forma automática y en el orden indicado.  
+Se utilizan para **automatizar tareas repetitivas**, evitando tener que ejecutar los comandos manualmente uno a uno.
+
+---
+
+## ¿Para qué sirven los scripts?
+Los scripts permiten:
+- Automatizar copias de seguridad
+- Ejecutar tareas de mantenimiento
+- Programar limpiezas del sistema
+- Ahorrar tiempo y reducir errores humanos
+
+---
+
+## Diferencias entre `cron` y `anacron`
+
+### `cron`
+El servicio **cron** se utiliza para automatizar tareas de usuarios o del sistema en una **fecha y hora concretas**.
+
+Características:
+- Ejecuta tareas en un momento exacto
+- Se usa habitualmente para tareas de **usuarios**
+- Si el ordenador está apagado en el momento programado, **la tarea se pierde**
+- Ideal para tareas frecuentes y precisas
+
+---
+
+### `anacron`
+**Anacron** sirve para automatizar tareas similares a cron, pero pensadas para **tareas generales del sistema**.
+
+Características:
+- No requiere que el ordenador esté encendido a una hora exacta
+- Si el sistema está apagado, la tarea se ejecuta **cuando vuelve a encenderse**
+- Se utiliza principalmente para tareas del sistema operativo
+- No está pensado para tareas de usuarios normales
+
+---
+
+### Relación entre cron y anacron
+Antiguamente, `cron` y `anacron` funcionaban por separado.  
+Actualmente, **trabajan conjuntamente**, permitiendo una automatización más flexible y fiable en los sistemas Linux modernos.
 
 
- ### Paso 10
+
+## 6. Práctica de automatización
+
+ ### Paso 1 (Automatización con `cron`)
+
+ Abrimos "cron" mediante: nano/etc/crontab
+ En este archivo se configuran las tareas **diarias, semanales y mensuales** del sistema, que se ejecutan cuando el equipo vuelve a encenderse si no pudieron realizarse antes.
+
+<img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-02-44" src="https://github.com/user-attachments/assets/47cc49a6-18a8-4cbb-8c6f-1bae9207acd9" />
+<img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-02-51" src="https://github.com/user-attachments/assets/1623aaef-3ffc-4484-98c3-4a4d12e58d33" />
+<img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-03-33" src="https://github.com/user-attachments/assets/37fc814f-263f-4006-93e6-fa0bfcac5e1a" />
+
+ ### Paso 2
+
+Se listan los directorios relacionados con cron 
+
+El resultado muestra los directorios:
+- `cron.hourly`
+- `cron.daily`
+- `cron.weekly`
+- `cron.monthly`
+
+Estos directorios contienen scripts que se ejecutan de forma periódica. Cron se encarga de lanzar estas tareas y, si el sistema no estaba encendido, **anacron se asegura de que se ejecuten al volver a arrancar**.
+De esta forma, cron y anacron trabajan conjuntamente para automatizar tareas del sistema sin que se pierdan.
+
+<img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-04-27" src="https://github.com/user-attachments/assets/2687d3de-78ea-4f98-80a2-9400e1179543" />
+
+ ### Paso 3
+
+En la siguiente imágen vemos el **crontab de un usuario**, que permite programar tareas automáticas personales. Al abrir el editor aparece un archivo temporal donde se definen las tareas de cron. Cada tarea se define en una sola línea con el siguiente formato:
+
+minuto hora día_mes mes día_semana comando
+
+En este tipo de crontab **no se indica el usuario**, ya que las tareas se ejecutan con el usuario que las ha creado.
+
+<img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-06-32" src="https://github.com/user-attachments/assets/a6138daa-9cc4-4b90-a1c4-2a86947b7aed" />
+
+ ### Paso 4
+
+En esta imágen se crea un **script Bash** llamado `copies.sh` para automatizar la realización de copias de seguridad.
+
+Se define una variable `TIMESTAMP` que guarda la fecha y hora actual, lo que permite crear copias con nombres distintos y evitar sobrescribir archivos: TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+
+Finalmente, se utiliza el comando `tar` para comprimir el directorio `/home/vlad/Documentos` en un archivo `.tar.gz`, guardándolo en el escritorio: tar -cvf "/home/vlad/Escritorio/copies_$TIMESTAMP.tar.gz" "/home/vlad/Documentos"
+
+De esta forma, cada vez que se ejecuta el script se genera una copia de seguridad comprimida con un nombre único basado en la fecha y la hora.
+
+
+<img width="907" height="526" alt="Captura de pantalla de 2025-12-12 13-11-26" src="https://github.com/user-attachments/assets/691ce3da-5e99-4bbb-a91c-fcb3d773fb26" />
+
+ 
+ ### Paso 5
+
+Una vez creado el script `copies.sh`, se comprueban sus permisos. 
+
+Inicialmente, el archivo no tiene permiso de ejecución. Para permitir que el script pueda ejecutarse, se utiliza el comando: chmod +x copies.sh
+
+Tras aplicar este comando, se vuelve a listar el archivo y se observa que aparece el permiso `x`, indicando que el script es ejecutable.
+
+De este modo, el script ya puede ejecutarse manualmente o programarse con `cron` para automatizar la copia de seguridad.
+
+<img width="907" height="526" alt="Captura de pantalla de 2025-12-12 13-12-18" src="https://github.com/user-attachments/assets/4f8684ce-c965-4284-9c28-dac076fc8916" />
+
+
+### Paso 6
+
+En esta foto se edita el archivo `/etc/crontab` para programar la ejecución automática del script de copias de seguridad `copies.sh`.
+
+Se programa el script: /home/vlad/Documentos/copies.sh para que se ejecute de forma automática según la planificación indicada.
+
+El script de copia de seguridad se ejecuta automáticamente sin necesidad de intervención del usuario, integrando scripts y cron para la automatización.
+
+
+<img width="907" height="526" alt="Captura de pantalla de 2025-12-12 13-14-10" src="https://github.com/user-attachments/assets/9361f581-0f81-4184-bbc0-86f5af8f354a" />
+
+<img width="175" height="274" alt="Captura de pantalla de 2025-12-12 13-17-20" src="https://github.com/user-attachments/assets/b14b02b5-dbd0-4458-ac80-8949a3574563" />
+
+<img width="606" height="529" alt="Captura de pantalla de 2025-12-12 13-21-17" src="https://github.com/user-attachments/assets/745e04ca-0dc2-41a1-a43e-5f59afa7cc9b" />
+
+### Paso 7
+
+La siguiente línea del archivo `/etc/crontab` programa la ejecución de un script: 21 13 * * * root /home/vlad/copies.sh
+
+Su significado es el siguiente:
+- **21** → minuto 21
+- **13** → hora 13 (13:21)
+- **\*** → cualquier día del mes
+- **\*** → cualquier mes
+- **\*** → cualquier día de la semana
+- **root** → usuario que ejecuta la tarea
+- **/home/vlad/copies.sh** → script que se ejecuta
+
+Esto indica que el script `copies.sh` se ejecutará **todos los días a las 13:21**
+con permisos de administrador.
+
+<img width="614" height="32" alt="Captura de pantalla de 2025-12-12 13-23-44" src="https://github.com/user-attachments/assets/f06592e1-55b2-47c7-bb15-2ec510bd48fc" />
+
+### Paso 8
+
+En esta foto se automatiza la ejecución del script de copias de seguridad utilizando el directorio `/etc/cron.daily`
+Al listar el contenido del directorio con `ls /etc/cron.daily`, se comprueba que el script `copies` aparece junto a otras tareas automáticas del sistema.
+De esta forma, la copia de seguridad se ejecuta diariamente sin necesidad de indicar una hora concreta y sin depender de que el sistema esté encendido en un momento exacto.
+
+<img width="899" height="523" alt="Captura de pantalla de 2025-12-12 13-24-47" src="https://github.com/user-attachments/assets/4ff766f3-528a-49fe-a61f-39d6cc15c928" />
+
+### Paso 9 (Automatización con `anacron`)
+
+En esta foto se revisa el archivo `/etc/anacrontab`, que es el fichero de configuración de **anacron**.Anacron se encarga de ejecutar estas tareas cuando el sistema vuelve a encenderse si no pudieron ejecutarse en el momento previsto.
+Esto garantiza que las tareas automáticas del sistema **no se pierdan**, incluso si el ordenador ha estado apagado.
+
+<img width="899" height="523" alt="Captura de pantalla de 2025-12-12 13-25-35" src="https://github.com/user-attachments/assets/066a3d9b-ef40-4426-aafc-ae3d40534346" />
+
+### Paso 10
+
+El archivo `/var/spool/anacron/cron.daily` es utilizado internamente por anacron para almacenar la fecha de la última ejecución de las tareas diarias.
+
+Este archivo suele contener un número que representa dicha fecha. Si el archivo está vacío o se elimina su contenido, anacron interpreta que las tareas diarias no se han ejecutado y las lanzará en el siguiente arranque del sistema.
+
+<img width="899" height="523" alt="Captura de pantalla de 2025-12-12 13-26-36" src="https://github.com/user-attachments/assets/27dbf8dc-1387-4e64-9de5-b6c1122590cb" />
+<img width="740" height="481" alt="Captura de pantalla de 2025-12-12 13-30-05" src="https://github.com/user-attachments/assets/ef245c70-c40a-4aa2-a55e-3ca7a67ccbe1" />
+
+### Paso 11
+
+Tras configurar la automatización, se comprueba que el script de copias de seguridad se ha ejecutado correctamente, ya que se genera un archivo comprimido con nombre basado en la fecha y la hora: copies_20251212_132850.tar.gz 
+Esto confirma que la tarea automática se ha ejecutado.
+
+Se revisa el archivo interno de anacron: /var/spool/anacron/cron.daily
+
+Este archivo contiene un número que representa la **fecha de la última ejecución** de las tareas diarias, en este caso: 20251212
+
+El hecho de que la fecha esté actualizada confirma que **anacron ha ejecutado correctamente las tareas diarias**, incluso si el sistema hubiera estado apagado en el momento programado.
+
+<img width="190" height="190" alt="Captura de pantalla de 2025-12-12 13-29-22" src="https://github.com/user-attachments/assets/d1cd1664-c53d-4b0b-ae25-9b54ca6faf7c" />
+<img width="740" height="481" alt="Captura de pantalla de 2025-12-12 13-30-05" src="https://github.com/user-attachments/assets/61dd5cbe-5acd-4d76-8575-c3bc2b3bd02f" />
+<img width="740" height="481" alt="Captura de pantalla de 2025-12-12 13-30-26" src="https://github.com/user-attachments/assets/d9c09382-fb6d-4264-8226-e94539319d8c" />
+
 
 
 
  
- #### Paso 10
-
-
- 
- #### Paso 10
-
-
- 
- #### Paso 10
-
-
- 
- #### Paso 10
