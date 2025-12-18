@@ -347,7 +347,9 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 <img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-47-38" src="https://github.com/user-attachments/assets/92f3a3ea-a780-49a0-a69e-8e13e4d6c5e9" />
 <img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-54-06" src="https://github.com/user-attachments/assets/e6a86131-3e07-41c5-861f-77d0bf01fe0c" />
 
- ## Gestión de permisos
+
+## Gestión de permisos
+
  
 En Linux, los permisos controlan quién puede acceder a archivos y directorios. Se basan en el modelo **UGO**, que distingue entre:
 
@@ -438,13 +440,13 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
 
 
- ### Paso 1
+### Paso 1
  
  - Creamos 4 usuarios(roig, verd,groc y blau),añadimos los usuarios roig y blau al grupo parchis q hemos creado.
 
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-46-33" src="https://github.com/user-attachments/assets/a108e2eb-e565-48e8-8258-16803862d43c" />
 
- ### Paso 2
+### Paso 2
  
  - Vamos a "/var" y hacemos una carpeta llamada "compartida".
 
@@ -457,7 +459,7 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-52-21" src="https://github.com/user-attachments/assets/dd472021-f692-464b-a44c-d483afca02e3" />
 
  
- ### Paso 4
+### Paso 4
 
  - En el directorio compartida, hemos quitado los permisos de acceso usando tres métodos distintos con chmod:
  - Forma numérica (octal) "chmod 750 compartida"
@@ -467,19 +469,19 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-55-44" src="https://github.com/user-attachments/assets/03f37b7a-ba7d-4f90-adcf-595403397cfa" />
 
  
- ### Paso 5
+### Paso 5
  
  - Comprobamos que groc tiene todos los permisos,entramos y creamos una carpeta.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-56-50" src="https://github.com/user-attachments/assets/44a3aa2b-1723-4653-97c8-21f416ad3855" />
  
- ### Paso 6
+### Paso 6
 
  - Comprobamos que el usuario groc no puede crear o borrar ficheros.
 
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 11-58-36" src="https://github.com/user-attachments/assets/e08a035a-05d0-43eb-adb8-f3917bee6f5b" />
 
- ### Paso 7
+### Paso 7
  
  - Comprobamos que el usuario verd no tiene ningun permiso.
 
@@ -497,39 +499,39 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 <img width="732" height="481" alt="Captura de pantalla de 2025-12-09 12-08-09" src="https://github.com/user-attachments/assets/14ccdbb6-f946-4dce-91e2-17023b67230e" />
 
 
- ### Paso 8
+### Paso 8
  - Denegamos al usuario roig permisos y comprobamos
    
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-24" src="https://github.com/user-attachments/assets/ea5232e1-85b7-4618-8289-1bd44090cf5e" />
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-57" src="https://github.com/user-attachments/assets/73472222-205d-4c75-9938-332edd7b8e11" />
 
 
- ### Paso 9
+### Paso 9
 
  - Con setfacl -b se han eliminado todas las excepciones ACL, restaurando únicamente los permisos estándar UGO del directorio.
 
 <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-12-40" src="https://github.com/user-attachments/assets/84b72e7a-ce9e-4fc8-a493-9ffbebc1eac4" />
 
  
- ### Paso 10
+### Paso 10
 
  - Cambiamos el propietario y el grupo del directorio a root y concedimos permisos completos a todos los usuarios mediante chmod 777.
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-14-17" src="https://github.com/user-attachments/assets/a838eea1-a5ab-4dd6-8cb0-39b4c45e2625" />
 
- ### Paso 11
+### Paso 11
 
  - Al conceder permisos 777, cualquier usuario puede acceder al directorio y borrar archivos aunque no sean de su propiedad, como se comprueba con el usuario blau.
 
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-16-05" src="https://github.com/user-attachments/assets/f52ca467-9a95-410a-a755-91c9af73625a" />
 
- ### Paso 12
+### Paso 12
 
  - Para evitar que los usuarios borren archivos ajenos en una carpeta compartida, se ha activado el sticky bit mediante chmod o+t o chmod 1777.
 
 <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-19-45" src="https://github.com/user-attachments/assets/42113733-b9bc-4f7d-b409-fc159af03b69" />
 
 
- ### Paso 10
+### Paso 10
 
   - Con el sticky bit activado, los usuarios pueden crear archivos en la carpeta compartida, pero solo pueden borrar los que son de su propiedad, como se comprueba con el usuario verd.
 
