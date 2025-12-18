@@ -348,7 +348,7 @@ Aunque hay algunos archivos del sistema (sobre todo en /var/log) con varios frag
 <img width="1281" height="842" alt="Captura de pantalla de 2025-11-07 12-54-06" src="https://github.com/user-attachments/assets/e6a86131-3e07-41c5-861f-77d0bf01fe0c" />
 
 
-## Gestión de permisos
+# Gestión de permisos
 
  
 En Linux, los permisos controlan quién puede acceder a archivos y directorios. Se basan en el modelo **UGO**, que distingue entre:
@@ -381,7 +381,6 @@ Existen permisos especiales como el **sticky bit**, el **SUID** y el **SGID**, q
 
 Por último, las **ACL (Access Control Lists)** permiten asignar permisos más detallados a usuarios o grupos específicos, más allá del sistema tradicional UGO.
 
----
 
 ### Tipo de archivo
 
@@ -396,7 +395,6 @@ La **primera letra** de los permisos indica el tipo de archivo:
 - **prova** empieza por `-` → es un archivo
 - **prova2** empieza por `d` → es un directorio
 
----
 
 ### Estructura de los permisos
 
@@ -411,12 +409,12 @@ Si una letra **no aparece**, significa que ese permiso **no está concedido**.
 ### Significado en directorios
 En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 
----
+
 
 - **prova** empieza por `-` → es un archivo
 - **prova2** empieza por `d` → es un directorio
 
----
+
 
 ### Archivo `prova` (`rw-r--r--`)
 
@@ -427,7 +425,7 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 - **Grupo** (`r--`): solo lectura
 - **Otros** (`r--`): solo lectura
 
----
+
 
 ### Directorio `prova2` (`rwxr-xr-x`)
 
@@ -435,10 +433,9 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 - **Grupo** (`r-x`): puede ver y entrar, pero no crear ni borrar archivos.
 - **Otros** (`r-x`): puede ver y entrar, pero no crear ni borrar archivos.
 
----
+
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
-
 
 ### Paso 1
  
