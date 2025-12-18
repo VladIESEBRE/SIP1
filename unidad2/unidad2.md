@@ -411,7 +411,10 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 
 ---
 
-### Análisis de permisos en los ejemplos
+- **prova** empieza por `-` → es un archivo
+- **prova2** empieza por `d` → es un directorio
+
+---
 
 ### Archivo `prova` (`rw-r--r--`)
 
@@ -430,8 +433,7 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 - **Grupo** (`r-x`): puede ver y entrar, pero no crear ni borrar archivos.
 - **Otros** (`r-x`): puede ver y entrar, pero no crear ni borrar archivos.
 
-
-
+---
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-43-58" src="https://github.com/user-attachments/assets/55a4014e-19ad-4048-8598-f6a903235680" />
 
@@ -448,7 +450,7 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 
  <img width="746" height="493" alt="Captura de pantalla de 2025-12-09 11-47-54" src="https://github.com/user-attachments/assets/c769a530-0fb6-4403-8842-712084abfdac" />
 
- ### Paso 3
+### Paso 3
 
  - Utilizamos el comando chown para cambiar el propietario de la carpeta y chgrp para modificar el grupo propietario.
 
@@ -496,7 +498,8 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 
 
  ### Paso 8
- - Denegamos al usuario roig permisos y comprobamos 
+ - Denegamos al usuario roig permisos y comprobamos
+   
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-24" src="https://github.com/user-attachments/assets/ea5232e1-85b7-4618-8289-1bd44090cf5e" />
  <img width="741" height="483" alt="Captura de pantalla de 2025-12-09 12-10-57" src="https://github.com/user-attachments/assets/73472222-205d-4c75-9938-332edd7b8e11" />
 
