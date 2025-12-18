@@ -819,7 +819,7 @@ De esta forma, cron y anacron trabajan conjuntamente para automatizar tareas del
 
 <img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-04-27" src="https://github.com/user-attachments/assets/2687d3de-78ea-4f98-80a2-9400e1179543" />
 
- ### Paso 3
+### Paso 3
 
 En la siguiente imágen vemos el **crontab de un usuario**, que permite programar tareas automáticas personales. Al abrir el editor aparece un archivo temporal donde se definen las tareas de cron. Cada tarea se define en una sola línea con el siguiente formato:
 
@@ -829,7 +829,7 @@ En este tipo de crontab **no se indica el usuario**, ya que las tareas se ejecut
 
 <img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-06-32" src="https://github.com/user-attachments/assets/a6138daa-9cc4-4b90-a1c4-2a86947b7aed" />
 
- ### Paso 4
+### Paso 4
 
 En esta imágen se crea un **script Bash** llamado `copies.sh` para automatizar la realización de copias de seguridad.
 
@@ -843,7 +843,7 @@ De esta forma, cada vez que se ejecuta el script se genera una copia de segurida
 <img width="907" height="526" alt="Captura de pantalla de 2025-12-12 13-11-26" src="https://github.com/user-attachments/assets/691ce3da-5e99-4bbb-a91c-fcb3d773fb26" />
 
  
- ### Paso 5
+### Paso 5
 
 Una vez creado el script `copies.sh`, se comprueban sus permisos. 
 
