@@ -593,7 +593,7 @@ En Linux existen varios comandos para realizar copias de seguridad. Cada uno tie
 
 ## 3. Práctica: comandos de copias de seguridad
 
- ### Paso 1
+### Paso 1
  
 Se crea un sistema de archivos EXT4 en la partición `/dev/sdb1` usando:
 
