@@ -485,7 +485,7 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 <img width="736" height="485" alt="Captura de pantalla de 2025-12-09 12-00-00" src="https://github.com/user-attachments/assets/c9592f62-cc1b-4120-a540-587bdde2fb26" />
 
  
- ## PERMISOS ESPECIALES
+## PERMISOS ESPECIALES
 
  - Creamos un nuevo usuario llamado "morat"
  - Mediante setfacl hemos asignado permisos completos al usuario morat y lo hemos hemos verificado mediante el comando getfacl; el símbolo + confirma que existen ACL activas y que el usuario tiene permisos efectivos.
@@ -513,6 +513,7 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 ### Paso 10
 
  - Cambiamos el propietario y el grupo del directorio a root y concedimos permisos completos a todos los usuarios mediante chmod 777.
+   
  <img width="741" height="490" alt="Captura de pantalla de 2025-12-09 12-14-17" src="https://github.com/user-attachments/assets/a838eea1-a5ab-4dd6-8cb0-39b4c45e2625" />
 
 ### Paso 11
@@ -543,7 +544,6 @@ En los directorios, el permiso **x** significa **poder entrar** en la carpeta.
 ### ¿Qué es una copia de seguridad?
 Una **copia de seguridad** es una duplicación de datos que se realiza con el objetivo de **proteger la información** y poder recuperarla en caso de pérdida, fallo del sistema, errores humanos, ataques o averías de hardware.
 
----
 
 ### Tipos de copias de seguridad
 
@@ -553,7 +553,6 @@ Una **copia de seguridad** es una duplicación de datos que se realiza con el ob
 | **Diferencial** | Copia solo los cambios desde la última copia completa | Más rápida y ocupa menos que la completa | El tamaño aumenta con el tiempo |
 | **Incremental** | Copia solo los cambios desde la última copia realizada | Muy rápida y ocupa muy poco espacio | Restauración más compleja |
 
----
 
 ### Diferencia entre copia de seguridad, imagen de sistema e instantáneas
 
@@ -568,15 +567,12 @@ Una **copia de seguridad** es una duplicación de datos que se realiza con el ob
   Capturan el estado de un sistema o disco en un momento concreto.  
   Son rápidas, pero dependen del sistema de archivos y no sustituyen a una copia externa.
 
----
 
 ### Redundancia de datos (RAID)
 
 La **redundancia** consiste en duplicar datos para aumentar la **seguridad y disponibilidad** del sistema.  
 Un ejemplo común es **RAID**, que combina varios discos duros para mejorar la tolerancia a fallos.
 RAID **no es una copia de seguridad**, ya que solo protege frente a fallos de hardware y no ante borrados accidentales, virus o errores humanos.
-
----
 
 
 ## 2. Teoría de comandos para copias de seguridad
@@ -591,7 +587,6 @@ En Linux existen varios comandos para realizar copias de seguridad. Cada uno tie
 | **rsync** | Sincroniza archivos y carpetas | Permite copias locales y remotas mediante **SSH**. Solo copia los cambios, por lo que es rápido y eficiente |
 | **dd** | Clona discos o particiones completas | No es inteligente. Copia bloque a bloque. Se usa para clonar discos, no para copias de archivos |
 
----
 
 - El comando `dd` no se recomienda para copias de seguridad habituales de archivos, ya que no discrimina datos y puede sobrescribir información si se usa incorrectamente.
 
@@ -707,8 +702,6 @@ Esto demuestra que `dd` permite clonar discos o particiones completas, aunque no
 ## 4. Copias de seguridad con Duplicity 
 
 La primera copia es completa y las siguientes solo almacenan los cambios, reduciendo el tiempo y el espacio necesario para las copias de seguridad.
- 
----
 
 ### Paso 1 
 
@@ -748,7 +741,6 @@ El resultado muestra la copia completa inicial y las copias incrementales poster
 Un **script** es un archivo que contiene una serie de comandos que se ejecutan de forma automática y en el orden indicado.  
 Se utilizan para **automatizar tareas repetitivas**, evitando tener que ejecutar los comandos manualmente uno a uno.
 
----
 
 ## ¿Para qué sirven los scripts?
 Los scripts permiten:
@@ -757,7 +749,6 @@ Los scripts permiten:
 - Programar limpiezas del sistema
 - Ahorrar tiempo y reducir errores humanos
 
----
 
 ## Diferencias entre `cron` y `anacron`
 
@@ -770,7 +761,6 @@ Características:
 - Si el ordenador está apagado en el momento programado, **la tarea se pierde**
 - Ideal para tareas frecuentes y precisas
 
----
 
 ### `anacron`
 **Anacron** sirve para automatizar tareas similares a cron, pero pensadas para **tareas generales del sistema**.
@@ -781,7 +771,6 @@ Características:
 - Se utiliza principalmente para tareas del sistema operativo
 - No está pensado para tareas de usuarios normales
 
----
 
 ### Relación entre cron y anacron
 Antiguamente, `cron` y `anacron` funcionaban por separado.  
@@ -791,7 +780,7 @@ Actualmente, **trabajan conjuntamente**, permitiendo una automatización más fl
 
 ## 6. Práctica de automatización
 
- ### Paso 1 (Automatización con `cron`)
+### Paso 1 (Automatización con `cron`)
 
  Abrimos "cron" mediante: nano/etc/crontab
  
@@ -801,7 +790,7 @@ Actualmente, **trabajan conjuntamente**, permitiendo una automatización más fl
 <img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-02-51" src="https://github.com/user-attachments/assets/1623aaef-3ffc-4484-98c3-4a4d12e58d33" />
 <img width="742" height="484" alt="Captura de pantalla de 2025-12-12 13-03-33" src="https://github.com/user-attachments/assets/37fc814f-263f-4006-93e6-fa0bfcac5e1a" />
 
- ### Paso 2
+### Paso 2
 
 Se listan los directorios relacionados con cron 
 
@@ -908,6 +897,7 @@ El archivo `/var/spool/anacron/cron.daily` es utilizado internamente por anacron
 Este archivo suele contener un número que representa dicha fecha. Si el archivo está vacío o se elimina su contenido, anacron interpreta que las tareas diarias no se han ejecutado y las lanzará en el siguiente arranque del sistema.
 
 <img width="899" height="523" alt="Captura de pantalla de 2025-12-12 13-26-36" src="https://github.com/user-attachments/assets/27dbf8dc-1387-4e64-9de5-b6c1122590cb" />
+
 <img width="740" height="481" alt="Captura de pantalla de 2025-12-12 13-30-05" src="https://github.com/user-attachments/assets/ef245c70-c40a-4aa2-a55e-3ca7a67ccbe1" />
 
 ### Paso 11
