@@ -177,6 +177,38 @@ Define un usuario compatible con sistemas Linux, incluyendo datos de identidad, 
 
 ## Paso 11
 
+ - Se modifica el archivo /etc/nsswitch.conf para incluir LDAP como origen de información para usuarios, grupos y contraseñas (passwd, group, shadow y gshadow), permitiendo la autenticación completa mediante el servidor LDAP.
+
+<img width="1012" height="629" alt="Captura de pantalla de 2026-01-16 13-04-37" src="https://github.com/user-attachments/assets/4590a7d6-b9a1-4277-a95e-7f9ba8677c77" />
+
+## Paso 12
+
+ - Se modifica el archivo /etc/pam.d/common-session para crear automáticamente el directorio personal de los usuarios LDAP mediante el módulo pam_mkhomedir, garantizando el correcto inicio de sesión.
+
+<img width="1014" height="632" alt="Captura de pantalla de 2026-01-16 13-09-13" src="https://github.com/user-attachments/assets/e17a84b2-8ebd-4499-a458-1ddf522d1aee" />
+
+## Paso 13
+
+ - Se modifica el archivo /etc/pam.d/common-password eliminando la opción use_authtok en los módulos LDAP para evitar conflictos en la gestión de contraseñas durante la autenticación.
+
+   <img width="1011" height="626" alt="Captura de pantalla de 2026-01-16 13-11-23" src="https://github.com/user-attachments/assets/5b0b6d8b-a2e5-4340-9993-b7d9745fe0a5" />
+   <img width="1004" height="627" alt="Captura de pantalla de 2026-01-16 13-13-14" src="https://github.com/user-attachments/assets/f6903d40-c16d-4129-a694-d60994db2dab" />
+
+## Paso 14
+
+ - Se configura el gestor de sesiones LightDM para permitir el inicio de sesión manual, posibilitando el acceso de usuarios LDAP que no aparecen en la lista de usuarios locales.
+
+   <img width="1019" height="631" alt="Captura de pantalla de 2026-01-16 13-15-52" src="https://github.com/user-attachments/assets/85b4c556-df70-4f76-af3c-e78bf7e515b9" />
+
+
+
+
+
+
+   
+
+
+
 
 
 
