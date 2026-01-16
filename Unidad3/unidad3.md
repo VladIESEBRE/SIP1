@@ -86,6 +86,8 @@ Un árbol LDAP es la estructura jerárquica donde se organiza la información de
 
 <img width="796" height="520" alt="Captura de pantalla de 2026-01-16 10-09-45" src="https://github.com/user-attachments/assets/4aa55f0d-030a-4d76-9579-0e3815bc6c5d" />
 
+## Paso 7
+
 # Explicación del fichero `uo.ldif`
 
 El fichero `uo.ldif` es un archivo en formato **LDIF (LDAP Data Interchange Format)** que se utiliza para crear una **Unidad Organizativa (OU)** dentro del directorio LDAP.  
@@ -112,19 +114,46 @@ En este caso, define una unidad organizativa destinada a almacenar los **usuario
 - `ou: users`  
   Nombre de la unidad organizativa.
 
- ## Paso 1
 
   - En el caso del dominio gina.cat, el fichero debe adaptarse para que el DN coincida con la estructura del directorio LDAP
 
     <img width="791" height="521" alt="Captura de pantalla de 2026-01-16 10-19-08" src="https://github.com/user-attachments/assets/c5a5277a-bc99-44c1-b5ab-5386510a61e4" />
 
+ # Explicación del fichero `grup.ldif`
 
-  
+El fichero `grup.ldif` es un archivo **LDIF** que se utiliza para crear un **grupo LDAP** de tipo POSIX.  
+Este tipo de grupo se usa habitualmente en sistemas Linux para gestionar permisos y pertenencia de usuarios.
+
+<img width="791" height="512" alt="Captura de pantalla de 2026-01-16 10-21-58" src="https://github.com/user-attachments/assets/787858a1-fd1b-4cfc-bdcc-ecca4794c93b" />
+ 
+  - Adaptación al dominio correcto
+
+<img width="791" height="512" alt="Captura de pantalla de 2026-01-16 10-24-38" src="https://github.com/user-attachments/assets/f12b4c1c-7a0d-4be1-ba77-c8e71653b924" />
 
 
+# Explicación del fichero `usu.ldif`
+
+El fichero `usu.ldif` es un archivo **LDIF** que se utiliza para crear un **usuario LDAP**.  
+Define un usuario compatible con sistemas Linux, incluyendo datos de identidad, grupo, directorio personal y políticas de contraseña.
+
+<img width="790" height="519" alt="Captura de pantalla de 2026-01-16 10-26-18" src="https://github.com/user-attachments/assets/cd89ce38-7acb-4366-a47f-4db5d69d4595" />
+ 
+  - Adaptación al dominio correcto
+
+<img width="795" height="524" alt="Captura de pantalla de 2026-01-16 10-28-18" src="https://github.com/user-attachments/assets/fdc770a0-b088-4b0b-a2b6-e02cd5f3c6eb" />
 
 
+## Paso 8 
 
+ - Se importan los ficheros LDIF correspondientes a las unidades organizativas, grupos y usuarios mediante el comando ldapadd.
+
+<img width="957" height="507" alt="Captura de pantalla de 2026-01-16 10-31-18" src="https://github.com/user-attachments/assets/0b1fdf22-338d-4062-8ceb-54db4e002605" />
+
+ - Se comprueba el contenido del directorio LDAP mediante el comando slapcat, verificando la correcta creación del dominio dc=gina,dc=cat, la unidad organizativa users, el grupo alumnes y el usuario alu1, confirmando el correcto funcionamiento del servicio LDAP.
+
+<img width="789" height="802" alt="Captura de pantalla de 2026-01-16 10-35-49" src="https://github.com/user-attachments/assets/2a5a239c-42ad-4245-8122-7330d2f51288" />
+
+<img width="786" height="532" alt="Captura de pantalla de 2026-01-16 10-36-05" src="https://github.com/user-attachments/assets/a1812757-2ec3-4654-b423-9482eadd530e" />
 
 
 
