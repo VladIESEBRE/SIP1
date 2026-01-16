@@ -155,6 +155,36 @@ Define un usuario compatible con sistemas Linux, incluyendo datos de identidad, 
 
 <img width="786" height="532" alt="Captura de pantalla de 2026-01-16 10-36-05" src="https://github.com/user-attachments/assets/a1812757-2ec3-4654-b423-9482eadd530e" />
 
+## Paso 9
+
+ - Comprobamos que el ping al servidor funciona desde el cliente
+
+   <img width="755" height="594" alt="Captura de pantalla de 2026-01-16 10-54-58" src="https://github.com/user-attachments/assets/ee903ed4-6263-442c-a463-99d749b8e07b" />
+
+ - Hacemos un apt update e instalamos los paquetes libnss-ldap, libpam-ldap y nscd para permitir la autenticación de usuarios contra el servidor LDAP.
+
+## Paso 10
+
+ - Configuración del cliente LDAP
+   
+<img width="1019" height="633" alt="Captura de pantalla de 2026-01-16 11-57-22" src="https://github.com/user-attachments/assets/5d885ef9-344b-4856-a9be-7a2449ca4aad" />
+<img width="1019" height="633" alt="Captura de pantalla de 2026-01-16 11-58-09" src="https://github.com/user-attachments/assets/92a6e655-db20-4df6-ae2f-12765512d72c" />
+<img width="1019" height="633" alt="Captura de pantalla de 2026-01-16 11-58-49" src="https://github.com/user-attachments/assets/0ae6c560-40c8-4d12-8f8b-0a5c140aede2" />
+<img width="1019" height="633" alt="Captura de pantalla de 2026-01-16 11-59-01" src="https://github.com/user-attachments/assets/bc8d2f19-4252-4523-962a-e30035428558" />
+<img width="1019" height="633" alt="Captura de pantalla de 2026-01-16 11-59-08" src="https://github.com/user-attachments/assets/ec9df728-cba6-4660-adea-0ee3421bb148" />
+<img width="1020" height="627" alt="Captura de pantalla de 2026-01-16 12-00-30" src="https://github.com/user-attachments/assets/b37146e8-41eb-4297-a1fd-9278bfd002f0" />
+<img width="1016" height="627" alt="Captura de pantalla de 2026-01-16 12-09-17" src="https://github.com/user-attachments/assets/9fd21f7f-6351-47d4-a9d5-be97711e67c6" />
+
+## Paso 11
+
+
+
+
+
+
+
+
+
 
 
 
