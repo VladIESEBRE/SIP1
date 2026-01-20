@@ -200,6 +200,13 @@ Define un usuario compatible con sistemas Linux, incluyendo datos de identidad, 
 
    <img width="1019" height="631" alt="Captura de pantalla de 2026-01-16 13-15-52" src="https://github.com/user-attachments/assets/85b4c556-df70-4f76-af3c-e78bf7e515b9" />
 
+## Paso 15
+
+ - Se comprueba la autenticación de un usuario LDAP iniciando sesión gráficamente en el cliente. Se verifica la identidad del usuario, la consulta al directorio LDAP y la creación automática del directorio personal.
+
+   <img width="737" height="489" alt="imatge" src="https://github.com/user-attachments/assets/e6291725-63b8-4496-9276-0ba9b0b4298a" />
+   <img width="733" height="595" alt="Captura de pantalla de 2026-01-20 13-32-10" src="https://github.com/user-attachments/assets/fa9e0871-4b3a-44a9-b8cb-af7429add27c" />
+
 
 
 
