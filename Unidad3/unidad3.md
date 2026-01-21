@@ -212,6 +212,7 @@ Define un usuario compatible con sistemas Linux, incluyendo datos de identidad, 
 ## Buscar
 
 <img width="976" height="609" alt="Captura de pantalla de 2026-01-20 13-40-36" src="https://github.com/user-attachments/assets/72069dcd-5c53-42d8-90ae-0443f92171a6" />
+<img width="859" height="284" alt="Captura de pantalla de 2026-01-21 10-51-04" src="https://github.com/user-attachments/assets/d7b16ffa-4309-4818-8230-d47552ba6154" />
 <img width="976" height="609" alt="Captura de pantalla de 2026-01-20 13-42-46" src="https://github.com/user-attachments/assets/448d63e8-aa3d-4ed1-9ed4-dfb2bc87c43f" />
 <img width="1101" height="700" alt="Captura de pantalla de 2026-01-20 13-44-39" src="https://github.com/user-attachments/assets/d8a624c2-d40e-4790-82b9-7505be15205a" />
 
@@ -225,6 +226,7 @@ Define un usuario compatible con sistemas Linux, incluyendo datos de identidad, 
 
 ## Borrar objetos
 
+<img width="1113" height="310" alt="Captura de pantalla de 2026-01-21 10-56-07" src="https://github.com/user-attachments/assets/d2e93440-2443-4635-adb8-fe8b5045d97e" />
 <img width="314" height="57" alt="Captura de pantalla de 2026-01-20 14-25-11" src="https://github.com/user-attachments/assets/2a9e82d2-ae0d-404d-bb91-e01d81b9627e" />
 <img width="1021" height="71" alt="Captura de pantalla de 2026-01-20 14-24-56" src="https://github.com/user-attachments/assets/7308ac9c-fb5d-4ca7-9198-61716719cfe2" />
 
