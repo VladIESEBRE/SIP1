@@ -244,7 +244,7 @@ uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu)
 <img width="817" height="684" alt="Captura de pantalla de 2026-01-23 12-04-28" src="https://github.com/user-attachments/assets/4fb72246-fba0-4ae8-a030-d08ec77a24e2" />
 
 ## 4. Quants grups hi ha al domini vesper.cat?
- - Hay 2 grupos (Informática y Departamentos).
+ - Hay 2 grupos (Informática y Administración).
 
 <img width="985" height="545" alt="Captura de pantalla de 2026-01-23 12-11-30" src="https://github.com/user-attachments/assets/21086009-eaab-46ad-8f60-94a0ebbd845b" />
 
