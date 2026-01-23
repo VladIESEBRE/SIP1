@@ -240,12 +240,27 @@ uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu)
 <img width="817" height="684" alt="Captura de pantalla de 2026-01-23 12-04-28" src="https://github.com/user-attachments/assets/4fb72246-fba0-4ae8-a030-d08ec77a24e2" />
 
 ## 4. Quants grups hi ha al domini vesper.cat?
+ - Hay 2 grupos (Informática y Departamentos).
 
 <img width="985" height="545" alt="Captura de pantalla de 2026-01-23 12-11-30" src="https://github.com/user-attachments/assets/21086009-eaab-46ad-8f60-94a0ebbd845b" />
 
 ## 5. Afegeix l’usuari que has creat dintre d’un dels grups del domini
 
-   
+   <img width="819" height="144" alt="Captura de pantalla de 2026-01-23 12-19-13" src="https://github.com/user-attachments/assets/e9aeae86-0b65-4882-add7-eb356abfee78" />
+<img width="1004" height="162" alt="Captura de pantalla de 2026-01-23 12-19-31" src="https://github.com/user-attachments/assets/9ca9d9ec-dfbb-4313-a48d-ce13814febf4" />
+<img width="1003" height="520" alt="Captura de pantalla de 2026-01-23 12-22-26" src="https://github.com/user-attachments/assets/136f1bf7-487a-4ffa-b8ca-0a33c59ea76a" />
+
+## 6. D’un sol cop: Afegeix un nou atribut opcional a l’usuari sergi, modifica el cognom de l’usuari sergi al valor Pallarés
+
+<img width="721" height="200" alt="Captura de pantalla de 2026-01-23 12-32-03" src="https://github.com/user-attachments/assets/71f60d5c-4ea7-48bd-9fcb-47c165fc304b" />
+<img width="1049" height="677" alt="Captura de pantalla de 2026-01-23 12-35-25" src="https://github.com/user-attachments/assets/b0e8b6ff-e06b-497f-bb15-728dbf846274" />
+
+## 7. Quants usuaris hi ha dintre de la uo rrhh? Quins són?
+ - Hay 3 usuarios: Xavier,Enric,Sergi 
+
+<img width="1195" height="672" alt="imatge" src="https://github.com/user-attachments/assets/5658df16-9396-4369-9170-d1e38b1b9045" />
+
+
 
 
 
