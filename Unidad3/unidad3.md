@@ -264,27 +264,54 @@ uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu)
 
 <img width="1195" height="672" alt="imatge" src="https://github.com/user-attachments/assets/5658df16-9396-4369-9170-d1e38b1b9045" />
 
+## 8. Esborra el gidNumber del grup informàtica
+ - No se puede borrar gidNumber ya que es obligatorio para la clase de objeto posixGroup
+
+<img width="1111" height="145" alt="Captura de pantalla de 2026-01-23 12-52-02" src="https://github.com/user-attachments/assets/d824bef6-ce88-44ce-896e-a20984029b60" />
+<img width="1108" height="212" alt="Captura de pantalla de 2026-01-23 12-53-15" src="https://github.com/user-attachments/assets/ec2faead-abf4-440c-9166-33119bb96cc8" />
+
+## 9. Quantes uos hi ha al domini vesper.cat?
+ - Hay 3 uos (rrhh,departaments,nomines)
+<img width="1118" height="563" alt="Captura de pantalla de 2026-01-23 12-57-27" src="https://github.com/user-attachments/assets/eec58ae9-49b2-414f-93a5-5058fb433d13" />
+
+## 10. Modifica el cn de Xavier per Francesc Xavier
+
+<img width="1274" height="674" alt="Captura de pantalla de 2026-01-23 13-01-37" src="https://github.com/user-attachments/assets/8ae0cfe9-e38f-4228-88c8-7ec01dab76df" />
+
+## 11. Esborra la uo nòmines
+
+<img width="1258" height="633" alt="Captura de pantalla de 2026-01-23 13-05-38" src="https://github.com/user-attachments/assets/6de41428-c939-4dc7-b88d-c824670490a4" />
+
+## 12. Mostra els usuaris que tinguin com a grup principal el grup administració
+ - Primero miramos que GID tine el grupo administración en el archivo original: gidNumber: 1002. Tenemos que buscar usuarios con el gidNumber=1002.
+
+<img width="861" height="803" alt="Captura de pantalla de 2026-01-23 13-08-56" src="https://github.com/user-attachments/assets/727db1cf-2b2b-4158-8d37-c29d9acf2adc" />
+
+## 13. Quin usuari té el uidNumber 1003?
+ - No hay usuarios con el uidNumber 1003
+
+ <img width="865" height="524" alt="Captura de pantalla de 2026-01-23 13-12-15" src="https://github.com/user-attachments/assets/68c6bdd3-567f-4a12-9b68-c69808b66501" />
+
+## 14. Mostra quins són els usuaris on el seu cognom comenci per R i el seu uidNumber sigui més gran que 1003
+
+<img width="950" height="338" alt="Captura de pantalla de 2026-01-23 13-14-59" src="https://github.com/user-attachments/assets/f5dde81e-f8a1-4fa8-b7c7-af69dfa50cfa" />
+
+## 15. Mostra quins usuaris formen part del grup informàtica o aquells usuaris que tinguis de cognom Pallarés
+
+ - "No se puede realizar en una sola consulta de usuario porque la objectClass posixGroup guarda a los miembros dentro del objeto de grupo (mediante el atributo memberUid) y no dentro del objeto de usuario. Por lo tanto, he extraído primero los nombres del grupo 'informatica' (xavier, enric) y después he aplicado un filtro lógico combinando ambas condiciones: (|(uid=xavier)(uid=enric)(sn=Pallarés))."
+
+### Paso 1 ( Identificar los miembros del grupo informàtica)
+
+<img width="931" height="480" alt="Captura de pantalla de 2026-01-23 13-19-31" src="https://github.com/user-attachments/assets/d1e346c3-ed04-4be0-9dcd-557bd57ce5a1" />
+
+### Paso 2 ( Identificar los miembros con el apellido Pallarés )
+
+<img width="852" height="414" alt="Captura de pantalla de 2026-01-23 13-21-21" src="https://github.com/user-attachments/assets/f1acc082-0996-4eb5-880b-62dbe74edbd1" />
 
 
+### Paso 3 ( Identificar los miembros del grupo informàtica)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="1333" height="810" alt="Captura de pantalla de 2026-01-23 13-27-19" src="https://github.com/user-attachments/assets/9c70564e-b77b-4a5a-a21d-5faa07ea7b71" />
 
 
 
