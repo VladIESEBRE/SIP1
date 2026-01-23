@@ -210,15 +210,40 @@ Define un usuario compatible con sistemas Linux, incluyendo datos de identidad, 
 
 # Actividad
 ## Preparació prèvia
+ - Fes un dpkg-reconfigure slapd al servidor per tal de deixar la base de dades buida i només amb el
+domini i l’usuari admin creat. Comprova-ho amb un slapcat.
 
+<img width="1124" height="679" alt="Captura de pantalla de 2026-01-23 11-45-19" src="https://github.com/user-attachments/assets/b7218f80-e251-4e81-8f1d-2f8748876b3c" />
+ 
+ - Descarrega l'arxiu dades_pt10.ldif del moodle i amb la comanda ldapadd carrega els usuaris, grups i
+uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu)
 
+<img width="1120" height="552" alt="Captura de pantalla de 2026-01-23 11-49-26" src="https://github.com/user-attachments/assets/04aa4e58-e7e4-45dd-ad30-7c4cde0a5d41" />
 
+ - Fes un altre slapcat per tal de comprovar que les dades s'han carregat correctament
 
+   <img width="1135" height="683" alt="Captura de pantalla de 2026-01-23 11-50-23" src="https://github.com/user-attachments/assets/24562704-742a-415c-9d6a-06826b66dc9d" />
 
+## 1. Crea un nou usuari directament al domini
 
+<img width="735" height="321" alt="Captura de pantalla de 2026-01-23 11-55-23" src="https://github.com/user-attachments/assets/ce543b60-aa64-4908-b947-47333386f29f" />
+<img width="990" height="253" alt="Captura de pantalla de 2026-01-23 11-56-39" src="https://github.com/user-attachments/assets/d78d11d8-272b-4498-a103-1160bdcea1cd" />
 
+## 2. Crea una nova uo anomenada nòmines
 
+<img width="798" height="143" alt="Captura de pantalla de 2026-01-23 11-58-57" src="https://github.com/user-attachments/assets/6bb91cdc-2bbe-4c3b-ba84-a0935079c3ac" />
+<img width="1123" height="164" alt="Captura de pantalla de 2026-01-23 11-59-55" src="https://github.com/user-attachments/assets/741d0378-aeb5-45fe-8484-f6e471934b88" />
 
+## 3. Mou l’usuari que has creat dintre de la uo nòmines
+
+<img width="1264" height="124" alt="Captura de pantalla de 2026-01-23 12-05-02" src="https://github.com/user-attachments/assets/1063393a-3332-4a49-a978-0cdc80df39d5" />
+<img width="817" height="684" alt="Captura de pantalla de 2026-01-23 12-04-28" src="https://github.com/user-attachments/assets/4fb72246-fba0-4ae8-a030-d08ec77a24e2" />
+
+## 4. Quants grups hi ha al domini vesper.cat?
+
+<img width="985" height="545" alt="Captura de pantalla de 2026-01-23 12-11-30" src="https://github.com/user-attachments/assets/21086009-eaab-46ad-8f60-94a0ebbd845b" />
+
+## 5. Afegeix l’usuari que has creat dintre d’un dels grups del domini
 
    
 
