@@ -228,11 +228,15 @@ uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu)
 
 <img width="735" height="321" alt="Captura de pantalla de 2026-01-23 11-55-23" src="https://github.com/user-attachments/assets/ce543b60-aa64-4908-b947-47333386f29f" />
 <img width="990" height="253" alt="Captura de pantalla de 2026-01-23 11-56-39" src="https://github.com/user-attachments/assets/d78d11d8-272b-4498-a103-1160bdcea1cd" />
+<img width="1122" height="563" alt="Captura de pantalla de 2026-01-23 12-47-16" src="https://github.com/user-attachments/assets/7274f39e-738b-47e5-a8b2-2f29e9ae478f" />
+
 
 ## 2. Crea una nova uo anomenada nòmines
 
 <img width="798" height="143" alt="Captura de pantalla de 2026-01-23 11-58-57" src="https://github.com/user-attachments/assets/6bb91cdc-2bbe-4c3b-ba84-a0935079c3ac" />
 <img width="1123" height="164" alt="Captura de pantalla de 2026-01-23 11-59-55" src="https://github.com/user-attachments/assets/741d0378-aeb5-45fe-8484-f6e471934b88" />
+<img width="1115" height="560" alt="Captura de pantalla de 2026-01-23 12-45-13" src="https://github.com/user-attachments/assets/34142980-7e30-4af8-ad27-11727279a463" />
+
 
 ## 3. Mou l’usuari que has creat dintre de la uo nòmines
 
