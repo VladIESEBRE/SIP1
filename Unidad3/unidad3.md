@@ -347,18 +347,25 @@ instalamos
 
 comprobamos 
 
+puede entrar y crear ficheros
 <img width="940" height="738" alt="Captura de pantalla de 2026-01-27 11-59-53" src="https://github.com/user-attachments/assets/506ce078-271b-4e87-afed-1a31c54be88b" />
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-01-54" src="https://github.com/user-attachments/assets/de8bf345-77bc-4de5-af68-65e1184f7ce8" />
-<img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-03-44" src="https://github.com/user-attachments/assets/10c20bea-1278-49f2-86c1-ec92f82de0c6" />
 
+puede entrar y crear ficgheros
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-03-44" src="https://github.com/user-attachments/assets/626cdba6-2db2-47ed-a619-2f6490868836" />
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-04-25" src="https://github.com/user-attachments/assets/943e30d2-9a1f-424e-9eac-e5c10dc2ea6b" />
 
+no puede entrar
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-05-21" src="https://github.com/user-attachments/assets/2e161142-d329-4a8a-8a9a-2f034d8e38a3" />
-
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-07-00" src="https://github.com/user-attachments/assets/c91400f1-fef8-4c74-8025-4c06c8213bb9" />
 
+no puede crear ficheros
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-06-25" src="https://github.com/user-attachments/assets/4e951d62-bd4c-4afc-9769-cc1f87864bfc" />
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-06-35" src="https://github.com/user-attachments/assets/a2fe593f-1b53-4fd3-9e1c-3c160ce8084d" />
 
+quitamos guest
+
+<img width="1125" height="711" alt="Captura de pantalla de 2026-01-27 12-13-31" src="https://github.com/user-attachments/assets/d299773d-3b5b-4ceb-b261-3a98784df126" />
+ 
+ al ficher de samba poner alguna linea para q despues puede entrar con los usuarios del ldap al client
 
