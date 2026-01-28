@@ -313,57 +313,64 @@ uos (Compte que el domini és vesper.cat, hauràs de modificar-lo pel teu)
 
 <img width="1333" height="810" alt="Captura de pantalla de 2026-01-23 13-27-19" src="https://github.com/user-attachments/assets/9c70564e-b77b-4a5a-a21d-5faa07ea7b71" />
 
+# Servidor Samba y servidor NFS
 
-servidor samba y servidor nfs( sirven para compartir arxius ,recuros..= samba permet compartir impresores y fer la autenticacio a nivell ldap), nfs funciona a nivell de host(ip)
+ - Para la gestión de archivos en red, existen dos estándares principales dependiendo de tu sistema operativo. Samba es la herramienta universal diseñada para la interoperabilidad, permitiendo que equipos Linux compartan carpetas e impresoras con sistemas Windows de forma transparente. Es la opción ideal para hogares o oficinas con redes mixtas, basando su seguridad en el acceso por usuario y contraseña.
 
+Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/Linux. Su gran ventaja es la eficiencia; al ser más ligero que Samba, ofrece una velocidad de transferencia muy superior cuando se comunican dos máquinas Linux entre sí. Es el estándar utilizado en servidores y laboratorios educativos, ya que permite montar carpetas remotas como si fuesen discos duros locales con un impacto mínimo en el rendimiento del sistema.
 
-parte servidor samba: 
+## Parte servidor Samba: 
 
-install samba ( 2 capturas)
+### Paso 1 ( Istalar Samba)
+
 <img width="937" height="194" alt="Captura de pantalla de 2026-01-27 11-37-39" src="https://github.com/user-attachments/assets/9146f3ac-221a-4372-b0c3-cddf38f3d5b5" />
 <img width="939" height="555" alt="Captura de pantalla de 2026-01-27 11-38-28" src="https://github.com/user-attachments/assets/fb09f80f-f57b-4115-b96c-47bc8fa7208c" />
 
 
-preparamos 
+### Paso 2 ( Preparación)
+ - Se creó el directorio /proves, al cual se le asignaron permisos totales (777) y se cambió su propiedad al usuario nobody:nogroup.
+
 <img width="939" height="555" alt="Captura de pantalla de 2026-01-27 11-41-31" src="https://github.com/user-attachments/assets/1734c9ba-caf8-4c8d-87b3-968946e2f978" />
 
-crear usuarios i asignar contraseña
+ - Se crearon los usuarios blau, roig y groc utilizando el comando useradd -M -s /sbin/nologin y se vincularon dichos usuarios al servicio mediante smbpasswd -a, estableciendo las contraseñas necesarias para que puedan acceder a las carpetas compartidas desde otros equipos
 <img width="939" height="555" alt="Captura de pantalla de 2026-01-27 11-44-24" src="https://github.com/user-attachments/assets/5fa7f6bd-df08-432b-b6d3-5d1475a74b53" />
 
-creamos grupo y añadimos 
+ - Se creó un grupo de sistema denominado colors. Posteriormente, se añadieron los usuarios roig y groc a dicho grupo
 
 <img width="939" height="555" alt="Captura de pantalla de 2026-01-27 11-45-40" src="https://github.com/user-attachments/assets/fcb3499f-b00d-4e03-8ebc-d288179db7cf" />
 
-modificamos
+ - Este esquema permite un control granular donde diferentes usuarios tienen distintos niveles de privilegio sobre la misma carpeta compartida.
 <img width="939" height="555" alt="Captura de pantalla de 2026-01-27 11-49-28" src="https://github.com/user-attachments/assets/784a5ad2-bae6-48c6-9a62-d1990867ed73" />
 
-siempre q hacemos cambios reiniciamos servidor y tiene q salir en verde al hacer status
+ - Siempre que hacemos cambios reiniciamos el servidor. Tiene que salir en verde al hacer status.
+   
 <img width="939" height="555" alt="Captura de pantalla de 2026-01-27 11-50-34" src="https://github.com/user-attachments/assets/9bdbc524-1cff-4706-902c-ebb8f67af725" />
 <img width="939" height="555" alt="Captura de pantalla de 2026-01-27 11-51-04" src="https://github.com/user-attachments/assets/4a0d0c2f-8c58-409a-9f32-8e194694ab6e" />
 
-Samba parte del cliente :
-instalamos 
+## Parte cliente Samba:
+ - Instalamos smbclient
+   
 <img width="729" height="475" alt="Captura de pantalla de 2026-01-27 11-55-42" src="https://github.com/user-attachments/assets/60045dc6-e2db-4a73-8be6-202f10e90b7e" />
 
-comprobamos 
+### Comprobamos 
 
-puede entrar y crear ficheros
+ - Anonim/Guest puede entrar y crear ficheros
 <img width="940" height="738" alt="Captura de pantalla de 2026-01-27 11-59-53" src="https://github.com/user-attachments/assets/506ce078-271b-4e87-afed-1a31c54be88b" />
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-01-54" src="https://github.com/user-attachments/assets/de8bf345-77bc-4de5-af68-65e1184f7ce8" />
 
-puede entrar y crear ficgheros
+ - Blau puede entrar y crear ficgheros
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-03-44" src="https://github.com/user-attachments/assets/626cdba6-2db2-47ed-a619-2f6490868836" />
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-04-25" src="https://github.com/user-attachments/assets/943e30d2-9a1f-424e-9eac-e5c10dc2ea6b" />
 
-no puede entrar
+ - Roig no puede entrar
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-05-21" src="https://github.com/user-attachments/assets/2e161142-d329-4a8a-8a9a-2f034d8e38a3" />
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-07-00" src="https://github.com/user-attachments/assets/c91400f1-fef8-4c74-8025-4c06c8213bb9" />
 
-no puede crear ficheros
+ - Groc no puede crear ficheros
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-06-25" src="https://github.com/user-attachments/assets/4e951d62-bd4c-4afc-9769-cc1f87864bfc" />
 <img width="953" height="744" alt="Captura de pantalla de 2026-01-27 12-06-35" src="https://github.com/user-attachments/assets/a2fe593f-1b53-4fd3-9e1c-3c160ce8084d" />
 
-quitamos guest
+ - Si quitamos guest solucionamos el problema del acceso de roig.
 
 <img width="1125" height="711" alt="Captura de pantalla de 2026-01-27 12-13-31" src="https://github.com/user-attachments/assets/d299773d-3b5b-4ceb-b261-3a98784df126" />
  
