@@ -401,13 +401,21 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
  <img width="740" height="491" alt="Captura de pantalla de 2026-02-06 12-13-11" src="https://github.com/user-attachments/assets/674b2bab-1393-4b06-9499-17c2448e7e20" />
 <img width="738" height="484" alt="Captura de pantalla de 2026-02-06 12-13-52" src="https://github.com/user-attachments/assets/65384957-89ac-4d1a-a103-0023aba2ec9d" />
 
+ ### Paso 1 ( )
 
+ <img width="938" height="683" alt="Captura de pantalla de 2026-02-06 12-24-40" src="https://github.com/user-attachments/assets/2aab21f5-f45e-4e20-a2c8-5afb106d152e" />
 
- ### Paso 8 ( )
- ### Paso 9 ( )
- ### Paso 10 ( )
- ### Paso 11 ( )
- ### Paso 12 ( )
- ### Paso 13 ( )
- ### Paso 14 ( )
+ ### Paso 2 ( )
+ <img width="743" height="487" alt="Captura de pantalla de 2026-02-06 12-26-54" src="https://github.com/user-attachments/assets/2e0959a0-7b75-4383-a619-ac869289a9c0" />
+ ### Paso 3 ( )
+ <img width="939" height="594" alt="Captura de pantalla de 2026-02-06 12-27-54" src="https://github.com/user-attachments/assets/12724c66-adea-4fef-86e5-aeff5e46e8f9" />
+ <img width="704" height="35" alt="Captura de pantalla de 2026-02-06 12-28-30" src="https://github.com/user-attachments/assets/39d6d3f6-638d-4c80-974c-be441827621f" />
+
+ ### Paso 4 ( )
+ <img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-27" src="https://github.com/user-attachments/assets/5eae3b6c-5041-4f37-bd1c-1dc637f56e18" />
+<img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-33" src="https://github.com/user-attachments/assets/7a5cb746-ba2e-435e-b69b-fd0e1a8f8408" />
+
+ ### Paso 5 ( )
+ <img width="748" height="490" alt="Captura de pantalla de 2026-02-06 13-06-57" src="https://github.com/user-attachments/assets/85033d00-fada-4888-bd17-1f6e4667691d" />
+
 
