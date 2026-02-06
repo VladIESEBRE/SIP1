@@ -373,6 +373,41 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
  - Si quitamos guest solucionamos el problema del acceso de roig.
 
 <img width="1125" height="711" alt="Captura de pantalla de 2026-01-27 12-13-31" src="https://github.com/user-attachments/assets/d299773d-3b5b-4ceb-b261-3a98784df126" />
- 
+
+ ACTIVITAD
  al ficher de samba poner alguna linea para q despues puede entrar con los usuarios del ldap al client
+
+### Paso 1 ( )
+<img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-46-23" src="https://github.com/user-attachments/assets/f0cd8629-cbc4-4932-b65b-ff61c8e91996" />
+<img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-47-55" src="https://github.com/user-attachments/assets/b093b0b1-11c6-4fa1-8343-f07f084fa703" />
+
+### Paso 2 ( )
+<img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-49-16" src="https://github.com/user-attachments/assets/4d418373-5db5-49d1-a5b0-30d7ca638755" />
+
+### Paso 3 ( )
+<img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-51-58" src="https://github.com/user-attachments/assets/043f6b90-34b1-4c1e-9db5-980cb65a7efa" />
+<img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-53-08" src="https://github.com/user-attachments/assets/6d3cb2db-79bd-4f6d-8ffe-89fb06de7e84" />
+
+### Paso 4 ( Client)
+<img width="811" height="82" alt="Captura de pantalla de 2026-02-06 12-01-50" src="https://github.com/user-attachments/assets/7a6a97c0-2df9-4ac0-888f-df7bc2a52944" />
+
+### Paso 5 ( )
+<img width="817" height="511" alt="Captura de pantalla de 2026-02-06 12-02-51" src="https://github.com/user-attachments/assets/9f9faccc-1198-4f1a-ae7d-3fcac1d6c4aa" />
+
+### Paso 6 ( )
+<img width="934" height="631" alt="Captura de pantalla de 2026-02-06 12-08-17" src="https://github.com/user-attachments/assets/36b9b93b-d568-42a7-86b0-ac9624d46373" />
+
+ ### Paso 7 ( )
+ <img width="740" height="491" alt="Captura de pantalla de 2026-02-06 12-13-11" src="https://github.com/user-attachments/assets/674b2bab-1393-4b06-9499-17c2448e7e20" />
+<img width="738" height="484" alt="Captura de pantalla de 2026-02-06 12-13-52" src="https://github.com/user-attachments/assets/65384957-89ac-4d1a-a103-0023aba2ec9d" />
+
+
+
+ ### Paso 8 ( )
+ ### Paso 9 ( )
+ ### Paso 10 ( )
+ ### Paso 11 ( )
+ ### Paso 12 ( )
+ ### Paso 13 ( )
+ ### Paso 14 ( )
 
