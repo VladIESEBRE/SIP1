@@ -377,24 +377,34 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
  ACTIVITAD
  al ficher de samba poner alguna linea para q despues puede entrar con los usuarios del ldap al client
 
-### Paso 1 ( )
+#NFS COMpratir la carpeta compartida, ex1 q la carpeta se cree en el servidor no en el client
+
+### Paso 1 ( SERVER )
+ - Instalamos nfs-kernerl-server y comprobamos que funciona
+   
 <img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-46-23" src="https://github.com/user-attachments/assets/f0cd8629-cbc4-4932-b65b-ff61c8e91996" />
 <img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-47-55" src="https://github.com/user-attachments/assets/b093b0b1-11c6-4fa1-8343-f07f084fa703" />
 
-### Paso 2 ( )
+### Paso 2 
+ - Creamos una carpeta "provesnfs", le damos permisos y comprobamos
+
 <img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-49-16" src="https://github.com/user-attachments/assets/4d418373-5db5-49d1-a5b0-30d7ca638755" />
 
-### Paso 3 ( )
+### Paso 3 
+ - Añadidimos la línea necesaria en /etc/exports para compartir el directorio /provesnfs con cualquier cliente (*) con permisos de lectura y escritura. Reiniciamos el servidor.
 <img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-51-58" src="https://github.com/user-attachments/assets/043f6b90-34b1-4c1e-9db5-980cb65a7efa" />
 <img width="733" height="474" alt="Captura de pantalla de 2026-02-06 11-53-08" src="https://github.com/user-attachments/assets/6d3cb2db-79bd-4f6d-8ffe-89fb06de7e84" />
 
-### Paso 4 ( Client)
+### Paso 4 ( CLIENT)
+ - Instalamos paquetes
 <img width="811" height="82" alt="Captura de pantalla de 2026-02-06 12-01-50" src="https://github.com/user-attachments/assets/7a6a97c0-2df9-4ac0-888f-df7bc2a52944" />
 
 ### Paso 5 ( )
+ - Creamos una carpeta "divendres" y le damos permisos 
 <img width="817" height="511" alt="Captura de pantalla de 2026-02-06 12-02-51" src="https://github.com/user-attachments/assets/9f9faccc-1198-4f1a-ae7d-3fcac1d6c4aa" />
 
 ### Paso 6 ( )
+ - Configuramos el archivo /etc/fstab para que la carpeta compartida de NFS se monte automáticamente al arrancar el sistema.
 <img width="934" height="631" alt="Captura de pantalla de 2026-02-06 12-08-17" src="https://github.com/user-attachments/assets/36b9b93b-d568-42a7-86b0-ac9624d46373" />
 
  ### Paso 7 ( )
