@@ -457,9 +457,8 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 
 ## Conexión de Cliente Windows a Servidor NFS Linux
 
- ### Paso 1 
+ ### Paso 1 (Preparación del Cliente Windows)
  - Nos aseguramos de que estamos conectados a Xarxa NAT, NatNetwork igual q el servidor
- - Preparación del Cliente Windows
  - Vamos al Panel de Control > Programas > Activar o desactivar las características de Windows. Buscamos la carpeta Servicios para NFS (Services for NFS). Desplegamos y marcamos la casilla Cliente para NFS (Client for NFS). Pulsamos Aceptar y reiniciamos el equipo cuando lo pida.
 
     <img width="790" height="598" alt="Captura de pantalla de 2026-02-10 22-24-09" src="https://github.com/user-attachments/assets/a87cef77-d09b-417c-80a5-194ccde8da83" />
