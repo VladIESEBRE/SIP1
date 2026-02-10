@@ -376,7 +376,7 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 
  # ACTIVITAD
  
- ##Configuración de un servidor de archivos Samba con autenticación mediante directorio LDAP en Ubuntu Server
+ ## Configuración de un servidor de archivos Samba con autenticación mediante directorio LDAP en Ubuntu Server
  
  ### Paso 1 ( SERVER )
  - Instalación de paquetes necesarios
@@ -392,8 +392,7 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
   - Integración con el sistema (Name Service Switch). Editamos el archivo /etc/nsswitch.conf. Añadimos la palabra ldap al final de las líneas passwd, group y shadow.
 <img width="837" height="539" alt="Captura de pantalla de 2026-02-10 20-39-47" src="https://github.com/user-attachments/assets/6c952c31-84f3-4b76-9056-ff704ba1dc06" />
     
- ### Paso 4 
-  - Configuración de Samba.
+ ### Paso 4 (Configuración de Samba.)
   - workgroup = GINA: Define el nombre del dominio.
   - passdb backend = ldapsam:ldap://127.0.0.1: Le dice a Samba que no guarde las contraseñas en un archivo de texto, sino que se conecte a la base de datos LDAP local para verificar a los usuarios.
   - ldap suffix y admin dn: Indican dónde buscar los usuarios dentro del directorio.
