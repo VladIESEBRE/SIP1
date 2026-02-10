@@ -393,10 +393,13 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 <img width="837" height="539" alt="Captura de pantalla de 2026-02-10 20-39-47" src="https://github.com/user-attachments/assets/6c952c31-84f3-4b76-9056-ff704ba1dc06" />
     
  ### Paso 4 
-  - Configuración de Samba
+  - Configuración de Samba.
+  - workgroup = GINA: Define el nombre del dominio.
+  - passdb backend = ldapsam:ldap://127.0.0.1: Le dice a Samba que no guarde las contraseñas en un archivo de texto, sino que se conecte a la base de datos LDAP local para verificar a los usuarios.
+  - ldap suffix y admin dn: Indican dónde buscar los usuarios dentro del directorio.
+    
 <img width="893" height="768" alt="Captura de pantalla de 2026-02-10 20-43-53" src="https://github.com/user-attachments/assets/d94d0212-3adf-4d19-b501-575c149004e7" />
 
-    
  ### Paso 5 
  - Reinicio de servicios
    <img width="739" height="28" alt="Captura de pantalla de 2026-02-10 20-47-01" src="https://github.com/user-attachments/assets/f8498bf0-8778-4c6f-bed9-03a2c77160dc" />
@@ -407,7 +410,9 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 
 ### Paso 7 
  - Comprobación desde el Cliente
+   
    <img width="602" height="432" alt="Captura de pantalla de 2026-02-10 20-59-23" src="https://github.com/user-attachments/assets/2aad67ca-cd12-48f9-bd8e-f968865e1550" />
+   
    <img width="1114" height="671" alt="Captura de pantalla de 2026-02-10 20-59-33" src="https://github.com/user-attachments/assets/47649b72-3856-4f6e-9e0f-155186a13dc8" />
 
 
