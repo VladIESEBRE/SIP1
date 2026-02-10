@@ -415,7 +415,10 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
    <img width="1114" height="671" alt="Captura de pantalla de 2026-02-10 20-59-33" src="https://github.com/user-attachments/assets/47649b72-3856-4f6e-9e0f-155186a13dc8" />
 
 
-#NFS COMpratir la carpeta compartida, ex1 q la carpeta se cree en el servidor no en el client
+# Configuración de NFS (Network File System)
+ - A diferencia de Samba (que suele usarse para conectar Windows y Linux), NFS es el estándar "nativo" para compartir archivos entre sistemas Linux de forma transparente.
+
+## Compartir una carpeta física que reside en el servidor para que el cliente pueda montarla y utilizarla como si fuera un disco duro propio.
 
 ### Paso 1 ( SERVER )
  - Instalamos nfs-kernerl-server y comprobamos que funciona
@@ -437,33 +440,80 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
  - Instalamos paquetes
 <img width="811" height="82" alt="Captura de pantalla de 2026-02-06 12-01-50" src="https://github.com/user-attachments/assets/7a6a97c0-2df9-4ac0-888f-df7bc2a52944" />
 
-### Paso 5 ( )
+### Paso 5 
  - Creamos una carpeta "divendres" y le damos permisos 
 <img width="817" height="511" alt="Captura de pantalla de 2026-02-06 12-02-51" src="https://github.com/user-attachments/assets/9f9faccc-1198-4f1a-ae7d-3fcac1d6c4aa" />
 
-### Paso 6 ( )
+### Paso 6 
  - Configuramos el archivo /etc/fstab para que la carpeta compartida de NFS se monte automáticamente al arrancar el sistema.
 <img width="934" height="631" alt="Captura de pantalla de 2026-02-06 12-08-17" src="https://github.com/user-attachments/assets/36b9b93b-d568-42a7-86b0-ac9624d46373" />
 
- ### Paso 7 ( )
+ ### Paso 7 (SERVER)
+  - Comprobamos la sincronización verificando que los archivos creados en el servidor son visibles y accesibles desde la terminal del cliente."
  <img width="740" height="491" alt="Captura de pantalla de 2026-02-06 12-13-11" src="https://github.com/user-attachments/assets/674b2bab-1393-4b06-9499-17c2448e7e20" />
-<img width="738" height="484" alt="Captura de pantalla de 2026-02-06 12-13-52" src="https://github.com/user-attachments/assets/65384957-89ac-4d1a-a103-0023aba2ec9d" />
+<img width="881" height="286" alt="Captura de pantalla de 2026-02-10 22-01-21" src="https://github.com/user-attachments/assets/491e213d-56d3-4bf8-8f42-d6bd80f76159" />
 
- ### Paso 1 ( )
+# ACTIVITAD
 
- <img width="938" height="683" alt="Captura de pantalla de 2026-02-06 12-24-40" src="https://github.com/user-attachments/assets/2aab21f5-f45e-4e20-a2c8-5afb106d152e" />
+## Conexión de Cliente Windows a Servidor NFS Linux
 
- ### Paso 2 ( )
- <img width="743" height="487" alt="Captura de pantalla de 2026-02-06 12-26-54" src="https://github.com/user-attachments/assets/2e0959a0-7b75-4383-a619-ac869289a9c0" />
- ### Paso 3 ( )
- <img width="939" height="594" alt="Captura de pantalla de 2026-02-06 12-27-54" src="https://github.com/user-attachments/assets/12724c66-adea-4fef-86e5-aeff5e46e8f9" />
- <img width="704" height="35" alt="Captura de pantalla de 2026-02-06 12-28-30" src="https://github.com/user-attachments/assets/39d6d3f6-638d-4c80-974c-be441827621f" />
+ ### Paso 1 
+ - Nos aseguramos de que estamos conectados a Xarxa NAT, NatNetwork igual q el servidor
+ - Preparación del Cliente Windows
+ - Vamos al Panel de Control > Programas > Activar o desactivar las características de Windows. Buscamos la carpeta Servicios para NFS (Services for NFS). Desplegamos y marcamos la casilla Cliente para NFS (Client for NFS). Pulsamos Aceptar y reiniciamos el equipo cuando lo pida.
 
- ### Paso 4 ( )
- <img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-27" src="https://github.com/user-attachments/assets/5eae3b6c-5041-4f37-bd1c-1dc637f56e18" />
-<img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-33" src="https://github.com/user-attachments/assets/7a5cb746-ba2e-435e-b69b-fd0e1a8f8408" />
+    <img width="790" height="598" alt="Captura de pantalla de 2026-02-10 22-24-09" src="https://github.com/user-attachments/assets/a87cef77-d09b-417c-80a5-194ccde8da83" />
 
- ### Paso 5 ( )
- <img width="748" height="490" alt="Captura de pantalla de 2026-02-06 13-06-57" src="https://github.com/user-attachments/assets/85033d00-fada-4888-bd17-1f6e4667691d" />
+ 
+ ### Paso 2 
+  - Desactivamos firewall ("sudo ufw disable" en Ubuntu)
+    <img width="791" height="596" alt="Captura de pantalla de 2026-02-10 23-06-19" src="https://github.com/user-attachments/assets/26020cc0-b6c2-4157-8827-eae01dde5b52" />
+
+ ### Paso 3 
+  - Actualizamos el exports
+    <img width="894" height="765" alt="Captura de pantalla de 2026-02-10 22-32-23" src="https://github.com/user-attachments/assets/ef3464ec-0d9a-4a7b-b378-9dfdc9801826" />
+
+ ### Paso 4 
+  - Creamos el directorio, le damos permisos y reiniciamos.
+
+    <img width="581" height="49" alt="Captura de pantalla de 2026-02-10 22-33-12" src="https://github.com/user-attachments/assets/f05faccc-a390-4edd-b583-93a2745f3253" />
+    <img width="568" height="80" alt="Captura de pantalla de 2026-02-10 22-33-25" src="https://github.com/user-attachments/assets/66c16fa0-f621-41ac-af8d-4411f60df8d2" />
+
+ ### Paso 5 (Comprobación)
+ 
+ <img width="616" height="460" alt="Captura de pantalla de 2026-02-10 22-44-45" src="https://github.com/user-attachments/assets/1f658757-2cd8-48bf-b2f6-383fc4105c7a" />
+ 
+ <img width="789" height="603" alt="Captura de pantalla de 2026-02-10 23-17-25" src="https://github.com/user-attachments/assets/7ebf460e-e0be-4516-b845-9fab1d4c5f16" />
+
+ # Automatización y Perfiles Móviles con NFS y LDAP
+ 
+  - Objetivo: Configurar el sistema para que las carpetas compartidas se monten automáticamente al arrancar el equipo y crear un usuario en LDAP (alu2) cuyo directorio personal ("Home") no esté en el disco local, sino en el servidor NFS.
+ 
+ ### Paso 1 (Automatización del montaje) (CLIENT)
+  - Para evitar tener que escribir el comando mount cada vez que reiniciamos el cliente, editamos /etc/fstab añadiendo las líneas para nuestras carpetas compartidas (provesnfs y perfils).
+
+<img width="938" height="683" alt="Captura de pantalla de 2026-02-06 12-24-40" src="https://github.com/user-attachments/assets/9d69e6c4-f47b-43ea-901d-3acb0ceebf38" />
+
+ ### Paso 2 (Preparación del directorio de Perfiles en el Servidor)
+ <img width="743" height="487" alt="Captura de pantalla de 2026-02-06 12-26-54" src="https://github.com/user-attachments/assets/18159034-14dc-4efc-b5b8-c2f707682aec" />
+
+ ### Paso 3 
+  - Añadimos esta nueva ruta al archivo /etc/exports para compartirla con la red y reiniciamos el servicio NFS.
+    
+ <img width="939" height="594" alt="Captura de pantalla de 2026-02-06 12-27-54" src="https://github.com/user-attachments/assets/9db57648-8afc-4ba7-bc31-164bcb9cba67" />
+<img width="704" height="35" alt="Captura de pantalla de 2026-02-06 12-28-30" src="https://github.com/user-attachments/assets/faa7a3b9-58b9-4e43-9a9c-8ca097cce9bd" />
+
+ ### Paso 4 
+  - Creamos el usuario alu2 definiendo explícitamente que su carpeta personal reside en la ruta compartida.
+  - Insertamos el usuario en la base de datos LDAP mediante el comando: ldapadd -x -D "cn=admin,dc=gina,dc=cat" -W -f usu.ldif
+  - Cuando alu2 inicie sesión en cualquier ordenador cliente, el sistema buscará su carpeta en /perfils/alu2, que en realidad está en el servidor gracias a NFS.
+    
+ <img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-27" src="https://github.com/user-attachments/assets/b2b6184e-3180-42a6-9024-30325298cd7e" />
+<img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-33" src="https://github.com/user-attachments/assets/922e5d82-6e82-4053-8621-d0da1255085f" />
+
+
+ ### Paso 5 (Verificación de permisos y acceso)
+<img width="748" height="490" alt="Captura de pantalla de 2026-02-06 13-06-57" src="https://github.com/user-attachments/assets/039ddcef-ad2b-4331-93fe-0fe3c7b0d0db" />
+
 
 
