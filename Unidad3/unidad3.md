@@ -490,6 +490,7 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
  
  ### Paso 1 (Automatización del montaje) (CLIENT)
   - Para evitar tener que escribir el comando mount cada vez que reiniciamos el cliente, editamos /etc/fstab añadiendo las líneas para nuestras carpetas compartidas (provesnfs y perfils).
+  - Reiniciamos la máquina cliente aquí para comprobar que, al encenderse de nuevo, la carpeta /perfils se ha montado sola sin necesidad de comandos manuales.
 
 <img width="938" height="683" alt="Captura de pantalla de 2026-02-06 12-24-40" src="https://github.com/user-attachments/assets/9d69e6c4-f47b-43ea-901d-3acb0ceebf38" />
 
@@ -503,9 +504,10 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 <img width="704" height="35" alt="Captura de pantalla de 2026-02-06 12-28-30" src="https://github.com/user-attachments/assets/faa7a3b9-58b9-4e43-9a9c-8ca097cce9bd" />
 
  ### Paso 4 
-  - Creamos el usuario alu2 definiendo explícitamente que su carpeta personal reside en la ruta compartida.
+  - Modificamos los datos para crear al usuario alu2: Cambiamos uid y cn a alu2. Asignamos un nuevo uidNumber.Definimos el homeDirectory como /perfils/alu2 (la ruta compartida). Aseguramos que el gidNumber coincide con el grupo existente (1002).
   - Insertamos el usuario en la base de datos LDAP mediante el comando: ldapadd -x -D "cn=admin,dc=gina,dc=cat" -W -f usu.ldif
   - Cuando alu2 inicie sesión en cualquier ordenador cliente, el sistema buscará su carpeta en /perfils/alu2, que en realidad está en el servidor gracias a NFS.
+  - Reiniciamos la máquina client.
     
  <img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-27" src="https://github.com/user-attachments/assets/b2b6184e-3180-42a6-9024-30325298cd7e" />
 <img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-33" src="https://github.com/user-attachments/assets/922e5d82-6e82-4053-8621-d0da1255085f" />
