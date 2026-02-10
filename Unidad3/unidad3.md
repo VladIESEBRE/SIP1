@@ -493,7 +493,7 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 
 <img width="938" height="683" alt="Captura de pantalla de 2026-02-06 12-24-40" src="https://github.com/user-attachments/assets/9d69e6c4-f47b-43ea-901d-3acb0ceebf38" />
 
- ### Paso 2 (Preparación del directorio de Perfiles en el Servidor)
+ ### Paso 2 (Preparación del directorio de Perfiles en el Servidor) (SERVIDOR)
  <img width="743" height="487" alt="Captura de pantalla de 2026-02-06 12-26-54" src="https://github.com/user-attachments/assets/18159034-14dc-4efc-b5b8-c2f707682aec" />
 
  ### Paso 3 
@@ -511,7 +511,7 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 <img width="744" height="479" alt="Captura de pantalla de 2026-02-06 12-36-33" src="https://github.com/user-attachments/assets/922e5d82-6e82-4053-8621-d0da1255085f" />
 
 
- ### Paso 5 (Verificación de permisos y acceso)
+ ### Paso 5 (Verificación)
 <img width="748" height="490" alt="Captura de pantalla de 2026-02-06 13-06-57" src="https://github.com/user-attachments/assets/039ddcef-ad2b-4331-93fe-0fe3c7b0d0db" />
 
 
