@@ -374,8 +374,42 @@ Por otro lado, NFS (Network File System) es el protocolo nativo del mundo Unix/L
 
 <img width="1125" height="711" alt="Captura de pantalla de 2026-01-27 12-13-31" src="https://github.com/user-attachments/assets/d299773d-3b5b-4ceb-b261-3a98784df126" />
 
- ACTIVITAD
- al ficher de samba poner alguna linea para q despues puede entrar con los usuarios del ldap al client
+ # ACTIVITAD
+ 
+ ##Configuración de un servidor de archivos Samba con autenticación mediante directorio LDAP en Ubuntu Server
+ 
+ ### Paso 1 ( SERVER )
+ - Instalación de paquetes necesarios
+<img width="830" height="27" alt="Captura de pantalla de 2026-02-10 20-38-55" src="https://github.com/user-attachments/assets/4e835ae4-dfe0-4b4d-ac05-ded431fc86c6" />
+
+ ### Paso 2 
+ - Configuración del cliente LDAP (nslcd)
+   <img width="859" height="534" alt="Captura de pantalla de 2026-02-10 20-36-09" src="https://github.com/user-attachments/assets/7aeb0800-c31a-403a-87a6-ad5ca894a01f" />
+   <img width="846" height="541" alt="Captura de pantalla de 2026-02-10 20-36-46" src="https://github.com/user-attachments/assets/58245247-223e-4bac-bd43-bd2601936c3c" />
+   <img width="850" height="541" alt="Captura de pantalla de 2026-02-10 20-37-56" src="https://github.com/user-attachments/assets/f8ec4970-4172-42d8-9c07-7f9a03e6dbdc" />
+
+ ### Paso 3 
+  - Integración con el sistema (Name Service Switch). Editamos el archivo /etc/nsswitch.conf. Añadimos la palabra ldap al final de las líneas passwd, group y shadow.
+<img width="837" height="539" alt="Captura de pantalla de 2026-02-10 20-39-47" src="https://github.com/user-attachments/assets/6c952c31-84f3-4b76-9056-ff704ba1dc06" />
+    
+ ### Paso 4 
+  - Configuración de Samba
+<img width="893" height="768" alt="Captura de pantalla de 2026-02-10 20-43-53" src="https://github.com/user-attachments/assets/d94d0212-3adf-4d19-b501-575c149004e7" />
+
+    
+ ### Paso 5 
+ - Reinicio de servicios
+   <img width="739" height="28" alt="Captura de pantalla de 2026-02-10 20-47-01" src="https://github.com/user-attachments/assets/f8498bf0-8778-4c6f-bed9-03a2c77160dc" />
+
+### Paso 6
+ - Creación y activación de usuario de prueba. Creamos un usuario llamado provesamba en el sistema. Al tener libnss-ldapd configurado, este usuario se integra correctamente. Usamos smbpasswd -a provesamba para habilitarlo en Samba y asignarle una contraseña de red.
+<img width="630" height="116" alt="Captura de pantalla de 2026-02-10 21-03-46" src="https://github.com/user-attachments/assets/ddb95c83-f160-466f-9b94-04d6c14cd4d6" />
+
+### Paso 7 
+ - Comprobación desde el Cliente
+   <img width="602" height="432" alt="Captura de pantalla de 2026-02-10 20-59-23" src="https://github.com/user-attachments/assets/2aad67ca-cd12-48f9-bd8e-f968865e1550" />
+   <img width="1114" height="671" alt="Captura de pantalla de 2026-02-10 20-59-33" src="https://github.com/user-attachments/assets/47649b72-3856-4f6e-9e0f-155186a13dc8" />
+
 
 #NFS COMpratir la carpeta compartida, ex1 q la carpeta se cree en el servidor no en el client
 
