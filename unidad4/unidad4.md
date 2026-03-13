@@ -41,3 +41,9 @@
  - Probamos mediante logger -p cron.notice "Prueba cron" (No debería aparecer, es inferior a crit).
  - logger -p auth.alert "Prueba auth" (Sí debería aparecer, alert es superior a crit).
  - cat /var/log/mireia.log demostrando que solo entró el evento de auth.alert y captura
+
+## Parte 3: Servidor de Logs Centralizado
+ - Editamos el archivo principal de rsyslog: Buscamos las siguientes líneas y quitamos la almohadilla (#) para descomentarlas.
+module(load="imudp")
+input(type="imudp" port="514")
+ - 
