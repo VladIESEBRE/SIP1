@@ -9,9 +9,9 @@ En esta primera parte de la práctica, utilizamos la herramienta gráfica **Moni
 
 Antes de iniciar ninguna aplicación pesada, analizamos el estado base del sistema operativo. 
 
-![Monitor del Sistema - Procesos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-47" src="https://github.com/user-attachments/assets/4d2b9e98-d852-4e38-b073-8d8e3a016f00" />
+[Monitor del Sistema - Procesos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-47" src="https://github.com/user-attachments/assets/4d2b9e98-d852-4e38-b073-8d8e3a016f00" />
 
-![Monitor del Sistema - Recursos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-51" src="https://github.com/user-attachments/assets/48bba2d5-979d-4840-adeb-ec6b94c6bdcf" />
+[Monitor del Sistema - Recursos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-51" src="https://github.com/user-attachments/assets/48bba2d5-979d-4840-adeb-ec6b94c6bdcf" />
 
 
 **Comentarios sobre el estado inicial:**
@@ -21,7 +21,8 @@ Antes de iniciar ninguna aplicación pesada, analizamos el estado base del siste
 
 ### 1.2. Estado del Sistema de Archivos
 
-![Monitor del Sistema - File Systems](ruta_de_tu_captura_11-59-56.png)
+[Monitor del Sistema - File Systems]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-56" src="https://github.com/user-attachments/assets/a13f777f-7223-45eb-b4ee-13c680f6ca89" />
+
 
 **Comentarios:**
 * En la pestaña de **File Systems**, verificamos la capacidad del disco. La partición principal (`/dev/sda3`) se encuentra al **70% de su capacidad** (14.1 GB usados). Es importante monitorizar esto, ya que los navegadores web como Firefox consumen espacio de disco creando archivos temporales y caché.
@@ -30,14 +31,7 @@ Antes de iniciar ninguna aplicación pesada, analizamos el estado base del siste
 
 A continuación, ejecutamos el navegador web Mozilla Firefox para observar el impacto inmediato en los recursos del sistema.
 
-![Monitor del Sistema - Proceso Firefox](ruta_de_tu_captura_12-00-17.png)
-
-**Análisis de los cambios:**
-Al abrir Firefox, el comportamiento del sistema cambia drásticamente para acomodar la nueva carga de trabajo:
-
-1. **Asignación de PID:** El Kernel de Linux reconoce la nueva petición y le asigna un Identificador de Proceso (**ID o PID**) único. En este caso, a Firefox se le ha asignado el ID **42570**.
-2. **Pico de CPU:** Observamos un incremento inmediato en la columna de `% CPU`, alcanzando un **14.29%**. Esto ocurre porque el procesador tiene que hacer un esfuerzo intensivo para leer los binarios del programa desde el disco y cargarlos en la memoria RAM, además de renderizar la interfaz gráfica inicial.
-3. **Consumo de Memoria:** El proceso empieza a reservar memoria RAM para poder funcionar (en el instante de la captura, 8.7 MB, cifra que aumenta rápidamente conforme carga el perfil del usuario y las pestañas).
+[Monitor del Sistema - Proceso Firefox]<img width="699" height="75" alt="Captura de pantalla de 2026-03-13 12-00-17" src="https://github.com/user-attachments/assets/80c8130f-d1b7-44b2-a978-0f1a0a07fed2" />
 
 **Conclusión de esta fase:**
 El sistema gestiona dinámicamente los recursos. Una vez que Firefox termine de arrancar completamente, el pico de CPU volverá a bajar estabilizándose cerca del 0-2%, pero la Memoria RAM consumida se mantendrá retenida por el proceso `firefox` hasta que cerremos la aplicación.
