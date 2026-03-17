@@ -1,4 +1,4 @@
-
+<img width="573" height="536" alt="Captura de pantalla de 2026-03-17 12-16-22" src="https://github.com/user-attachments/assets/81187e2d-19c0-4b16-af32-42bd73016c20" /><img width="573" height="536" alt="Captura de pantalla de 2026-03-17 12-16-22" src="https://github.com/user-attachments/assets/81187e2d-19c0-4b16-af32-42bd73016c20" />
 # Sprint 4: Monitorització, connexió remota i llicenciament
 
 ## 1. Monitorización de Procesos (Task Manager)
@@ -56,6 +56,7 @@ Por defecto, casi todos los eventos del sistema operativo se envían al archivo 
 
 <img width="737" height="484" alt="Captura de pantalla de 2026-03-13 12-03-27" src="https://github.com/user-attachments/assets/5dbfb062-8fc3-4c58-a9c4-e8b6213f4d52" />
 
+<img width="573" height="536" alt="Captura de pantalla de 2026-03-17 12-16-22" src="https://github.com/user-attachments/assets/f189ff87-7652-452a-9df5-4f25f2c84ca4" />
 
 **Análisis de la captura:**
 * En el primer comando (`ls /var/log`), vemos múltiples archivos terminados en números o extensiones comprimidas (ej. `dmesg.1.gz`, `vboxadd-setup.log.1`). Esto es el resultado de la **Rotación de Logs**.
