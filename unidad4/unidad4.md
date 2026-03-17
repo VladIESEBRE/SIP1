@@ -106,11 +106,11 @@ Las prioridades van de **menor a mayor gravedad**:
 * **Conclusión:** Comprobamos que el mensaje "Mail ha fallat" se ha registrado correctamente en su archivo dedicado, logrando separar los eventos.
 
 #### Prueba 3: Filtro de prioridad mínima (`mail.crit`)
-![Configuración de mail.crit en nano]
+[Configuración de mail.crit en nano]
 
 <img width="863" height="396" alt="Captura de pantalla de 2026-03-13 12-17-45" src="https://github.com/user-attachments/assets/5f889678-4e13-4366-815b-81d1c0fc049d" />
 
-![Prueba de reinicio y filtro restrictivo]
+[Prueba de reinicio y filtro restrictivo]
 
 <img width="895" height="796" alt="Captura de pantalla de 2026-03-13 12-19-30" src="https://github.com/user-attachments/assets/f1de8c5c-8506-4751-972b-1985c44da28f" />
 
@@ -129,7 +129,7 @@ Las prioridades van de **menor a mayor gravedad**:
 * Tras hacer `cat`, **solo aparece el "fallo 5"**. El `err` se descarta por ser menor, y el `alert` se descarta porque el símbolo `=` fuerza a ignorar las prioridades superiores.
 
 #### Prueba 5: El comodín global (`*.crit`)
-![Prueba de comodín global y cat mireia.log]
+[Prueba de comodín global y cat mireia.log]
 
 <img width="895" height="796" alt="Captura de pantalla de 2026-03-13 12-29-24" src="https://github.com/user-attachments/assets/c8164c94-9d9f-43e9-bff7-79f6a9cf4703" />
 
@@ -139,3 +139,69 @@ Las prioridades van de **menor a mayor gravedad**:
     1. `logger -p cron.notice "Este no"` (Aviso de tareas programadas - Nivel bajo).
     2. `logger -p auth.alert "Este si"` (Alerta de autenticación - Nivel alto).
 * **Conclusión:** Al hacer `cat /var/log/mireia.log`, comprobamos que el sistema ha creado el archivo personalizado y que **solo ha registrado el mensaje de autenticación ("Este si")**, ya que `alert` es superior a `crit`. El mensaje de cron fue correctamente ignorado.
+
+  ## 3. Servidor de Logs Centralizado
+
+En esta última parte de la práctica, simulamos un entorno real de producción configurando un **Servidor de Logs Centralizado**. El objetivo es que una máquina cliente envíe sus registros a través de la red a una máquina servidora. Esto es vital por motivos de seguridad: si el cliente es comprometido o falla, sus registros históricos estarán a salvo en el servidor.
+
+Para ello, utilizamos dos máquinas virtuales:
+* **Servidor (UbuntuLimpio1):** Recibe y almacena los logs (IP: 10.0.2.15).
+* **Cliente (UbuntuLimpio2):** Genera y envía los logs.
+
+### 3.1. Configuración del Servidor (Receptor)
+
+Primero, debemos indicarle al servicio `rsyslog` del servidor que escuche peticiones externas a través de la red.
+
+[Configuración rsyslog.conf en Servidor]
+
+<img width="713" height="397" alt="Captura de pantalla de 2026-03-13 13-10-42" src="https://github.com/user-attachments/assets/fd9360a4-e2e6-44b9-82cf-8964233ad7d8" />
+
+[Reinicio y UFW en Servidor]
+
+<img width="713" height="397" alt="Captura de pantalla de 2026-03-13 13-11-37" src="https://github.com/user-attachments/assets/dbfde840-0ac3-41a7-b131-d60008e066d4" />
+
+
+**Pasos realizados:**
+1. Editamos el archivo principal `/etc/rsyslog.conf`.
+2. Descomentamos las líneas `module(load="imudp")` e `input(type="imudp" port="514")`. Esto carga el módulo UDP y pone a la máquina a escuchar en el puerto estándar de Syslog (514).
+3. Reiniciamos el servicio con `systemctl restart rsyslog`.
+4. Añadimos una regla al cortafuegos (`ufw allow 514/udp`) para asegurarnos de que el tráfico entrante no sea bloqueado.
+
+### 3.2. Configuración del Cliente (Emisor)
+
+En la máquina cliente, debemos decirle a `rsyslog` dónde tiene que enviar una copia de la información.
+
+[Configuración 50-default.conf en Cliente]
+
+<img width="743" height="487" alt="Captura de pantalla de 2026-03-13 13-14-40" src="https://github.com/user-attachments/assets/fcc29ad7-3fe6-4a83-a97d-4d21bc004104" />
+
+
+**Pasos realizados:**
+1. Editamos el archivo de reglas `/etc/rsyslog.d/50-default.conf`.
+2. Añadimos la siguiente regla en la parte superior: `*.* @10.0.2.15`.
+   * `*.*`: Indica que se enviarán logs de **todos** los servicios y de **todas** las prioridades.
+   * `@`: El uso de una sola arroba especifica que la transmisión se hará mediante el protocolo **UDP** (si fueran dos `@@`, sería TCP).
+   * `10.0.2.15`: Es la dirección IP de nuestra máquina Servidor.
+3. Reiniciamos el servicio en el cliente para aplicar la nueva regla.
+
+### 3.3. Comprobación de la Conexión (La Prueba de Fuego)
+
+Para verificar que la centralización funciona, generamos un evento manual en el Cliente y comprobamos si llega al Servidor.
+
+**1. Generación del log en el Cliente:**
+[Generación del log en el Cliente]
+
+<img width="732" height="118" alt="Captura de pantalla de 2026-03-13 13-18-09" src="https://github.com/user-attachments/assets/98ea612a-e4ed-486d-8f00-49efaddc5475" />
+
+* Ejecutamos: `logger -p user.notice "¡Hola! Este es un log de prueba enviado al SERVIDOR CENTRAL"`.
+
+**2. Recepción del log en el Servidor:**
+[Recepción del log en el Servidor]
+
+<img width="646" height="96" alt="Captura de pantalla de 2026-03-13 13-18-29" src="https://github.com/user-attachments/assets/a86782fa-c344-408c-990d-102c0a9673b3" />
+
+* En el servidor, filtramos el registro general en busca de nuestra frase clave usando: `cat /var/log/syslog | grep -a "SERVIDOR CENTRAL"`.
+* *(Nota: Se utiliza el parámetro `-a` en grep para forzar la lectura en formato texto en caso de que detecte caracteres binarios).*
+
+**Conclusión final de la prueba:**
+La prueba es un éxito. Como se observa en la última captura, la línea registrada en el Servidor especifica claramente el origen del mensaje: `Mar 13 13:16:36 UbuntuLimpio2 root: [...]`. El nombre del host emisor (`UbuntuLimpio2`) confirma que el registro viajó correctamente a través de la red y fue guardado por el servidor centralizado.
