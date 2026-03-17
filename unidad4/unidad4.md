@@ -9,9 +9,13 @@ En esta primera parte de la práctica, utilizamos la herramienta gráfica **Moni
 
 Antes de iniciar ninguna aplicación pesada, analizamos el estado base del sistema operativo. 
 
-[Monitor del Sistema - Procesos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-47" src="https://github.com/user-attachments/assets/4d2b9e98-d852-4e38-b073-8d8e3a016f00" />
+[Monitor del Sistema - Procesos en reposo]
 
-[Monitor del Sistema - Recursos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-51" src="https://github.com/user-attachments/assets/48bba2d5-979d-4840-adeb-ec6b94c6bdcf" />
+<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-47" src="https://github.com/user-attachments/assets/4d2b9e98-d852-4e38-b073-8d8e3a016f00" />
+
+[Monitor del Sistema - Recursos en reposo]
+
+<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-51" src="https://github.com/user-attachments/assets/48bba2d5-979d-4840-adeb-ec6b94c6bdcf" />
 
 
 **Comentarios sobre el estado inicial:**
