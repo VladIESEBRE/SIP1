@@ -201,7 +201,3 @@ Para verificar que la centralización funciona, generamos un evento manual en el
 <img width="646" height="96" alt="Captura de pantalla de 2026-03-13 13-18-29" src="https://github.com/user-attachments/assets/a86782fa-c344-408c-990d-102c0a9673b3" />
 
 * En el servidor, filtramos el registro general en busca de nuestra frase clave usando: `cat /var/log/syslog | grep -a "SERVIDOR CENTRAL"`.
-
-
-**Conclusión final de la prueba:**
-La prueba es un éxito. Como se observa en la última captura, la línea registrada en el Servidor especifica claramente el origen del mensaje: `Mar 13 13:16:36 UbuntuLimpio2 root: [...]`. El nombre del host emisor (`UbuntuLimpio2`) confirma que el registro viajó correctamente a través de la red y fue guardado por el servidor centralizado.
