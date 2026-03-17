@@ -43,3 +43,99 @@ A continuación, ejecutamos el navegador web Mozilla Firefox para observar el im
 
 **Conclusión de esta fase:**
 El sistema gestiona dinámicamente los recursos. Una vez que Firefox termine de arrancar completamente, el pico de CPU volverá a bajar estabilizándose cerca del 0-2%, pero la Memoria RAM consumida se mantendrá retenida por el proceso `firefox` hasta que cerremos la aplicación.
+
+## 2. Gestión de Logs (Syslog, Rsyslog y Logrotate)
+
+En esta segunda fase de la práctica, analizamos cómo Ubuntu gestiona, almacena y filtra los registros del sistema (logs). 
+
+### 2.1. El directorio `/var/log` y la Rotación de Logs
+
+Por defecto, casi todos los eventos del sistema operativo se envían al archivo general `/var/log/syslog`. Sin embargo, si estos archivos crecieran indefinidamente, llenarían el disco duro.
+
+[Directorio de Logs y Logrotate]
+
+<img width="737" height="484" alt="Captura de pantalla de 2026-03-13 12-03-27" src="https://github.com/user-attachments/assets/5dbfb062-8fc3-4c58-a9c4-e8b6213f4d52" />
+
+
+**Análisis de la captura:**
+* En el primer comando (`ls /var/log`), vemos múltiples archivos terminados en números o extensiones comprimidas (ej. `dmesg.1.gz`, `vboxadd-setup.log.1`). Esto es el resultado de la **Rotación de Logs**.
+* **¿Qué es la rotación?** El sistema renombra periódicamente el log actual (pasando a ser `.1`). Los archivos más antiguos se comprimen en `.gz` para ahorrar espacio.
+* **Configuración:** Esto es gestionado por el servicio `logrotate`. Las reglas globales (por ejemplo, cambiar el tiempo de rotación de semanal `weekly` a diario `daily`) se definen en el archivo `/etc/logrotate.conf`. Las reglas específicas para cada programa se guardan en el directorio `/etc/logrotate.d/`, como se observa en la segunda parte de la captura.
+
+### 2.2. Visualización en tiempo real y el "Problema del Ruido"
+
+Para monitorizar eventos en tiempo real, utilizamos el comando `tail -f`.
+
+[Monitorización con tail -f syslog]
+
+<img width="897" height="394" alt="Captura de pantalla de 2026-03-13 12-06-44" src="https://github.com/user-attachments/assets/00549609-e979-4c20-a641-081df120b2bd" />
+
+
+**Análisis:**
+* El comando `tail -f /var/log/syslog` muestra las últimas líneas del log general y mantiene la terminal "escuchando", actualizándose al instante con cada nuevo evento.
+* **El problema:** Como se ve en la captura, en un sistema real (o si un servicio como `gnome-shell` está lanzando advertencias), la pantalla se satura de información irrelevante a gran velocidad. Es imposible leer errores críticos entre tanto "ruido". Por eso es vital configurar filtros con `rsyslog`.
+
+---
+
+### 2.3. Filtrado con Rsyslog: Servicios y Prioridades
+
+El servicio `rsyslog` permite clasificar los logs. Funciona leyendo el archivo de configuración `/etc/rsyslog.d/50-default.conf` basándose en la sintaxis: `servicio.prioridad   /ruta/destino`.
+
+Las prioridades van de **menor a mayor gravedad**:
+1. `debug` | 2. `info` | 3. `notice` | 4. `warning` | 5. `err` | 6. `crit` | 7. `alert` | 8. `emerg`
+
+> **Nota:** Al indicar una prioridad (ej. `alert`), el sistema captura esa y todas las superiores (`emerg` y `panic`). Si usamos `=` (ej. `=alert`), captura **solo** esa.
+
+#### Prueba 1: Todo va a Syslog por defecto
+[Prueba de logger y syslog general]
+
+<img width="898" height="797" alt="Captura de pantalla de 2026-03-13 12-14-18" src="https://github.com/user-attachments/assets/1ae49e67-250b-47f0-a75e-3a9b452eb866" />
+
+* Usamos el comando `logger -i -s -p mail.err "Mail ha fallat"`. 
+    * `-i`: Añade el PID del proceso (en este caso `[43254]`).
+    * `-s`: Muestra el mensaje por pantalla.
+    * `-p mail.err`: Define el servicio (`mail`) y la prioridad (`err`).
+* **Conclusión:** Observamos en el `tail` inferior que, aunque sea un error de correo, termina en `/var/log/syslog` mezclado con eventos de red, demostrando que syslog es el "cajón de sastre" por defecto.
+
+#### Prueba 2: Redirigir un servicio específico a su propio log
+[Comprobación del log de correo]
+
+<img width="863" height="396" alt="Captura de pantalla de 2026-03-13 12-15-30" src="https://github.com/user-attachments/assets/e4b70c68-bc28-4c4c-a594-d8c91ab703fc" />
+
+* Tras añadir la regla para el servicio de correo en el archivo de configuración, hacemos un `cat /var/log/mail.log`.
+* **Conclusión:** Comprobamos que el mensaje "Mail ha fallat" se ha registrado correctamente en su archivo dedicado, logrando separar los eventos.
+
+#### Prueba 3: Filtro de prioridad mínima (`mail.crit`)
+![Configuración de mail.crit en nano]
+
+<img width="863" height="396" alt="Captura de pantalla de 2026-03-13 12-17-45" src="https://github.com/user-attachments/assets/5f889678-4e13-4366-815b-81d1c0fc049d" />
+
+![Prueba de reinicio y filtro restrictivo]
+
+<img width="895" height="796" alt="Captura de pantalla de 2026-03-13 12-19-30" src="https://github.com/user-attachments/assets/f1de8c5c-8506-4751-972b-1985c44da28f" />
+
+* **Objetivo:** Filtrar solo los errores críticos o superiores del correo.
+* Entramos con `nano` y configuramos la regla: `mail.crit /var/log/mail.log`. Guardamos y **reiniciamos el servicio** obligatoriamente con `systemctl restart rsyslog`.
+* Mandamos un mensaje de nivel inferior: `logger -i -s -p mail.err "Mail ha fallat2"`.
+* **Conclusión:** El mensaje **no** entra en `mail.log` porque un `err` (nivel 5) está por debajo del umbral `crit` (nivel 6). Sin embargo, como se ve en la terminal inferior, el sistema general (`syslog`) sí lo recoge.
+
+#### Prueba 4: Prioridad Exacta (`mail.=crit`)
+[Prueba de prioridad exacta con rsyslog]
+
+<img width="783" height="736" alt="Captura de pantalla de 2026-03-17 11-57-40" src="https://github.com/user-attachments/assets/38cc25df-1b5d-4bef-863f-4476130df923" />
+
+* Si editamos la regla para que sea `mail.=crit`, el comportamiento cambia.
+* Al enviar tres eventos: `err` (fallo 3), `alert` (fallo 4) y `crit` (fallo 5).
+* Tras hacer `cat`, **solo aparece el "fallo 5"**. El `err` se descarta por ser menor, y el `alert` se descarta porque el símbolo `=` fuerza a ignorar las prioridades superiores.
+
+#### Prueba 5: El comodín global (`*.crit`)
+![Prueba de comodín global y cat mireia.log]
+
+<img width="895" height="796" alt="Captura de pantalla de 2026-03-13 12-29-24" src="https://github.com/user-attachments/assets/c8164c94-9d9f-43e9-bff7-79f6a9cf4703" />
+
+* **Objetivo:** Capturar cualquier evento crítico de todo el sistema.
+* Modificamos la regla a `*.crit /var/log/mireia.log` y reiniciamos el servicio.
+* Generamos dos logs distintos:
+    1. `logger -p cron.notice "Este no"` (Aviso de tareas programadas - Nivel bajo).
+    2. `logger -p auth.alert "Este si"` (Alerta de autenticación - Nivel alto).
+* **Conclusión:** Al hacer `cat /var/log/mireia.log`, comprobamos que el sistema ha creado el archivo personalizado y que **solo ha registrado el mensaje de autenticación ("Este si")**, ya que `alert` es superior a `crit`. El mensaje de cron fue correctamente ignorado.
