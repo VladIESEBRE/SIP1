@@ -22,6 +22,7 @@ Antes de iniciar ninguna aplicación pesada, analizamos el estado base del siste
 ### 1.2. Estado del Sistema de Archivos
 
 [Monitor del Sistema - File Systems]
+
 <img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-56" src="https://github.com/user-attachments/assets/a13f777f-7223-45eb-b4ee-13c680f6ca89" />
 
 
@@ -33,6 +34,7 @@ Antes de iniciar ninguna aplicación pesada, analizamos el estado base del siste
 A continuación, ejecutamos el navegador web Mozilla Firefox para observar el impacto inmediato en los recursos del sistema.
 
 [Monitor del Sistema - Proceso Firefox]
+
 <img width="699" height="75" alt="Captura de pantalla de 2026-03-13 12-00-17" src="https://github.com/user-attachments/assets/80c8130f-d1b7-44b2-a978-0f1a0a07fed2" />
 
 **Conclusión de esta fase:**
