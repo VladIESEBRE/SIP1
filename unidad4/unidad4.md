@@ -9,8 +9,10 @@ En esta primera parte de la práctica, utilizamos la herramienta gráfica **Moni
 
 Antes de iniciar ninguna aplicación pesada, analizamos el estado base del sistema operativo. 
 
-![Monitor del Sistema - Procesos en reposo](ruta_de_tu_captura_11-59-47.png)
-![Monitor del Sistema - Recursos en reposo](ruta_de_tu_captura_11-59-51.png)
+![Monitor del Sistema - Procesos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-47" src="https://github.com/user-attachments/assets/4d2b9e98-d852-4e38-b073-8d8e3a016f00" />
+
+![Monitor del Sistema - Recursos en reposo]<img width="701" height="501" alt="Captura de pantalla de 2026-03-13 11-59-51" src="https://github.com/user-attachments/assets/48bba2d5-979d-4840-adeb-ec6b94c6bdcf" />
+
 
 **Comentarios sobre el estado inicial:**
 * En la pestaña de **Procesos**, observamos que solo se están ejecutando los servicios básicos del entorno de escritorio GNOME (`gnome-shell`, `bash`, servicios de red, etc.).
