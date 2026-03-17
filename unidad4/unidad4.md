@@ -1,4 +1,4 @@
-<img width="573" height="536" alt="Captura de pantalla de 2026-03-17 12-16-22" src="https://github.com/user-attachments/assets/81187e2d-19c0-4b16-af32-42bd73016c20" /><img width="573" height="536" alt="Captura de pantalla de 2026-03-17 12-16-22" src="https://github.com/user-attachments/assets/81187e2d-19c0-4b16-af32-42bd73016c20" />
+
 # Sprint 4: Monitorització, connexió remota i llicenciament
 
 ## 1. Monitorización de Procesos (Task Manager)
