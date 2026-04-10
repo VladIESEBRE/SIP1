@@ -242,7 +242,20 @@ Ahora vamos a encender el servicio para que se quede "escuchando" a la espera de
 x11vnc -usepw -display :0
 ```
 <img width="735" height="487" alt="Captura de pantalla de 2026-04-10 12-28-31" src="https://github.com/user-attachments/assets/ab75b3fb-bd95-4c24-b1a1-235f7e341436" />
+
 ---
+
+### ⚠️ Nota importante sobre el entorno gráfico (Wayland vs Xorg)
+
+Las versiones recientes de Ubuntu utilizan **Wayland** como servidor gráfico por defecto. Sin embargo, la herramienta `x11vnc` que estamos utilizando está diseñada específicamente para interactuar con el sistema tradicional **Xorg** (X11).
+
+Si se intenta iniciar el servidor `x11vnc` estando en una sesión de Wayland, el sistema bloqueará la captura de pantalla y la terminal devolverá un error del tipo `X Error of failed request: BadMatch`. 
+
+**Solución aplicada:** Para solucionar esto y permitir la conexión, fue necesario cambiar el entorno gráfico del servidor. Para ello:
+1. Se cerró la sesión del usuario actual.
+2. En la pantalla de inicio de sesión, se hizo clic en el icono del engranaje (⚙️) situado en la esquina inferior derecha.
+3. Se seleccionó la opción **"Ubuntu en Xorg"**.
+4. Se volvió a iniciar sesión normalmente y se ejecutó el comando de `x11vnc`, funcionando esta vez sin errores.
 
 ## 💻 Parte 2: Configuración de la Máquina Cliente (Desde donde vamos a mirar)
 
@@ -255,18 +268,18 @@ Abre la terminal en la máquina cliente y ejecuta:
 sudo apt update
 sudo apt install xtightvncviewer -y
 ```
-* **Explicación:** Instala un visor ligero y compatible por terminal para conectarnos a servidores VNC.
-* 📸 **Captura de pantalla 5:** Haz una captura de la terminal cuando finalice la instalación de `xtightvncviewer`.
+<img width="743" height="484" alt="Captura de pantalla de 2026-04-10 12-33-38" src="https://github.com/user-attachments/assets/4b3a8dce-a5b5-4bf9-ab7a-c3d240e962b7" />
 
 ### Paso 2: Conectarse al servidor
-Vamos a iniciar la conexión utilizando la IP que averiguamos en el Paso 3 del servidor. Reemplaza `IP_DEL_SERVIDOR` por tus números reales.
+Vamos a iniciar la conexión utilizando la IP que averiguamos en el Paso 3 del servidor. 
 
 ```bash
 vncviewer IP_DEL_SERVIDOR
 ```
-* **Explicación:** Llama al visor y le indica a qué dirección IP debe conectarse. Al presionar Enter, se abrirá una pequeña ventana emergente pidiéndote la contraseña.
-* 📸 **Captura de pantalla 6:** Haz una captura de toda tu pantalla donde se vea la terminal con el comando ejecutado y la ventanita emergente pidiéndote la contraseña.
+<img width="734" height="304" alt="Captura de pantalla de 2026-04-10 12-36-57" src="https://github.com/user-attachments/assets/6c92f364-28a5-41f8-b517-201a64d3199a" />
 
 ### Paso 3: ¡Conexión establecida!
 Una vez introduzcas la contraseña, se abrirá una nueva ventana mostrándote el escritorio exacto de tu máquina Servidor.
-* 📸 **Captura de pantalla 7 (La más importante):** Haz una captura donde se vea claramente tu entorno de la máquina Cliente, y dentro de ella, la ventana abierta mostrando y controlando el escritorio de la máquina Servidor.
+
+<img width="1351" height="858" alt="Captura de pantalla de 2026-04-10 12-39-20" src="https://github.com/user-attachments/assets/683b485e-21f3-4407-8ab6-b7105e9f9fdb" />
+
