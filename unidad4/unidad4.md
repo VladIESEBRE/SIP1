@@ -202,3 +202,79 @@ Para verificar que la centralización funciona, generamos un evento manual en el
 <img width="646" height="96" alt="Captura de pantalla de 2026-03-13 13-18-29" src="https://github.com/user-attachments/assets/a86782fa-c344-408c-990d-102c0a9673b3" />
 
 * En el servidor, filtramos el registro general en busca de nuestra frase clave usando: `cat /var/log/syslog | grep -a "SERVIDOR CENTRAL"`.
+
+
+# Práctica: Conexión Remota mediante VNC en Ubuntu
+
+Esta práctica consiste en instalar y configurar un servidor VNC en una máquina virtual (Servidor) y un visor VNC en otra máquina virtual (Cliente) para establecer una conexión de escritorio remoto.
+
+## 🖥️ Parte 1: Configuración de la Máquina Servidor (La que vamos a controlar)
+
+En esta máquina instalaremos `x11vnc`, una herramienta que nos permite compartir la sesión gráfica que ya está iniciada en Ubuntu.
+
+### Paso 1: Instalar el servidor VNC
+Primero, debemos asegurarnos de que el sistema esté actualizado y luego instalar el paquete necesario.
+
+```bash
+sudo apt update
+sudo apt install x11vnc -y
+```
+* **Explicación:** `apt update` actualiza la lista de paquetes disponibles. `apt install x11vnc -y` descarga e instala el servidor VNC, aceptando automáticamente las confirmaciones con el `-y`.
+  
+<img width="668" height="428" alt="Captura de pantalla de 2026-04-10 12-16-46" src="https://github.com/user-attachments/assets/b02053c6-63a9-4c74-bbc3-295d9826f3a8" />
+
+### Paso 2: Crear una contraseña de seguridad
+Para evitar que cualquier persona en la red se conecte a nuestra máquina sin permiso, debemos establecer una contraseña.
+
+```bash
+x11vnc -storepasswd
+```
+* **Explicación:** Este comando genera un archivo seguro con tu contraseña. Escríbela, pulsa Enter, confírmala y escribe `y` (yes) cuando te pregunte si deseas guardarla en el archivo `~/.vnc/passwd`.
+* 📸 **Captura de pantalla 2:** Haz una captura mostrando el texto de la terminal donde se confirma que la contraseña se ha guardado en `~/.vnc/passwd`.
+
+### Paso 3: Averiguar la dirección IP del servidor
+Necesitamos saber la "dirección" de esta máquina para que el cliente sepa a dónde llamar.
+
+```bash
+ip a
+```
+* **Explicación:** Muestra la configuración de red. Debes buscar la interfaz principal (suele llamarse `enp0s3` o similar) y anotar la dirección que aparece al lado de `inet` (ejemplo: `192.168.1.50`).
+* 📸 **Captura de pantalla 3:** Haz una captura de la terminal mostrando el resultado del comando, marcando o resaltando (si puedes) dónde aparece tu dirección IP.
+
+### Paso 4: Iniciar el servidor VNC
+Ahora vamos a encender el servicio para que se quede "escuchando" a la espera de que el cliente se conecte.
+
+```bash
+x11vnc -usepw -display :0
+```
+* **Explicación:** `-usepw` le dice que pida la contraseña que creamos en el paso 2. `-display :0` le indica que comparta la pantalla principal que estamos viendo ahora mismo. **Importante: No cierres esta terminal.**
+* 📸 **Captura de pantalla 4:** Haz una captura de la terminal mostrando el servidor ejecutándose (verás que el texto se queda parado y dice algo como `PORT=5900`).
+
+---
+
+## 💻 Parte 2: Configuración de la Máquina Cliente (Desde donde vamos a mirar)
+
+Ahora nos vamos a la segunda máquina virtual de Ubuntu. Aquí instalaremos el programa que nos servirá como "visor".
+
+### Paso 1: Instalar el cliente VNC
+Abre la terminal en la máquina cliente y ejecuta:
+
+```bash
+sudo apt update
+sudo apt install xtightvncviewer -y
+```
+* **Explicación:** Instala un visor ligero y compatible por terminal para conectarnos a servidores VNC.
+* 📸 **Captura de pantalla 5:** Haz una captura de la terminal cuando finalice la instalación de `xtightvncviewer`.
+
+### Paso 2: Conectarse al servidor
+Vamos a iniciar la conexión utilizando la IP que averiguamos en el Paso 3 del servidor. Reemplaza `IP_DEL_SERVIDOR` por tus números reales.
+
+```bash
+vncviewer IP_DEL_SERVIDOR
+```
+* **Explicación:** Llama al visor y le indica a qué dirección IP debe conectarse. Al presionar Enter, se abrirá una pequeña ventana emergente pidiéndote la contraseña.
+* 📸 **Captura de pantalla 6:** Haz una captura de toda tu pantalla donde se vea la terminal con el comando ejecutado y la ventanita emergente pidiéndote la contraseña.
+
+### Paso 3: ¡Conexión establecida!
+Una vez introduzcas la contraseña, se abrirá una nueva ventana mostrándote el escritorio exacto de tu máquina Servidor.
+* 📸 **Captura de pantalla 7 (La más importante):** Haz una captura donde se vea claramente tu entorno de la máquina Cliente, y dentro de ella, la ventana abierta mostrando y controlando el escritorio de la máquina Servidor.
