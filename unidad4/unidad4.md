@@ -283,3 +283,38 @@ Una vez introduzcas la contraseña, se abrirá una nueva ventana mostrándote el
 
 <img width="1351" height="858" alt="Captura de pantalla de 2026-04-10 12-39-20" src="https://github.com/user-attachments/assets/683b485e-21f3-4407-8ab6-b7105e9f9fdb" />
 
+## 🔒 Parte 3 (Mejora de Seguridad): Tunelización de VNC a través de SSH
+
+Como hemos visto en las partes anteriores, VNC es una herramienta excelente, pero tiene un punto débil: **no encripta la conexión**. Todo lo que escribimos o vemos viaja en "texto plano" por la red. 
+
+Para solucionar esto de forma profesional, en esta parte vamos a crear un **Túnel SSH**. SSH sí está fuertemente encriptado, así que usaremos SSH para crear un "tubo seguro" entre las dos máquinas y enviaremos la conexión VNC por dentro de ese tubo.
+
+### Paso 1: Instalar el servidor SSH (En la Máquina Servidor)
+Para podernos conectar por SSH, el servidor debe tener el servicio instalado y escuchando. En la terminal de la máquina **Servidor** (`UbuntuLimpio1`), ejecutamos:
+
+```bash
+sudo apt update
+sudo apt install openssh-server -y
+```
+<img width="735" height="460" alt="Captura de pantalla de 2026-04-10 12-48-09" src="https://github.com/user-attachments/assets/af019d7a-1266-484c-9c3a-160ab13c7b84" />
+
+### Paso 2: Crear el túnel seguro (En la Máquina Cliente)
+Ahora vamos a la máquina **Cliente** (`UbuntuLimpio2`). Abriremos un túnel encriptado hacia el servidor. 
+
+Ejecuta este comando :
+
+```bash
+ssh -L 5900:localhost:5900 ubuntulimpio1@IP_DEL_SERVIDOR
+```
+<img width="840" height="547" alt="Captura de pantalla de 2026-04-10 12-51-43" src="https://github.com/user-attachments/assets/16035482-7d61-4f37-9564-0eb1fa473a5a" />
+
+### Paso 3: Conectar el VNC a través del túnel (En la Máquina Cliente) 
+
+Abrimos una **nueva pestaña** en la terminal de la máquina **Cliente** y ejecutamos el visor VNC, pero esta vez **NO** apuntaremos a la IP del servidor, sino a nuestra propia máquina (localhost):
+
+```bash
+vncviewer localhost:5900
+```
+<img width="1920" height="1080" alt="Captura de pantalla de 2026-04-10 12-56-13" src="https://github.com/user-attachments/assets/fdc1a5de-f68f-4aed-8ed6-e869a64644e8" />
+
+
