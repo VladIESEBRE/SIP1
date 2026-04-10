@@ -206,9 +206,7 @@ Para verificar que la centralización funciona, generamos un evento manual en el
 
 # Práctica: Conexión Remota mediante VNC en Ubuntu
 
-Esta práctica consiste en instalar y configurar un servidor VNC en una máquina virtual (Servidor) y un visor VNC en otra máquina virtual (Cliente) para establecer una conexión de escritorio remoto.
-
-## 🖥️ Parte 1: Configuración de la Máquina Servidor (La que vamos a controlar)
+## 🖥️ Parte 1: Configuración de la Máquina Servidor 
 
 En esta máquina instalaremos `x11vnc`, una herramienta que nos permite compartir la sesión gráfica que ya está iniciada en Ubuntu.
 
@@ -219,8 +217,6 @@ Primero, debemos asegurarnos de que el sistema esté actualizado y luego instala
 sudo apt update
 sudo apt install x11vnc -y
 ```
-* **Explicación:** `apt update` actualiza la lista de paquetes disponibles. `apt install x11vnc -y` descarga e instala el servidor VNC, aceptando automáticamente las confirmaciones con el `-y`.
-  
 <img width="668" height="428" alt="Captura de pantalla de 2026-04-10 12-16-46" src="https://github.com/user-attachments/assets/b02053c6-63a9-4c74-bbc3-295d9826f3a8" />
 
 ### Paso 2: Crear una contraseña de seguridad
@@ -229,8 +225,7 @@ Para evitar que cualquier persona en la red se conecte a nuestra máquina sin pe
 ```bash
 x11vnc -storepasswd
 ```
-* **Explicación:** Este comando genera un archivo seguro con tu contraseña. Escríbela, pulsa Enter, confírmala y escribe `y` (yes) cuando te pregunte si deseas guardarla en el archivo `~/.vnc/passwd`.
-* 📸 **Captura de pantalla 2:** Haz una captura mostrando el texto de la terminal donde se confirma que la contraseña se ha guardado en `~/.vnc/passwd`.
+<img width="653" height="113" alt="Captura de pantalla de 2026-04-10 12-19-34" src="https://github.com/user-attachments/assets/c7806dc4-f0b0-45f2-a94d-15549c11300f" />
 
 ### Paso 3: Averiguar la dirección IP del servidor
 Necesitamos saber la "dirección" de esta máquina para que el cliente sepa a dónde llamar.
@@ -238,8 +233,7 @@ Necesitamos saber la "dirección" de esta máquina para que el cliente sepa a d�
 ```bash
 ip a
 ```
-* **Explicación:** Muestra la configuración de red. Debes buscar la interfaz principal (suele llamarse `enp0s3` o similar) y anotar la dirección que aparece al lado de `inet` (ejemplo: `192.168.1.50`).
-* 📸 **Captura de pantalla 3:** Haz una captura de la terminal mostrando el resultado del comando, marcando o resaltando (si puedes) dónde aparece tu dirección IP.
+<img width="652" height="310" alt="Captura de pantalla de 2026-04-10 12-22-01" src="https://github.com/user-attachments/assets/0091e54d-9dfd-416c-b642-876e06c95bbc" />
 
 ### Paso 4: Iniciar el servidor VNC
 Ahora vamos a encender el servicio para que se quede "escuchando" a la espera de que el cliente se conecte.
@@ -247,9 +241,7 @@ Ahora vamos a encender el servicio para que se quede "escuchando" a la espera de
 ```bash
 x11vnc -usepw -display :0
 ```
-* **Explicación:** `-usepw` le dice que pida la contraseña que creamos en el paso 2. `-display :0` le indica que comparta la pantalla principal que estamos viendo ahora mismo. **Importante: No cierres esta terminal.**
-* 📸 **Captura de pantalla 4:** Haz una captura de la terminal mostrando el servidor ejecutándose (verás que el texto se queda parado y dice algo como `PORT=5900`).
-
+<img width="735" height="487" alt="Captura de pantalla de 2026-04-10 12-28-31" src="https://github.com/user-attachments/assets/ab75b3fb-bd95-4c24-b1a1-235f7e341436" />
 ---
 
 ## 💻 Parte 2: Configuración de la Máquina Cliente (Desde donde vamos a mirar)
