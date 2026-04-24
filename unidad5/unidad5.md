@@ -42,7 +42,6 @@
 
 
 - **Pas 9** Fer un canvi (instal·lar app o configuració)
-- He instaldao Brave
 
   <img width="291" height="936" alt="Captura de pantalla de 2026-04-24 12-20-59" src="https://github.com/user-attachments/assets/1da2aae2-572f-41d8-bc07-11661c17dd20" />
 
@@ -59,11 +58,21 @@
 
 - **Pas 11** Obrir Configuració → Sistema → Activació
 - **Pas 12** Veure si Windows està activat
-- **Pas 13** Executar al cmd: `slmgr /xpr`
-- **Pas 14** Esbrinar llicenciament Windows i explicar breument
-- **Pas 15** Consultar preu aproximat d'una llicència Windows (web oficial o botigues)
 
----
+<img width="1244" height="369" alt="Captura de pantalla de 2026-04-24 13-13-01" src="https://github.com/user-attachments/assets/9e6982ba-9c2f-4e64-9fe9-7d27b625e3d7" />
+
+- **Pas 13** Executar al cmd: `slmgr /xpr`
+  
+  <img width="1182" height="624" alt="Captura de pantalla de 2026-04-24 13-15-00" src="https://github.com/user-attachments/assets/3aecc7f5-35e8-482e-aaac-9e288fd674b7" />
+
+- **Pas 14** Esbrinar llicenciament Windows i explicar breument
+- Tipus de llicències de Windows:
+
+OEM → ve preinstal·lada amb el PC, lligada a la placa base, no es pot transferir a un altre equip
+Retail → es compra per separat, es pot transferir a un altre equip
+Volume → per a empreses, s'activen moltes llicències alhora amb una clau única
+
+- **Pas 15** Consultar preu aproximat d'una llicència Windows (web oficial o botigues)
 
 ## Fase 4 – Gestor d'arrencada
 
