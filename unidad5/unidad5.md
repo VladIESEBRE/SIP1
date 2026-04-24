@@ -47,6 +47,11 @@
 
 - **Pas 10** Restaurar i comprovar
 
+  <img width="1245" height="970" alt="Captura de pantalla de 2026-04-24 12-33-02" src="https://github.com/user-attachments/assets/ce1851ac-80b0-4fea-82f6-66ff902212e8" />
+
+  <img width="1245" height="970" alt="Captura de pantalla de 2026-04-24 13-03-00" src="https://github.com/user-attachments/assets/436bf1f3-edac-4824-bd21-19e32db5f9c5" />
+
+
 ---
 
 ## Fase 3 – Llicències de Windows
