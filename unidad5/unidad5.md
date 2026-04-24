@@ -7,7 +7,16 @@
 
 - **Pas 1** Crear màquina virtual amb VirtualBox
 - **Pas 2** Assignar recursos (RAM mínim 4 GB, disc mínim 40 GB)
+  
+  <img width="1008" height="619" alt="Captura de pantalla de 2026-04-24 12-04-55" src="https://github.com/user-attachments/assets/f382ee5b-6734-446c-bd2f-9fc5be5e6a7d" />
+
+  <img width="1008" height="619" alt="Captura de pantalla de 2026-04-24 12-05-47" src="https://github.com/user-attachments/assets/3201c749-54f0-465a-8fe1-4c056a0c3b93" />
+
+
 - **Pas 3** Carregar ISO de Windows 10 o Windows 11
+
+  <img width="1009" height="624" alt="Captura de pantalla de 2026-04-24 12-03-34" src="https://github.com/user-attachments/assets/26d2f5b0-c426-47a9-be14-4287b6d9a56b" />
+
 - **Pas 4** Instal·lar el sistema (idioma, usuari, contrasenya)
 - **Pas 5** Comprovar que arrenca correctament
 
