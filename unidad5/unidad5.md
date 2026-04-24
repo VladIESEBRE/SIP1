@@ -15,10 +15,13 @@
 
 - **Pas 3** Carregar ISO de Windows 10 o Windows 11
 
-  <img width="1009" height="624" alt="Captura de pantalla de 2026-04-24 12-03-34" src="https://github.com/user-attachments/assets/26d2f5b0-c426-47a9-be14-4287b6d9a56b" />
+  <img width="1009" height="621" alt="Captura de pantalla de 2026-04-24 12-11-39" src="https://github.com/user-attachments/assets/62d18025-e07d-49dc-94f3-3703f10887de" />
 
 - **Pas 4** Instal·lar el sistema (idioma, usuari, contrasenya)
-- **Pas 5** Comprovar que arrenca correctament
+- **Pas 5** Comprovar que arranca correctament
+  
+  <img width="1244" height="974" alt="Captura de pantalla de 2026-04-24 12-09-32" src="https://github.com/user-attachments/assets/5235c051-d2a2-4803-a8ba-73a805667f38" />
+
 
 ---
 
@@ -26,8 +29,22 @@
 
 - **Pas 6** Cercar "Crear un punt de restauració"
 - **Pas 7** Activar protecció del sistema al disc C:
+
+  <img width="497" height="569" alt="Captura de pantalla de 2026-04-24 12-14-58" src="https://github.com/user-attachments/assets/c55273ac-8228-4528-bf10-0ab7042fb2fe" />
+
+  <img width="496" height="591" alt="Captura de pantalla de 2026-04-24 12-15-08" src="https://github.com/user-attachments/assets/c702c46b-c878-49dd-93e2-0f1b4ffef10a" />
+
 - **Pas 8** Crear un punt manual
+
+  <img width="496" height="591" alt="Captura de pantalla de 2026-04-24 12-17-02" src="https://github.com/user-attachments/assets/8088b3e4-c62e-4df8-9ea7-5b1dfe818885" />
+
+  <img width="496" height="591" alt="Captura de pantalla de 2026-04-24 12-16-54" src="https://github.com/user-attachments/assets/b1fab00f-0604-4ecd-abfc-c9d7ff35364d" />
+
+
 - **Pas 9** Fer un canvi (instal·lar app o configuració)
+
+  <img width="291" height="936" alt="Captura de pantalla de 2026-04-24 12-20-59" src="https://github.com/user-attachments/assets/1da2aae2-572f-41d8-bc07-11661c17dd20" />
+
 - **Pas 10** Restaurar i comprovar
 
 ---
