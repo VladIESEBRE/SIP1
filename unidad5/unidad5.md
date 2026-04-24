@@ -42,6 +42,7 @@
 
 
 - **Pas 9** Fer un canvi (instal·lar app o configuració)
+- He instaldao Brave
 
   <img width="291" height="936" alt="Captura de pantalla de 2026-04-24 12-20-59" src="https://github.com/user-attachments/assets/1da2aae2-572f-41d8-bc07-11661c17dd20" />
 
