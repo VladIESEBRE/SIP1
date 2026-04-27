@@ -59,11 +59,11 @@
 - **Pas 11** Obrir Configuració → Sistema → Activació
 - **Pas 12** Veure si Windows està activat
 
-<img width="1244" height="369" alt="Captura de pantalla de 2026-04-24 13-13-01" src="https://github.com/user-attachments/assets/9e6982ba-9c2f-4e64-9fe9-7d27b625e3d7" />
+<img width="491" height="229" alt="Captura de pantalla de 2026-04-27 12-19-55" src="https://github.com/user-attachments/assets/9997439f-470c-4c3e-b5e9-43ed8d7eeaab" />
 
 - **Pas 13** Executar al cmd: `slmgr /xpr`
   
-  <img width="1182" height="624" alt="Captura de pantalla de 2026-04-24 13-15-00" src="https://github.com/user-attachments/assets/3aecc7f5-35e8-482e-aaac-9e288fd674b7" />
+<img width="752" height="378" alt="Captura de pantalla de 2026-04-27 12-20-57" src="https://github.com/user-attachments/assets/51191ef7-19f7-43a8-875b-3a6febb96202" />
 
 - **Pas 14** Esbrinar llicenciament Windows i explicar breument
 - Tipus de llicències de Windows:
@@ -74,32 +74,69 @@ Volume → per a empreses, s'activen moltes llicències alhora amb una clau úni
 
 - **Pas 15** Consultar preu aproximat d'una llicència Windows (web oficial o botigues)
 
+  **Preu oficial en Microsoft Store:**
+- Windows 10 Home → **145 €**
+- Windows 10 Pro → **259 €**
+
+  <img width="1663" height="294" alt="Captura de pantalla de 2026-04-27 12-26-38" src="https://github.com/user-attachments/assets/37203326-0e14-46f1-9ca3-e7c5d4174645" />
+
 ## Fase 4 – Gestor d'arrencada
 
 - **Pas 16** Obrir Command Prompt com administrador
 - **Pas 17** Executar `bcdedit`
+
+  <img width="563" height="603" alt="Captura de pantalla de 2026-04-27 12-25-36" src="https://github.com/user-attachments/assets/005d148b-b45f-4abf-8695-f8066c0b8276" />
+
 - **Pas 18** Identificar els blocs
+  
   - Administrador de arranque de Windows (Boot Manager)
+
+    <img width="521" height="227" alt="Captura de pantalla de 2026-04-27 12-28-45" src="https://github.com/user-attachments/assets/a792242a-1a2a-4848-8be2-6aede2336b38" />
+
   - Cargador de arranque de Windows (Boot Loader)
 
-> **Del bloc Boot Manager, identificar:**
-> - `default {current}` → sistema que arrenca per defecte
-> - `timeout 30` → temps d'espera abans d'arrencar
->
-> **Del bloc Boot Loader, identificar:**
-> - `device partition=C:` → on està instal·lat Windows
-> - `path \Windows\system32\winload.efi` → fitxer que carrega el sistema
-> - `description Windows 11` → sistema operatiu
+    <img width="506" height="318" alt="Captura de pantalla de 2026-04-27 12-31-03" src="https://github.com/user-attachments/assets/1cf38fbd-f9db-4e96-a880-515ed09c9913" />
 
 - **Pas 19** Interpretar dades concretes
+
+  **Bloc Boot Manager (Administrador de arranque):**
+- `device` = `partition=\Device\HarddiskVolume1` → disc on està el gestor d'arrencada
+- `default` = `{current}` → arrenca el sistema actual per defecte
+- `timeout` = `30` → espera 30 segons abans d'arrencar automàticament
+
+  **Bloc Boot Loader (Cargador de arranque):**
+- `device` = `partition=C:` → Windows està instal·lat al disc C:
+- `path` = `\Windows\system32\winload.efi` → fitxer que carrega Windows
+- `description` = `Windows 10` → el sistema operatiu instal·lat és Windows 10
+- `systemroot` = `\Windows` → carpeta principal del sistema
+  
 - **Pas 20** Respondre preguntes curtes
-  - Quin sistema s'està arrencant
-  - A quin disc o partició està instal·lat
-  - Quant temps espera abans d'arrencar
-  - Quin fitxer inicia Windows
+  
+ - **Quin sistema s'està arrencant?**
+  → Windows 10 (valor `description` del Boot Loader)
+
+- **A quin disc o partició està instal·lat?**
+  → Al disc C: (valor `device partition=C:`)
+
+- **Quant temps espera abans d'arrencar?**
+  → 30 segons (valor `timeout` del Boot Manager)
+
+- **Quin fitxer inicia Windows?**
+  → `\Windows\system32\winload.efi` (valor `path` del Boot Loader)
+  
 - **Pas 21** Interpretació final. *Explicar amb una frase:*
+
   - Qui decideix l'arrencada (Boot Manager)
+
+     - **Boot Manager** → és el que decideix quin sistema operatiu arrencar. 
+  Llegeix el menú d'arrencada i aplica el timeout de 30 segons 
+  abans de carregar el sistema per defecte.
+
   - Qui carrega el sistema (Boot Loader)
+ 
+    - **Boot Loader** → és el que carrega el sistema operatiu a la memòria. 
+  Un cop el Boot Manager li passa el control, localitza el fitxer 
+  `winload.efi` i inicia Windows 10.
 
 ---
 
