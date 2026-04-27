@@ -66,11 +66,12 @@
 <img width="752" height="378" alt="Captura de pantalla de 2026-04-27 12-20-57" src="https://github.com/user-attachments/assets/51191ef7-19f7-43a8-875b-3a6febb96202" />
 
 - **Pas 14** Esbrinar llicenciament Windows i explicar breument
-- Tipus de llicències de Windows:
 
-OEM → ve preinstal·lada amb el PC, lligada a la placa base, no es pot transferir a un altre equip
-Retail → es compra per separat, es pot transferir a un altre equip
-Volume → per a empreses, s'activen moltes llicències alhora amb una clau única
+ **Tipus de llicències de Windows:**
+
+- OEM → ve preinstal·lada amb el PC, lligada a la placa base, no es pot transferir a un altre equip
+- Retail → es compra per separat, es pot transferir a un altre equip
+- Volume → per a empreses, s'activen moltes llicències alhora amb una clau única
 
 - **Pas 15** Consultar preu aproximat d'una llicència Windows (web oficial o botigues)
 
