@@ -145,9 +145,23 @@
 
 - **Pas 22** Obrir configuració de xarxa
 - **Pas 23** Consultar IP amb: `ipconfig`
+
+  <img width="929" height="769" alt="Captura de pantalla de 2026-04-28 08-09-00" src="https://github.com/user-attachments/assets/88067ef0-a555-4a83-b453-69225cba4ca0" />
+
+
 - **Pas 24** Configurar IP dinàmica (DHCP automàtic)
+
+  <img width="929" height="769" alt="Captura de pantalla de 2026-04-28 08-11-15" src="https://github.com/user-attachments/assets/def6d1f0-1c5a-4275-8f26-4353c4dd25eb" />
+
+
 - **Pas 25** Configurar IP fixa (manual: IP, màscara, gateway, DNS)
+
+  <img width="851" height="773" alt="Captura de pantalla de 2026-04-28 08-16-51" src="https://github.com/user-attachments/assets/bbd9d1fd-185e-43c1-b18a-72a76304a46e" />
+
+  
 - **Pas 26** Comprovar connexió amb: `ping google.com`
+
+  <img width="866" height="607" alt="Captura de pantalla de 2026-04-28 08-18-28" src="https://github.com/user-attachments/assets/e6640486-f188-4e13-990b-27aa1ce7f246" />
 
 ---
 
