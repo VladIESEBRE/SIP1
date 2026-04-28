@@ -177,9 +177,22 @@
   - `mkdir prova` → crear carpeta
   - `echo hola > fitxer.txt` → crear fitxer
   - `del fitxer.txt` → eliminar fitxer
+
+   <img width="885" height="766" alt="Captura de pantalla de 2026-04-28 08-32-51" src="https://github.com/user-attachments/assets/217c2ccd-58ff-4cde-b51f-e295ea0bb975" />
+
 - **Pas 30** Comandes útils del sistema
   - `tasklist` → veure processos actius
+  
+  <img width="595" height="726" alt="Captura de pantalla de 2026-04-28 08-34-29" src="https://github.com/user-attachments/assets/7197c92a-d32e-4ce3-a00d-29e87ff6a603" />
+
   - `taskkill /IM notepad.exe /F` → tancar un procés
+ 
+    <img width="780" height="312" alt="Captura de pantalla de 2026-04-28 08-36-50" src="https://github.com/user-attachments/assets/2bed84d2-c56d-4215-90ef-5b0a74a40cbd" />
+
+    - **Solo funciona en cmd**
+    
+    <img width="593" height="205" alt="Captura de pantalla de 2026-04-28 08-38-27" src="https://github.com/user-attachments/assets/9806b60d-97c8-4f91-8aa8-eb1a75f5d3d3" />
+
   - `systeminfo` → informació completa del sistema
   - `hostname` → nom de l'equip
   - `whoami` → usuari actual
