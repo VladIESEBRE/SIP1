@@ -241,9 +241,31 @@
 ## Fase 7 – Instal·lació d'aplicacions
 
 - **Pas 34** Descarregar un programa des del navegador (ex: Chrome o VS Code)
+
+  <img width="914" height="716" alt="Captura de pantalla de 2026-04-28 08-51-03" src="https://github.com/user-attachments/assets/cce2ec8e-fa0c-45da-860e-f8359d4a3850" />
+
 - **Pas 35** Instal·lar-lo seguint l'assistent
+
+  <img width="914" height="716" alt="Captura de pantalla de 2026-04-28 08-52-16" src="https://github.com/user-attachments/assets/a22d7de2-edde-48de-acd0-cffd8d6c7434" />
+   
 - **Pas 36** Obrir-lo i comprovar que funciona
+- 
+  <img width="1021" height="809" alt="Captura de pantalla de 2026-04-28 08-54-04" src="https://github.com/user-attachments/assets/dd0b3570-82f1-45de-8949-0f70de01e398" />
+
 - **Pas 37** Instal·lar una aplicació des de Microsoft Store
+  
+  <img width="798" height="640" alt="Captura de pantalla de 2026-04-28 08-56-13" src="https://github.com/user-attachments/assets/917ed88e-fafb-49b4-b00c-481ebd5ccf0f" />
+
 - **Pas 38** Obrir-la i comprovar funcionament
+
+  <img width="1021" height="812" alt="Captura de pantalla de 2026-04-28 09-02-24" src="https://github.com/user-attachments/assets/9c4e5480-4494-49ca-825b-451a478d2b72" />
+
 - **Pas 39** Desinstal·lar una aplicació: *Configuració → Aplicacions → Desinstal·lar*
+
+  <img width="1021" height="812" alt="Captura de pantalla de 2026-04-28 09-04-38" src="https://github.com/user-attachments/assets/a5cec6e2-8a6f-457f-a4fd-d75ce42b94ff" />
+
+  <img width="1021" height="812" alt="Captura de pantalla de 2026-04-28 09-04-46" src="https://github.com/user-attachments/assets/5bf3417a-ecb7-4e1d-a800-6488bdfc0bcf" />
+
+  <img width="1021" height="812" alt="Captura de pantalla de 2026-04-28 09-04-52" src="https://github.com/user-attachments/assets/17f097f5-0a81-484b-84a9-4e5cf4214eb9" />
+
 - **Pas 40** Verificació: *Comprovar que el programa ja no apareix al sistema*
