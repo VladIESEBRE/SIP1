@@ -113,19 +113,19 @@
   
 - **Pas 20** Respondre preguntes curtes
   
- - **Quin sistema s'està arrencant?**
+   - **Quin sistema s'està arrencant?**
   → Windows 10 (valor `description` del Boot Loader)
 
-- **A quin disc o partició està instal·lat?**
+  - **A quin disc o partició està instal·lat?**
   → Al disc C: (valor `device partition=C:`)
 
-- **Quant temps espera abans d'arrencar?**
+  - **Quant temps espera abans d'arrencar?**
   → 30 segons (valor `timeout` del Boot Manager)
 
-- **Quin fitxer inicia Windows?**
+  - **Quin fitxer inicia Windows?**
   → `\Windows\system32\winload.efi` (valor `path` del Boot Loader)
   
-- **Pas 21** Interpretació final. *Explicar amb una frase:*
+  - **Pas 21** Interpretació final. *Explicar amb una frase:*
 
   - Qui decideix l'arrencada (Boot Manager)
 
