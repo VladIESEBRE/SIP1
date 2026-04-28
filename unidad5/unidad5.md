@@ -188,27 +188,53 @@
   - `taskkill /IM notepad.exe /F` → tancar un procés
  
     <img width="780" height="312" alt="Captura de pantalla de 2026-04-28 08-36-50" src="https://github.com/user-attachments/assets/2bed84d2-c56d-4215-90ef-5b0a74a40cbd" />
-
-    - **Solo funciona en cmd**
     
     <img width="593" height="205" alt="Captura de pantalla de 2026-04-28 08-38-27" src="https://github.com/user-attachments/assets/9806b60d-97c8-4f91-8aa8-eb1a75f5d3d3" />
 
   - `systeminfo` → informació completa del sistema
+
+   <img width="775" height="737" alt="Captura de pantalla de 2026-04-28 08-40-48" src="https://github.com/user-attachments/assets/a745a941-c884-4c00-963c-e18022930ded" />
+
   - `hostname` → nom de l'equip
   - `whoami` → usuari actual
+ 
+    <img width="209" height="126" alt="Captura de pantalla de 2026-04-28 08-41-37" src="https://github.com/user-attachments/assets/4aafbe09-bea0-4a3b-b067-a94575c5dcf1" />
+
 - **Pas 31** Comandes de xarxa
   - `ipconfig` → veure configuració IP
   - `ping google.com` → comprovar connexió
+
+   <img width="555" height="429" alt="Captura de pantalla de 2026-04-28 08-43-17" src="https://github.com/user-attachments/assets/f48b6188-dcae-418d-87dc-0e93bb4c878c" />
+
+    
   - `netstat -an` → connexions obertes
+ 
+  <img width="526" height="679" alt="Captura de pantalla de 2026-04-28 08-43-30" src="https://github.com/user-attachments/assets/6464c584-a328-4c08-9482-3be8840d3b5a" />
+
 - **Pas 32** Comandes interessants (una mica més avançades)
   - `tree` → veure estructura de carpetes
+    
+    <img width="449" height="395" alt="Captura de pantalla de 2026-04-28 08-44-31" src="https://github.com/user-attachments/assets/3fd37947-4ac9-442c-8734-6ae192a503f6" />
+
   - `cls` → netejar pantalla
+ 
+    <img width="408" height="152" alt="Captura de pantalla de 2026-04-28 08-45-13" src="https://github.com/user-attachments/assets/b42b252c-6c72-4e0e-ab4c-97ade2ddca51" />
+
   - `help` → veure ajuda
+ 
+    <img width="603" height="718" alt="Captura de pantalla de 2026-04-28 08-45-33" src="https://github.com/user-attachments/assets/8be71056-a209-4e75-87c6-a8a660cbe24e" />
+
   - `shutdown /s /t 0` → apagar l'equip
+ 
+    <img width="305" height="61" alt="Captura de pantalla de 2026-04-28 08-46-21" src="https://github.com/user-attachments/assets/720a718d-2805-45fa-a611-6e0c98c1ccf4" />
+
 - **Pas 33** Mini interpretació
   - Indicar què mostra `tasklist`
+    - `tasklist` mostra → llista de tots els processos que s'estan executant
   - Indicar què mostra `ipconfig`
+     - `ipconfig` mostra → la configuració de xarxa de l'equip (IP, màscara, gateway)
   - Indicar què mostra `systeminfo`
+     - `systeminfo` mostra → informació detallada del sistema (OS, RAM, processador...)
 
 ---
 
