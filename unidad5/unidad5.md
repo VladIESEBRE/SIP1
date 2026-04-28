@@ -266,6 +266,6 @@
 
   <img width="1021" height="812" alt="Captura de pantalla de 2026-04-28 09-04-46" src="https://github.com/user-attachments/assets/5bf3417a-ecb7-4e1d-a800-6488bdfc0bcf" />
 
-  <img width="1021" height="812" alt="Captura de pantalla de 2026-04-28 09-04-52" src="https://github.com/user-attachments/assets/17f097f5-0a81-484b-84a9-4e5cf4214eb9" />
-
 - **Pas 40** Verificació: *Comprovar que el programa ja no apareix al sistema*
+  
+  <img width="1021" height="812" alt="Captura de pantalla de 2026-04-28 09-04-52" src="https://github.com/user-attachments/assets/17f097f5-0a81-484b-84a9-4e5cf4214eb9" />
