@@ -101,15 +101,15 @@
 - **Pas 19** Interpretar dades concretes
 
   **Bloc Boot Manager (Administrador de arranque):**
-- **`device`** = `partition=\Device\HarddiskVolume1` → disc on està el gestor d'arrencada
-- **`default`** = `{current}` → arrenca el sistema actual per defecte
-- **`timeout`** = `30` → espera 30 segons abans d'arrencar automàticament
+  - **`device`** = `partition=\Device\HarddiskVolume1` → disc on està el gestor d'arrencada
+  - **`default`** = `{current}` → arrenca el sistema actual per defecte
+  - **`timeout`** = `30` → espera 30 segons abans d'arrencar automàticament
 
   **Bloc Boot Loader (Cargador de arranque):**
-- **`device`** = `partition=C:` → Windows està instal·lat al disc C:
-- **`path`** = `\Windows\system32\winload.efi` → fitxer que carrega Windows
-- **`description`** = `Windows 10` → el sistema operatiu instal·lat és Windows 10
-- **`systemroot`** = `\Windows` → carpeta principal del sistema
+  - **`device`** = `partition=C:` → Windows està instal·lat al disc C:
+  - **`path`** = `\Windows\system32\winload.efi` → fitxer que carrega Windows
+  - **`description`** = `Windows 10` → el sistema operatiu instal·lat és Windows 10
+  - **`systemroot`** = `\Windows` → carpeta principal del sistema
   
 - **Pas 20** Respondre preguntes curtes
   
