@@ -53,9 +53,9 @@
 <img width="1022" height="810" alt="Captura de pantalla de 2026-05-07 08-52-39" src="https://github.com/user-attachments/assets/f68b6acf-7f27-4d45-95b1-0edd39fb4c79" />
 
 ### Pas 9. Provar les quotes
-- Inicia sessió com `alumne1`.
-- Copia fitxers grans a `D:\` fins a superar els 300 MB.
-- Comprova que el sistema bloqueja la còpia en arribar al límit.
+
+<img width="1020" height="807" alt="Captura de pantalla de 2026-05-07 09-13-05" src="https://github.com/user-attachments/assets/0f62a21f-c89a-427c-ace4-28a333863d20" />
+
 
 ---
 
