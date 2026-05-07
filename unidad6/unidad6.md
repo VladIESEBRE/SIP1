@@ -62,41 +62,29 @@
 ## Fase 3 – Script de còpia i automatització
 
 ### Pas 10. Afegir tercer disc virtual i formatar-lo
-- Afegeix un tercer disc virtual des del gestor de virtualització.
-- A Gestió de discs, inicialitza'l i formata'l en **NTFS**.
-- Nom: `Backups` (p. ex. lletra `E:`).
+
+<img width="1021" height="813" alt="Captura de pantalla de 2026-05-07 09-25-13" src="https://github.com/user-attachments/assets/57c0c3c9-49fd-40d5-ad15-2df886e1b7d0" />
+
+<img width="1021" height="813" alt="Captura de pantalla de 2026-05-07 09-25-31" src="https://github.com/user-attachments/assets/fd78407f-4636-4e0a-9645-8123ee721012" />
 
 ### Pas 11. Crear la carpeta CòpiesUsuaris
 
-```cmd
-mkdir E:\CòpiesUsuaris
-```
+<img width="1022" height="815" alt="Captura de pantalla de 2026-05-07 09-27-39" src="https://github.com/user-attachments/assets/a956ebec-83c3-45a4-b44c-8d4f1c3c3d83" />
 
 ### Pas 12. Crear l'script de còpia
 
 Crea el fitxer `copia_usuari.bat` amb el contingut següent:
 
-```bat
-@echo off
-xcopy /E /I /Y "C:\Users\%USERNAME%" "E:\CòpiesUsuaris\%USERNAME%"
-```
-
-Desa l'script en una ubicació accessible, per exemple: `C:\Scripts\copia_usuari.bat`
+<img width="1022" height="813" alt="Captura de pantalla de 2026-05-07 09-36-52" src="https://github.com/user-attachments/assets/374200e5-8988-487b-96cb-167e4aa65a68" />
 
 ### Pas 13. Obrir gpedit.msc i anar als scripts d'inici de sessió
 
-```
-gpedit.msc
-→ Configuració d'usuari
-  → Configuració de Windows
-    → Scripts (Inici i tancament de sessió)
-      → Inici de sessió
-```
+<img width="1022" height="813" alt="Captura de pantalla de 2026-05-07 09-41-29" src="https://github.com/user-attachments/assets/420d0873-840f-435d-b391-147299a560fd" />
 
 ### Pas 14. Assignar l'script als usuaris alumne1 i alumne2
-- Fes doble clic a **Inici de sessió**.
-- Fes clic a **Afegir** → busca `C:\Scripts\copia_usuari.bat`.
-- Aplica i tanca.
+
+<img width="1022" height="813" alt="Captura de pantalla de 2026-05-07 09-42-42" src="https://github.com/user-attachments/assets/08fdff6f-15c0-44b5-8613-40633a4bf577" />
+
 
 ---
 
