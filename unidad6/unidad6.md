@@ -117,7 +117,7 @@ Crea el fitxer `copia_usuari.bat` amb el contingut següent:
 |----------------|--------------|------------------------------|
 | OneDrive.exe   | 97.048 KB    | Sincronització al núvol no necessària en entorn local |
 | SearchIndexer.exe      | 33.248 KB      | Indexació de cerca, no essencial en MV de pràctiques  |
-| SkypeApp.exe   | 229.572 KB       | Windows Defender, consumeix recursos en MV |
+| MsMpEng.exe   | 229.572 KB       | Windows Defender, consumeix recursos en MV |
 
 <img width="751" height="525" alt="Captura de pantalla de 2026-05-07 10-01-54" src="https://github.com/user-attachments/assets/edc9fe1d-2752-4118-8600-4caf73fe5d0f" />
 
@@ -129,28 +129,33 @@ Crea el fitxer `copia_usuari.bat` amb el contingut següent:
 
 <img width="1019" height="815" alt="Captura de pantalla de 2026-05-07 10-08-56" src="https://github.com/user-attachments/assets/30a866c1-1110-4c1f-bf64-9a3d021c30ba" />
 
-<img width="557" height="87" alt="Captura de pantalla de 2026-05-07 10-13-17" src="https://github.com/user-attachments/assets/3ddea90d-e6c6-43ab-bf25-298fe56130de" />
+<img width="616" height="107" alt="Captura de pantalla de 2026-05-07 10-31-41" src="https://github.com/user-attachments/assets/74c42b4f-f11c-4940-8121-553859a2508d" />
 
- - OneDrive requereix permisos d'administrador per ser tancat forçosament
+ - Els processos d'OneDrive només es poden tancar amb permisos d'administrador. Els usuaris del grup Limitats no tenen aquests privilegis, per tant el script s'ha d'executar com a administrador o desactivar OneDrive des del registre.
    
-<img width="616" height="106" alt="Captura de pantalla de 2026-05-07 10-14-14" src="https://github.com/user-attachments/assets/d9f357fd-03bd-4498-8058-c62e223f4453" />
+<img width="684" height="515" alt="Captura de pantalla de 2026-05-07 10-38-58" src="https://github.com/user-attachments/assets/2a21ee32-8297-464a-8541-99a5144b02b0" />
 
 ### Pas 22. Automatitzar la fi de processos a l'inici de sessió
 
 <img width="1018" height="810" alt="Captura de pantalla de 2026-05-07 10-19-07" src="https://github.com/user-attachments/assets/febdd8e3-8294-4677-96b9-9916ab908629" />
 
-
-
-<img width="1014" height="813" alt="Captura de pantalla de 2026-05-07 10-24-11" src="https://github.com/user-attachments/assets/4b7e3cf4-2757-4825-b9a4-bc21891a80fa" />
-
-
-- Tanca la sessió i inicia com `alumne2`.
-- Comprova que els processos no s'executen.
+<img width="673" height="124" alt="Captura de pantalla de 2026-05-07 10-43-46" src="https://github.com/user-attachments/assets/7b5d3db7-8d3a-425b-be78-7ed413da9682" />
 
 ### Pas 23. Documentació
-- Afegeix el fitxer `processos_inici.txt` i la taula justificativa a la documentació amb **MkDocs**.
-- Explica què passa si mates un procés crític com `explorer.exe` (prova controlada).
-- Comenta com aquesta gestió pot millorar el rendiment en màquines virtuals o amb pocs recursos.
+#### Explica què passa si mates un procés crític com `explorer.exe` (prova controlada).
+- Si tanquem explorer.exe el escriptori desapareix completament, no hi ha barra de tasques ni icones. Es pot recuperar obrint el Administrador de tasques (Ctrl+Shift+Esc) → Archivo → Ejecutar nueva tarea → escriure explorer.exe. És un procés crític que no s'ha d'eliminar mai en producció.
+
+  <img width="1018" height="812" alt="Captura de pantalla de 2026-05-07 10-51-10" src="https://github.com/user-attachments/assets/88edd788-8a6a-4ea1-9e6a-cbfb93914aaa" />
+
+  <img width="1018" height="812" alt="Captura de pantalla de 2026-05-07 10-51-21" src="https://github.com/user-attachments/assets/cf7b436c-c720-47ee-975e-27bb52e486d6" />
+
+  <img width="1018" height="812" alt="Captura de pantalla de 2026-05-07 10-52-12" src="https://github.com/user-attachments/assets/6b738566-81b6-463b-bfb7-86c0de715387" />
+
+  <img width="1018" height="812" alt="Captura de pantalla de 2026-05-07 10-52-22" src="https://github.com/user-attachments/assets/67f3f2bb-f1b3-459c-9a8b-1c71eac93bcb" />
+
+
+#### Comenta com aquesta gestió pot millorar el rendiment de màquines virtuals o amb pocs recursos​
+- En màquines virtuals amb pocs recursos, tancar processos no essencials com OneDrive allibera memòria RAM i CPU. Això és especialment útil en entorns de pràctiques on la MV té assignada poca memòria.
 
 ---
 
