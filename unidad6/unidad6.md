@@ -15,25 +15,21 @@
 
 
 ### Pas 3. Inicialitzar el disc i crear les particions
-- Fes clic dret sobre el disc nou → **Inicialitzar disc** → tria `MBR` o `GPT`.
-- Crea la primera partició:
-  - Format: **NTFS**
-  - Nom: `Dades`
-- Crea la segona partició:
-  - Format: **FAT32**
-  - Nom: `Portable`
+
+<img width="1021" height="809" alt="Captura de pantalla de 2026-05-07 08-35-06" src="https://github.com/user-attachments/assets/0ec61904-4a92-40a8-8393-74caea513a28" />
+
+<img width="1021" height="809" alt="Captura de pantalla de 2026-05-07 08-37-05" src="https://github.com/user-attachments/assets/bfffd8df-10c2-451a-bec8-acecd394e5fc" />
+
+<img width="1021" height="809" alt="Captura de pantalla de 2026-05-07 08-37-41" src="https://github.com/user-attachments/assets/d8d3df31-e81c-4f8b-9659-e65290760ecf" />
+
+<img width="1021" height="809" alt="Captura de pantalla de 2026-05-07 08-38-05" src="https://github.com/user-attachments/assets/13ebbd30-9165-40a6-ac1f-690b3be8fabd" />
+
+<img width="1021" height="809" alt="Captura de pantalla de 2026-05-07 08-38-20" src="https://github.com/user-attachments/assets/a06d5016-7451-4bfc-b56b-e7aabd2bf87b" />
+
 
 ### Pas 4. Assignar lletres i comprovar amb diskpart
-- Assigna lletres de unitat a cada partició (p. ex. `D:` i `E:`).
-- Obre CMD com a administrador i executa:
 
-```cmd
-diskpart
-list disk
-list volume
-```
-
-- Comprova que les dues particions apareixen correctament.
+<img width="1021" height="809" alt="Captura de pantalla de 2026-05-07 08-40-53" src="https://github.com/user-attachments/assets/d17335da-5185-4218-b787-061ce03c751b" />
 
 ---
 
