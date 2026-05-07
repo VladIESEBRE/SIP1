@@ -91,10 +91,14 @@ Crea el fitxer `copia_usuari.bat` amb el contingut següent:
 ## Fase 4 – Verificació i documentació
 
 ### Pas 15. Verificar que tot funciona correctament
-- Inicia sessió com `alumne1`.
-- Comprova que l'script ha creat la carpeta `E:\CòpiesUsuaris\alumne1` amb els fitxers.
-- Intenta superar el límit de quota a `D:\` i verifica que el sistema ho bloqueja.
-- Documenta les comprovacions amb captures de pantalla.
+
+<img width="1022" height="813" alt="Captura de pantalla de 2026-05-07 09-45-33" src="https://github.com/user-attachments/assets/bb59beff-38c2-40fb-961f-864df358a06c" />
+
+<img width="1022" height="813" alt="Captura de pantalla de 2026-05-07 09-46-15" src="https://github.com/user-attachments/assets/31b36a80-7151-4e15-a63b-eec5f1fe5e4a" />
+
+<img width="1022" height="813" alt="Captura de pantalla de 2026-05-07 09-46-29" src="https://github.com/user-attachments/assets/832c71a1-7db7-4f15-8c94-a2e2605f8398" />
+
+<img width="1020" height="807" alt="Captura de pantalla de 2026-05-07 09-13-05" src="https://github.com/user-attachments/assets/5a373c1c-763f-4a38-a90d-c5fe6b26a58b" />
 
 ---
 
