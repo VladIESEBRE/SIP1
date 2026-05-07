@@ -106,40 +106,43 @@ Crea el fitxer `copia_usuari.bat` amb el contingut següent:
 
 ### Pas 19. Llistar processos actius
 
-```cmd
-tasklist
-tasklist > C:\Users\%USERNAME%\processos_inici.txt
-```
+<img width="1016" height="817" alt="Captura de pantalla de 2026-05-07 09-55-02" src="https://github.com/user-attachments/assets/07d7bcda-5223-4f4b-8429-af15d6c7a6ab" />
 
-Processos típics que pots observar: `explorer.exe`, `SearchIndexer.exe`, `OneDrive.exe`.
+<img width="1017" height="810" alt="Captura de pantalla de 2026-05-07 09-58-16" src="https://github.com/user-attachments/assets/60faada8-05dd-45ef-9ef1-783fc5ad6709" />
+
 
 ### Pas 20. Identificar processos prescindibles
 
-Elabora una taula com la següent:
-
 | Nom del procés | Memòria usada | Justificació per eliminar-lo |
 |----------------|--------------|------------------------------|
-| OneDrive.exe   | ~50 MB       | No necessari en entorn local |
-| Teams.exe      | ~150 MB      | No necessari per a l'usuari  |
-| SkypeApp.exe   | ~80 MB       | No s'utilitza en aquest context |
+| OneDrive.exe   | 97.048 KB    | Sincronització al núvol no necessària en entorn local |
+| SearchIndexer.exe      | 33.248 KB      | Indexació de cerca, no essencial en MV de pràctiques  |
+| SkypeApp.exe   | 229.572 KB       | Windows Defender, consumeix recursos en MV |
+
+<img width="751" height="525" alt="Captura de pantalla de 2026-05-07 10-01-54" src="https://github.com/user-attachments/assets/edc9fe1d-2752-4118-8600-4caf73fe5d0f" />
+
+<img width="751" height="525" alt="Captura de pantalla de 2026-05-07 10-04-21" src="https://github.com/user-attachments/assets/178999b1-830a-4d1d-864b-4048f028ff45" />
+
+<img width="751" height="525" alt="Captura de pantalla de 2026-05-07 10-04-42" src="https://github.com/user-attachments/assets/ce060e4e-01aa-4803-9052-93aa8043e676" />
 
 ### Pas 21. Eliminar processos manualment
 
-```cmd
-taskkill /IM OneDrive.exe /F
-tasklist
-```
+<img width="1019" height="815" alt="Captura de pantalla de 2026-05-07 10-08-56" src="https://github.com/user-attachments/assets/30a866c1-1110-4c1f-bf64-9a3d021c30ba" />
 
-> Fes una captura de pantalla **abans** i **després** d'executar la comanda.
+<img width="557" height="87" alt="Captura de pantalla de 2026-05-07 10-13-17" src="https://github.com/user-attachments/assets/3ddea90d-e6c6-43ab-bf25-298fe56130de" />
+
+ - OneDrive requereix permisos d'administrador per ser tancat forçosament
+   
+<img width="616" height="106" alt="Captura de pantalla de 2026-05-07 10-14-14" src="https://github.com/user-attachments/assets/d9f357fd-03bd-4498-8058-c62e223f4453" />
 
 ### Pas 22. Automatitzar la fi de processos a l'inici de sessió
 
-Afegeix les línies següents a l'script `copia_usuari.bat`:
+<img width="1018" height="810" alt="Captura de pantalla de 2026-05-07 10-19-07" src="https://github.com/user-attachments/assets/febdd8e3-8294-4677-96b9-9916ab908629" />
 
-```bat
-taskkill /IM OneDrive.exe /F
-taskkill /IM Teams.exe /F
-```
+
+
+<img width="1014" height="813" alt="Captura de pantalla de 2026-05-07 10-24-11" src="https://github.com/user-attachments/assets/4b7e3cf4-2757-4825-b9a4-bc21891a80fa" />
+
 
 - Tanca la sessió i inicia com `alumne2`.
 - Comprova que els processos no s'executen.
