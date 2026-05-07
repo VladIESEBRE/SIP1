@@ -36,31 +36,21 @@
 ## Fase 2 – Quotes i usuaris
 
 ### Pas 5. Activar quotes de disc a la partició Dades (NTFS)
-- A l'Explorador de fitxers, fes clic dret sobre `D:` → **Propietats** → pestanya **Quota**.
-- Activa **Habilitar la gestió de quotes**.
+
+<img width="1022" height="810" alt="Captura de pantalla de 2026-05-07 08-45-23" src="https://github.com/user-attachments/assets/803cec91-2114-442a-b7fe-41012ca83753" />
 
 ### Pas 6. Establir límit de 300 MB per usuari
-- Marca **Denega espai al disc als usuaris que superin el límit de quota**.
-- Estableix:
-  - **Límit de quota:** `300 MB`
-  - **Nivell d'advertència:** `250 MB`
-- Fes clic a **Aplica**.
+
+<img width="1022" height="810" alt="Captura de pantalla de 2026-05-07 08-46-54" src="https://github.com/user-attachments/assets/a0c64ea2-54dc-4b30-9128-fd3fc7ad70f2" />
+
 
 ### Pas 7. Crear dos usuaris locals
-Obre CMD com a administrador i executa:
 
-```cmd
-net user alumne1 Password1 /add
-net user alumne2 Password2 /add
-```
+<img width="1022" height="810" alt="Captura de pantalla de 2026-05-07 08-49-58" src="https://github.com/user-attachments/assets/9126b17c-752e-45b3-8f32-971a3d85a1d5" />
 
 ### Pas 8. Crear el grup Limitats i afegir els usuaris
 
-```cmd
-net localgroup Limitats /add
-net localgroup Limitats alumne1 /add
-net localgroup Limitats alumne2 /add
-```
+<img width="1022" height="810" alt="Captura de pantalla de 2026-05-07 08-52-39" src="https://github.com/user-attachments/assets/f68b6acf-7f27-4d45-95b1-0edd39fb4c79" />
 
 ### Pas 9. Provar les quotes
 - Inicia sessió com `alumne1`.
