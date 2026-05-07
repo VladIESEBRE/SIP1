@@ -16,5 +16,6 @@ El contenido está bajo licencia [Creative Commons BY-NC-SA 4.0 ES](LICENSE.md).
 ### [Sprint 4: Monitorització, connexió remota i llicenciament](unidad4/unidad4.md)
 
 ## [PROJECT 2)
-### [Sprint 1: Monitorització, connexió remota i llicenciament](unidad5/unidad5.md)
+### [Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sistemes Operatius](unidad5/unidad5.md)
+### [Sprint 2: Gestió de la Informació del Sistema i Administració](unidad6/unidad6.md)
 
