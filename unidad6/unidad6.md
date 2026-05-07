@@ -184,31 +184,59 @@ mkdir D:\Projectes
 ```
 
 ### Pas 25. Assignar permisos al grup Limitats
-1. Fes clic dret sobre `D:\Projectes` → **Propietats** → pestanya **Seguretat**.
-2. Fes clic a **Avançat** → **Desactiva la herència** → **Conserva els permisos existents**.
-3. Elimina les entrades de `Users` o `Everyone` si hi apareixen.
-4. Fes clic a **Afegir** → busca el grup `Limitats` → dona-li **Control total**.
-5. Aplica els canvis.
+
+<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-33-39" src="https://github.com/user-attachments/assets/78f40238-9db0-4188-9301-320a7cee386c" />
+
+<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-35-37" src="https://github.com/user-attachments/assets/82238be9-97b8-45e0-baa1-152acad053fb" />
+
+<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-35-47" src="https://github.com/user-attachments/assets/66639b6e-2915-4391-8949-3826738a427e" />
+
+<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-38-12" src="https://github.com/user-attachments/assets/9f7bbf54-5324-4151-a243-30fe66af4705" />
+
+<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-38-23" src="https://github.com/user-attachments/assets/0201e49a-fa63-4fb2-a565-9744bba35bea" />
+
+<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-38-31" src="https://github.com/user-attachments/assets/e561210a-e171-44d5-92d9-415c8614be47" />
 
 ### Pas 26. Comprovar accés amb alumne1
-- Inicia sessió com `alumne1`.
-- Crea un fitxer dins `D:\Projectes`, modifica'l i elimina'l.
-- Tot hauria de funcionar correctament (permisos heretats del grup `Limitats`).
+
+<img width="1049" height="847" alt="Captura de pantalla de 2026-05-07 11-51-49" src="https://github.com/user-attachments/assets/fcd0cb0a-7629-4efb-900f-955526db4c34" />
+
+<img width="1049" height="847" alt="Captura de pantalla de 2026-05-07 11-52-23" src="https://github.com/user-attachments/assets/b0165adc-ec66-4d71-b5a9-fba7041336b1" />
 
 ### Pas 27. Aplicar excepció per alumne2
 
-Torna a iniciar sessió com a administrador i executa:
-
-```cmd
-icacls "D:\Projectes" /grant:r alumne2:(R)
-```
+<img width="1049" height="845" alt="Captura de pantalla de 2026-05-07 11-55-53" src="https://github.com/user-attachments/assets/7950e3c6-3059-4fbb-8a0e-f23dd1e1c4c7" />
 
 Això substitueix qualsevol permís anterior d'`alumne2` i li dona **només lectura**.
 
 ### Pas 28. Comprovar l'excepció amb alumne2
-- Inicia sessió com `alumne2`.
-- Intenta **obrir** un fitxer → ha de poder llegir-lo ✅
-- Intenta **editar-lo o crear-ne un de nou** → ha de rebre un missatge de denegació ❌
+
+Primer s'ha executat el comando del enunciat:
+
+```cmd
+icacls "E:\Projectes" /grant:r alumne2:(R)
+```
+
+<img width="1049" height="845" alt="Captura de pantalla de 2026-05-07 11-55-53" src="https://github.com/user-attachments/assets/92cc3122-5d49-4443-9e6d-127e5661e68c" />
+
+
+Però alumne2 encara podia editar fitxers degut a que els permisos 
+del grup Limitats (Control total) tenien prioritat sobre el /grant.
+
+<img width="1051" height="879" alt="Captura de pantalla de 2026-05-07 12-12-48" src="https://github.com/user-attachments/assets/98343e4a-78c8-4f95-95fa-cd2d01f9935e" />
+
+Per solucionar-ho s'ha afegit una denegació explícita:
+
+```cmd
+icacls "E:\Projectes" /deny alumne2:(W,D,DC,WD)
+```
+<img width="1051" height="879" alt="Captura de pantalla de 2026-05-07 12-14-50" src="https://github.com/user-attachments/assets/e62907ed-980f-44c9-82c7-838f872ce914" />
+
+A Windows, les **denegacions explícites sempre tenen prioritat** 
+sobre els permisos de grup, per tant encara que Limitats tingui 
+Control total, alumne2 no pot escriure.
+<img width="1043" height="840" alt="Captura de pantalla de 2026-05-07 12-02-33" src="https://github.com/user-attachments/assets/0be99e47-5cfd-4773-8cfd-64140d558277" />
+
 
 ### Pas 29. Consultar els permisos aplicats
 
