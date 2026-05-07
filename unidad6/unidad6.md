@@ -211,7 +211,7 @@ Això substitueix qualsevol permís anterior d'`alumne2` i li dona **només lect
 
 ### Pas 28. Comprovar l'excepció amb alumne2
 
-Primer s'ha executat el comando del enunciat:
+ - Primer s'ha executat el comando del enunciat:
 
 ```cmd
 icacls "E:\Projectes" /grant:r alumne2:(R)
@@ -220,21 +220,20 @@ icacls "E:\Projectes" /grant:r alumne2:(R)
 <img width="1049" height="845" alt="Captura de pantalla de 2026-05-07 11-55-53" src="https://github.com/user-attachments/assets/92cc3122-5d49-4443-9e6d-127e5661e68c" />
 
 
-Però alumne2 encara podia editar fitxers degut a que els permisos 
+ - Però alumne2 encara podia editar fitxers degut a que els permisos 
 del grup Limitats (Control total) tenien prioritat sobre el /grant.
 
 <img width="1051" height="879" alt="Captura de pantalla de 2026-05-07 12-12-48" src="https://github.com/user-attachments/assets/98343e4a-78c8-4f95-95fa-cd2d01f9935e" />
 
-Per solucionar-ho s'ha afegit una denegació explícita:
+ - Per solucionar-ho s'ha afegit una denegació explícita:
 
 ```cmd
 icacls "E:\Projectes" /deny alumne2:(W,D,DC,WD)
 ```
 <img width="1051" height="879" alt="Captura de pantalla de 2026-05-07 12-14-50" src="https://github.com/user-attachments/assets/e62907ed-980f-44c9-82c7-838f872ce914" />
 
-A Windows, les **denegacions explícites sempre tenen prioritat** 
-sobre els permisos de grup, per tant encara que Limitats tingui 
-Control total, alumne2 no pot escriure.
+- A Windows, les **denegacions explícites sempre tenen prioritat** sobre els permisos de grup, per tant encara que Limitats tingui Control total, alumne2 no pot escriure.
+
 <img width="1043" height="840" alt="Captura de pantalla de 2026-05-07 12-02-33" src="https://github.com/user-attachments/assets/0be99e47-5cfd-4773-8cfd-64140d558277" />
 
 
