@@ -207,7 +207,7 @@ mkdir D:\Projectes
 
 <img width="1049" height="845" alt="Captura de pantalla de 2026-05-07 11-55-53" src="https://github.com/user-attachments/assets/7950e3c6-3059-4fbb-8a0e-f23dd1e1c4c7" />
 
-Això substitueix qualsevol permís anterior d'`alumne2` i li dona **només lectura**.
+ - Això substitueix qualsevol permís anterior d'`alumne2` i li dona **només lectura**.
 
 ### Pas 28. Comprovar l'excepció amb alumne2
 
