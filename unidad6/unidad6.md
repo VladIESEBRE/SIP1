@@ -189,7 +189,7 @@ mkdir D:\Projectes
 
 <img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-35-37" src="https://github.com/user-attachments/assets/82238be9-97b8-45e0-baa1-152acad053fb" />
 
-<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-35-47" src="https://github.com/user-attachments/assets/66639b6e-2915-4391-8949-3826738a427e" />
+<img width="1138" height="838" alt="Captura de pantalla de 2026-05-08 20-45-17" src="https://github.com/user-attachments/assets/86ffd28b-48ae-45a7-9641-8f15d11a46fa" />
 
 <img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-38-12" src="https://github.com/user-attachments/assets/9f7bbf54-5324-4151-a243-30fe66af4705" />
 
