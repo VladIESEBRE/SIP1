@@ -212,50 +212,15 @@ mkdir D:\Projectes
 
 ### Pas 28. Comprovar l'excepció amb alumne2
 
- - Primer s'ha executat el comando del enunciat:
+ <img width="1138" height="838" alt="Captura de pantalla de 2026-05-08 21-01-23" src="https://github.com/user-attachments/assets/4d396201-3053-4008-b5d6-8d769fd622aa" />
+ 
+<img width="1138" height="838" alt="Captura de pantalla de 2026-05-08 21-01-07" src="https://github.com/user-attachments/assets/2e23c98d-bbd6-4882-ac6f-8dc5494631e0" />
 
-```cmd
-icacls "E:\Projectes" /grant:r alumne2:(R)
-```
-
-<img width="1049" height="845" alt="Captura de pantalla de 2026-05-07 11-55-53" src="https://github.com/user-attachments/assets/92cc3122-5d49-4443-9e6d-127e5661e68c" />
-
-
- - Però alumne2 encara podia editar fitxers degut a que els permisos 
-del grup Limitats (Control total) tenien prioritat sobre el /grant.
-
-<img width="1051" height="879" alt="Captura de pantalla de 2026-05-07 12-12-48" src="https://github.com/user-attachments/assets/98343e4a-78c8-4f95-95fa-cd2d01f9935e" />
-
- - Per solucionar-ho s'ha afegit una denegació explícita:
-
-```cmd
-icacls "E:\Projectes" /deny alumne2:(W,D,DC,WD)
-```
-<img width="1051" height="879" alt="Captura de pantalla de 2026-05-07 12-14-50" src="https://github.com/user-attachments/assets/e62907ed-980f-44c9-82c7-838f872ce914" />
-
-- A Windows, les **denegacions explícites sempre tenen prioritat** sobre els permisos de grup, per tant encara que Limitats tingui Control total, alumne2 no pot escriure.
-
-<img width="1043" height="840" alt="Captura de pantalla de 2026-05-07 12-02-33" src="https://github.com/user-attachments/assets/0be99e47-5cfd-4773-8cfd-64140d558277" />
+<img width="1138" height="838" alt="Captura de pantalla de 2026-05-08 21-00-56" src="https://github.com/user-attachments/assets/e4983988-8a0f-4cb2-8546-0680a0656580" />
 
 
 ### Pas 29. Consultar els permisos aplicats
 
-Torna a la consola com a administrador i executa:
+<img width="1138" height="838" alt="Captura de pantalla de 2026-05-08 21-03-24" src="https://github.com/user-attachments/assets/68e3b08a-ca5c-4484-92b4-e734ae39e0c2" />
 
-```cmd
-icacls "D:\Projectes"
-```
 
-La sortida hauria de mostrar:
-
-```
-D:\Projectes
-  Limitats:(OI)(CI)(F)
-  alumne2:(R)
-```
-
-Això confirma que el grup té **control total** i `alumne2` té **només lectura**.
-
----
-
-> **Nota final:** Documenta cada fase amb captures de pantalla i afegeix-les a la documentació del projecte (MkDocs o similar).
