@@ -191,11 +191,10 @@ mkdir D:\Projectes
 
 <img width="1138" height="838" alt="Captura de pantalla de 2026-05-08 20-45-17" src="https://github.com/user-attachments/assets/86ffd28b-48ae-45a7-9641-8f15d11a46fa" />
 
-<img width="1138" height="838" alt="imatge" src="https://github.com/user-attachments/assets/8262fcb0-7427-4987-b36e-0df75b806b8f" />
-
 <img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-38-23" src="https://github.com/user-attachments/assets/0201e49a-fa63-4fb2-a565-9744bba35bea" />
 
-<img width="1018" height="814" alt="Captura de pantalla de 2026-05-07 11-38-31" src="https://github.com/user-attachments/assets/e561210a-e171-44d5-92d9-415c8614be47" />
+<img width="1138" height="838" alt="imatge" src="https://github.com/user-attachments/assets/8262fcb0-7427-4987-b36e-0df75b806b8f" />
+
 
 ### Pas 26. Comprovar accés amb alumne1
 
