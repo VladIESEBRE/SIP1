@@ -18,4 +18,5 @@ El contenido está bajo licencia [Creative Commons BY-NC-SA 4.0 ES](LICENSE.md).
 ## [PROJECT 2)
 ### [Sprint 1: Avaluació, Instal·lació i Configuració de Xarxes i Sistemes Operatius](unidad5/unidad5.md)
 ### [Sprint 2: Gestió de la Informació del Sistema i Administració](unidad6/unidad6.md)
+### [Sprint 4: Gestió de Recursos en Xarxa, Seguretat i Còpies de Seguretat](unidad7/unidad7.md)
 
