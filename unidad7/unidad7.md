@@ -44,33 +44,48 @@
 
 ---
 
-## Ejercicio 3. Consulta de licencias de Windows Server y equipos del dominio
+# Ejercicio 3. Consulta de licencias de Windows Server y equipos unidos al dominio
 
-### Escenario de la empresa:
-* **Infraestructura:** 1 servidor Windows Server.
-* **Equipos:** 25 ordenadores y 10 portátiles (Total 35 dispositivos).
-* **Usuarios:** 32 personas.
-* **Estado:** Todos los equipos están unidos al dominio.
+## 1. Precios aproximados
 
-### 1. Precios aproximados:
-* **Windows Server Standard o Datacenter:** (Sustituye por el precio buscado)
-* **User CAL:** (Sustituye por el precio buscado)
-* **Device CAL:** (Sustituye por el precio buscado)
+| Producto | Precio aproximado |
+|---|---|
+| Windows Server Standard | ~900€ |
+| Windows Server Datacenter | ~6.000€ |
+| User CAL | ~40€/usuario |
+| Device CAL | ~40€/dispositivo |
 
-### 2. Conceptos de licenciamiento:
-* **CAL:** Client Access License (Licencia de acceso para el cliente).
-* **Diferencia:** La **User CAL** licencia a un usuario para acceder desde cualquier dispositivo, mientras que la **Device CAL** licencia un dispositivo específico para que cualquier usuario acceda desde él.
+## 2. Qué es una CAL
 
-### 3. Cálculo de costes:
-* **Opción A (User CAL):** Coste de 32 licencias de usuario.
-* **Opción B (Device CAL):** Coste de 35 licencias de dispositivo.
+Una **CAL (Client Access License)** es una licencia de acceso de cliente que necesita cada usuario o dispositivo para conectarse legalmente a un Windows Server.
 
-### 4. Justificación del modelo adecuado:
-* **Elección:** Es más adecuado el modelo de **User CAL**.
-* **Justificación:** Al tener menos usuarios (32) que dispositivos (35), sale más rentable licenciar por usuario. Además, aporta mayor movilidad a los empleados si necesitan usar tanto el ordenador de sobremesa como el portátil.
+### Diferencia entre User CAL y Device CAL
 
-### 5. Equipos del dominio:
-* Para visualizar los equipos en el dominio, se puede utilizar uno de estos métodos:
-    * **Active Directory:** Desde la interfaz gráfica en "Usuarios y equipos de Active Directory".
-    * **PowerShell:** Mediante comandos específicos como `Get-ADComputer -Filter *`.
-   * **[Inserta tu captura de pantalla aquí: equipos del dominio]**
+- **User CAL**: se asigna a una persona. Permite que ese usuario acceda desde cualquier dispositivo.
+- **Device CAL**: se asigna a un dispositivo. Permite que cualquier usuario acceda desde ese equipo concreto.
+
+## 3. Cálculo del coste
+
+La empresa dispone de:
+- 25 ordenadores + 10 portátiles = **35 dispositivos**
+- **32 usuarios**
+
+**Coste con User CAL:**
+32 usuarios × 40€ = **1.280€**
+
+**Coste con Device CAL:**
+35 dispositivos × 40€ = **1.400€**
+
+## 4. Modelo más adecuado
+
+El modelo más adecuado es el de **User CAL**, ya que la empresa tiene menos usuarios (32) que dispositivos (35), lo que hace que el coste total sea inferior.
+
+## 5. Equipos del dominio
+
+### Desde Active Directory
+Administrador del servidor → Herramientas → Usuarios y equipos de Active Directory → Expandir el dominio → Carpeta "Computers"
+
+### Desde PowerShell
+```powershell
+Get-ADComputer -Filter * | Select-Object Name
+```
