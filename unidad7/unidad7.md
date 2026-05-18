@@ -41,6 +41,9 @@
 6. **Revisar los eventos del sistema:**
    * Abre: Administrador del servidor > Herramientas > Visor de eventos.
    * Consulta los errores del sistema, advertencias y errores de aplicación.
+  
+     <img width="1051" height="796" alt="Captura de pantalla de 2026-05-18 14-26-32" src="https://github.com/user-attachments/assets/6e682ea9-18f6-4165-a1e8-401a119d2dcc" />
+
 
 ---
 
