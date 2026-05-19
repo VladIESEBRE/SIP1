@@ -288,7 +288,9 @@ Pulsar **Siguiente**.
 ### Paso 5. Reinicio automático
  
 El servidor **se reinicia solo** al terminar la promoción. Tras el reinicio, ya forma parte del dominio creado y es controlador de dominio.
- 
+
+ <img width="1025" height="844" alt="Captura de pantalla de 2026-05-19 10-38-37" src="https://github.com/user-attachments/assets/70dd0541-650a-4228-aaf4-df2f2143c3a7" />
+
 ---
  
 ## Parte 3. Verificación
@@ -352,16 +354,6 @@ Get-ADComputer -Filter * -Properties OperatingSystem, LastLogonDate |
     Export-Csv -Path C:\equipos_dominio.csv -NoTypeInformation -Encoding UTF8
 ```
 
-**📸 CAPTURA 2:** *(Captura de pantalla de PowerShell mostrando el resultado del segundo comando: la tabla con Name, OperatingSystem y LastLogonDate)*
-
----
-
-## Resumen de capturas necesarias
-
-| # | Captura | Herramienta |
-|---|---|---|
-| 1 | Lista de equipos dentro de **Computers** | Active Directory Users and Computers (`dsa.msc`) |
-| 2 | Salida de `Get-ADComputer` con formato tabla | PowerShell |
 
 
 
