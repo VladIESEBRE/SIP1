@@ -207,8 +207,8 @@ Aparecerá un popup pidiendo agregar las características requeridas:
 - Centro de administración de Active Directory
 Pulsar **"Agregar características"** → **Siguiente**.
  
-**📸 CAPTURA:** *(Pantalla con el popup de características requeridas para AD DS)*
- 
+<img width="816" height="650" alt="Captura de pantalla de 2026-05-19 10-08-54" src="https://github.com/user-attachments/assets/4863f568-afb0-4409-8aa3-cf638b2719dc" />
+
 ### Paso 5. Características y AD DS
  
 En las siguientes pantallas (Características y AD DS) no hace falta tocar nada. Pulsar **Siguiente** en cada una.
@@ -227,7 +227,7 @@ En la pantalla de confirmación se muestra el resumen de lo que se va a instalar
 - **Servicios de dominio de Active Directory**
 Marcar **"Reiniciar automáticamente el servidor de destino en caso necesario"** y pulsar **Instalar**.
  
-**📸 CAPTURA:** *(Pantalla "Confirmar selecciones de instalación")*
+<img width="816" height="650" alt="Captura de pantalla de 2026-05-19 10-09-32" src="https://github.com/user-attachments/assets/f5fdd84b-6b41-44a1-9ca8-fbfda5f8d966" />
  
 ### Paso 7. Esperar la instalación
  
@@ -245,11 +245,11 @@ En el **Administrador del servidor**, en la parte superior derecha aparece una *
  
 **"Promover este servidor a controlador de dominio"**
  
-**📸 CAPTURA:** *(Notificación de promoción en el Administrador del servidor)*
+<img width="763" height="472" alt="Captura de pantalla de 2026-05-19 10-22-41" src="https://github.com/user-attachments/assets/c7ca8094-623e-4f3d-b46d-02223f1735f2" />
  
 ### Paso 2. Configuración de implementación
  
-Seleccionar **"Agregar un nuevo bosque"** e introducir el nombre del dominio raíz, por ejemplo:
+Seleccionar **"Agregar un nuevo bosque"** e introducir el nombre del dominio raíz :
  
 ```
 empresa.local
@@ -257,7 +257,8 @@ empresa.local
  
 Pulsar **Siguiente**.
  
-**📸 CAPTURA:** *(Pantalla "Configuración de implementación")*
+<img width="1025" height="844" alt="Captura de pantalla de 2026-05-19 10-24-43" src="https://github.com/user-attachments/assets/b10a9ef3-7237-464f-a576-c7f6a22ee1a7" />
+
  
 ### Paso 3. Opciones del controlador de dominio
  
@@ -266,17 +267,23 @@ Pulsar **Siguiente**.
 - Capacidades: dejar marcado **DNS** y **Catálogo global (GC)**
 - Introducir una **contraseña de DSRM** (Directory Services Restore Mode) y anotarla — sirve para recuperaciones de emergencia.
 Pulsar **Siguiente**.
- 
-**📸 CAPTURA:** *(Pantalla "Opciones del controlador de dominio")*
+
+ <img width="1025" height="844" alt="Captura de pantalla de 2026-05-19 10-31-44" src="https://github.com/user-attachments/assets/712cee5e-5ba5-4d80-8157-7c8828c88cf9" />
+
  
 ### Paso 4. Resto del asistente
  
 - **Opciones de DNS:** ignorar el aviso de delegación → Siguiente.
 - **Opciones adicionales:** se autocompleta el nombre NetBIOS (ej. `EMPRESA`) → Siguiente.
+
+  <img width="1025" height="844" alt="Captura de pantalla de 2026-05-19 10-33-20" src="https://github.com/user-attachments/assets/fa9add4f-cdb7-4e38-9c9e-3f4dc4c04e71" />
+
 - **Rutas de acceso:** dejar los valores por defecto → Siguiente.
 - **Revisar opciones:** Siguiente.
 - **Comprobación de requisitos previos:** debe salir "Todas las comprobaciones de requisitos previos se realizaron correctamente" → pulsar **Instalar**.
-**📸 CAPTURA:** *(Pantalla "Comprobación de requisitos previos" correcta)*
+
+<img width="1025" height="844" alt="Captura de pantalla de 2026-05-19 10-34-11" src="https://github.com/user-attachments/assets/c02c7e43-fe7f-4363-bf50-6099714e6b29" />
+
  
 ### Paso 5. Reinicio automático
  
