@@ -309,7 +309,6 @@ Tras el reinicio, comprobar que todo está correcto:
    Get-ADComputer -Filter *
    ```
  
-**📸 CAPTURA:** *(Menú Herramientas mostrando las nuevas opciones de Active Directory)*
  
 ---
  
