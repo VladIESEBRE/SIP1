@@ -303,13 +303,19 @@ Tras el reinicio, comprobar que todo está correcto:
    - Dominios y confianzas de Active Directory
    - Centro de administración de Active Directory
    - Administración de directivas de grupo
+  
+     <img width="1021" height="826" alt="Captura de pantalla de 2026-05-19 11-36-17" src="https://github.com/user-attachments/assets/7d4ff763-bb72-4599-b5c6-a6f96e4d8bf6" />
+
 2. El comando `dsa.msc` desde **Win + R** ya abre la consola de Usuarios y equipos.
+
+   <img width="1021" height="826" alt="Captura de pantalla de 2026-05-19 11-44-13" src="https://github.com/user-attachments/assets/82e9494d-48c9-4227-b707-79869577d7b5" />
+
 3. En PowerShell ya funciona:
    ```powershell
    Get-ADComputer -Filter *
    ```
- 
- 
+<img width="1021" height="826" alt="Captura de pantalla de 2026-05-19 11-45-25" src="https://github.com/user-attachments/assets/18e51c45-3d30-434c-b2fa-982833286d5e" />
+
 ---
  
 > **Nota:** Una vez completado este anexo, ya se pueden hacer las capturas del apartado 5 del ejercicio (mostrar equipos del dominio desde AD y desde PowerShell).
@@ -320,13 +326,6 @@ Tras el reinicio, comprobar que todo está correcto:
 
 ### 5.2. Desde PowerShell
 
-Abre **PowerShell como Administrador** en el servidor.
-
-> El módulo `ActiveDirectory` viene instalado cuando promocionas el servidor a controlador de dominio. Si no, instálalo con:
-> ```powershell
-> Install-WindowsFeature RSAT-AD-PowerShell
-> ```
-
 **Comandos útiles:**
 
 ```powershell
@@ -334,26 +333,14 @@ Abre **PowerShell como Administrador** en el servidor.
 Get-ADComputer -Filter *
 ```
 
+<img width="1021" height="826" alt="Captura de pantalla de 2026-05-19 11-45-25" src="https://github.com/user-attachments/assets/18e51c45-3d30-434c-b2fa-982833286d5e" />
+
 ```powershell
 # Versión más legible con campos útiles
 Get-ADComputer -Filter * -Properties OperatingSystem, LastLogonDate |
     Select-Object Name, OperatingSystem, LastLogonDate |
     Format-Table -AutoSize
 ```
-
-```powershell
-# Contar cuántos equipos hay en el dominio
-(Get-ADComputer -Filter *).Count
-```
-
-```powershell
-# Exportar la lista a CSV
-Get-ADComputer -Filter * -Properties OperatingSystem, LastLogonDate |
-    Select-Object Name, OperatingSystem, LastLogonDate |
-    Export-Csv -Path C:\equipos_dominio.csv -NoTypeInformation -Encoding UTF8
-```
-
-
-
+<img width="1019" height="847" alt="Captura de pantalla de 2026-05-19 11-47-56" src="https://github.com/user-attachments/assets/865e0e3c-670c-4ab9-a61c-df7a3e4507f4" />
 
 
